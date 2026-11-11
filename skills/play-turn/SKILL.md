@@ -1,6 +1,6 @@
 ---
 name: play-turn
-description: Recommend how to play a Dominion turn in progress, including play order, which cards to play or hold, what to buy or gain, and responses to attacks (e.g. what to discard to Militia). Use when given a current hand and game state and asked what to do, or when reviewing a played turn.
+description: Choose plays in a Dominion game in progress, including play order, which cards to play or hold, what to buy or gain, and responses to attacks (e.g. what to discard to Militia). Use for every decision while playing or advising on a game, each turn and each prompt, not only when asked; also when given a hand and game state and asked what to do, or when reviewing a played turn.
 ---
 
 # Play a turn

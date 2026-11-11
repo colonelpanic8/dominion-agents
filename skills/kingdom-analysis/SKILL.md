@@ -8,7 +8,8 @@ description: Analyze a Dominion kingdom before the game starts and recommend a p
 Turn a kingdom into a recommended plan, an opening for each split the
 starting deck can produce, and the risks to watch. Rely on the repo context
 (`context/rules.md`, `context/strategy.md`, `context/card-power.md` and
-`context/combos.md`). This skill adds the procedure.
+`context/combos.md`). This skill adds the procedure. Once the game starts,
+use the `play-turn` skill for each decision.
 
 Defaults, unless the user says otherwise:
 
