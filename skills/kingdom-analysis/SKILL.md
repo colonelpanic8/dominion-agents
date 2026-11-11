@@ -63,7 +63,7 @@ on *this* board.
 5. **Combos and outliers**: is there a known strong combo, a top-tier or
    "broken" card, or a way to end the game fast (three-pile, rush, alt VP)?
 
-## 4. Explore candidate strategies, then choose
+## 4. Explore candidate strategies
 
 Build two to four candidates that are realistic on this board. Always
 include the strongest Big Money + X as the baseline, plus any engine, slog,
@@ -74,30 +74,70 @@ bad plans. For each candidate, give:
   how a typical good turn looks once the deck is built.
 - **What it needs, by when**: e.g. "Chapel down to ~8 cards by turn 7,
   3 villages and 2 draw by turn 10, then +Buy."
-- **Speed and ceiling**: roughly when it starts scoring, how much it scores
-  per turn at its peak, and how it finishes the game.
-- **Weaknesses**: what goes wrong (bad shuffles, collisions, attacks it is
-  exposed to), and how it fares against each of the other candidates.
+- **Weaknesses**: bad shuffles, terminal collisions, dependence on one
+  contested pile, and attacks it is exposed to.
 
-Then choose: pick the plan with the best expected result against a
-competent opponent who picks *their* best plan. Say what would flip the
-choice, e.g. a 5/2 opening, more players, or the opponent going for a
-particular plan.
+## 5. Speed and scoring potential
 
-## 5. Openings and buy priorities
+Estimate these for each candidate. Rough turn numbers are fine: they exist
+to make plans comparable, not to be precise.
 
-- Give the best 4/3 and 5/2 openings, with one line of reasoning each.
+- **Speed**: the turn it starts scoring in earnest, and the earliest turn it
+  can realistically end the game, or force the opponent to.
+- **Scoring rate**: VP per turn at its peak, e.g. "Province + Duchy per
+  turn from turn 12", or "about 6 VP of tokens per turn".
+- **Scoring ceiling**: how much VP is actually available to it. Count
+  Provinces and Duchies, alternative VP (Gardens, Duke, Landmarks, VP
+  tokens), and VP it denies the opponent (Curses, contested piles). A plan
+  with a high rate but a low ceiling must end the game on its own terms.
+- **Shape of the curve**: money plans score early and flatten. Engines
+  score late and steeply. Slogs score slowly but for a long time. Rushes
+  score little and race to end the game. The intersection of two plans'
+  curves is when the slower plan must be ahead in VP.
+
+## 6. Matchups: how the opponent's choice changes things
+
+A plan is only viable relative to what the opponent does. For each pair of
+candidates, judge who is favored and why:
+
+- **Race**: does the faster plan end the game, or take an unbeatable lead,
+  before the slower one comes online? Compare speed with the scoring
+  crossover from step 5.
+- **Interference**: attacks that hit one plan much harder than the other.
+  Junking cripples thin engines. Handsize attacks hurt money more than
+  decks that draw after the attack.
+- **Shared resources**: contested piles (split piles, the only village,
+  limited Rewards or Loot), mirrored attacks (whoever plays Witch more
+  wins the Curse split), and three-pile risk created by either side.
+- **Game-length control**: who decides when the game ends. A rusher or
+  money deck can shorten the game. An engine with pile control can end it
+  on its own terms, or deny the opponent the end.
+
+Summarize this as a matchup table (rows: your plan; columns: opponent's
+plan; cells: favored / even / unfavored plus a reason). Then note which
+plans are **robust** (fine against everything) and which are **fragile**
+(good only if the opponent cooperates).
+
+## 7. Recommend
+
+- Pick the plan with the best result against the opponent's best response.
+  Against a strong opponent prefer robust plans, and say whether that is
+  a different plan than you would pick against an unknown or weak player.
+- Say what would flip the choice: a 5/2 opening, seeing the opponent commit
+  to a plan, more players, or a key pile running low.
+
+## 8. Openings and buy priorities
+
+- Give the best 4/3 and 5/2 openings for the recommended plan, with one
+  line of reasoning each.
 - Give the buy priority for the first two or three shuffles, and roughly
   when to start greening.
+- Note how to adapt once the opponent's opening shows their plan.
 
-## 6. Threats and interaction
+## 9. Endgame and piles
 
-- Name the opponent's likely best plan and how it interacts with yours,
-  including attack tempo, contested piles and the race for split or limited
-  piles.
-- Note three-pile risk: which piles could empty, and who benefits.
-- Note the end condition: Provinces or Colonies, Duchy dancing, alt-VP
-  piles.
+- Three-pile risk: which piles could empty, and who benefits.
+- The end condition: Provinces or Colonies, Duchy dancing, alt-VP piles.
 
 ## Output format
 
@@ -109,10 +149,19 @@ particular plan.
 | ... | ... | deck control: village | ... |
 
 ### Candidate strategies
-1. **<name>**: how it works · needs · speed/ceiling · weaknesses
+1. **<name>**: how it works · needs · weaknesses
 2. ...
 
-**Recommendation:** <plan, and why it beats the other candidates>
+| Plan | Starts scoring | Can end by | Peak VP/turn | VP ceiling |
+| --- | --- | --- | --- | --- |
+| ... | ~T10 | ~T16 | Province+Duchy | all Provinces + Duchies |
+
+| You \ Opponent | Plan A | Plan B | ... |
+| --- | --- | --- | --- |
+| Plan A | even | favored: <why> | ... |
+
+**Robust vs. fragile:** <which plans hold up regardless of the opponent>
+**Recommendation:** <plan, and why it holds up against the best response>
 **Open:** 4/3: <cards> · 5/2: <cards>
 **Watch out for:** <1–3 risks, and what would change the plan>
 ```
