@@ -7,6 +7,6 @@ fmt-check:
     alejandra -q --check .
 
 lint:
-    ./scripts/check-skills.sh
+    ./scripts/check.sh
 
 check: fmt-check lint

@@ -8,16 +8,19 @@ files shared by Claude Code and OpenAI Codex.
 
 | Path | Purpose |
 | --- | --- |
-| `skills/dominion-rules/` | Rules reference for every expansion through Rising Sun (Arcana provisional) |
-| `AGENTS.md` / `CLAUDE.md` | Repository instructions (one file, symlinked) |
+| `context/rules.md` | Rules reference for every expansion through Rising Sun (Arcana provisional) |
+| `AGENTS.md` / `CLAUDE.md` | Repository instructions that load the context (one file, symlinked) |
+| `skills/` | Optional task-specific skills |
 
-## Using the skills
+## How agents load it
 
-- **In this repo**: Codex finds skills through `.agents/skills`, and Claude
-  Code through `.claude/skills`. Both point to `skills/`.
-- **Globally**: symlink a skill directory into `~/.agents/skills/` (Codex)
-  and `~/.claude/skills/` (Claude Code), or install `packages.default` from
-  the flake, which ships the skills under `share/dominion-agents/skills`.
+- **Context**: `AGENTS.md` requires reading `context/rules.md`. Claude Code
+  inlines it automatically through an `@context/rules.md` import. Codex
+  reads it when following the instruction.
+- **Skills**: Codex finds them through `.agents/skills` and Claude Code
+  through `.claude/skills`. Both point to `skills/`.
+- **Outside this repo**: `packages.default` installs the context and skills
+  under `share/dominion-agents/`.
 
 ## Development
 

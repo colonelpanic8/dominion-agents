@@ -16,6 +16,7 @@
     in {
       packages.default = pkgs.runCommand "dominion-agents" {} ''
         mkdir -p $out/share/dominion-agents
+        cp -r ${./context} $out/share/dominion-agents/context
         cp -r ${./skills} $out/share/dominion-agents/skills
       '';
 

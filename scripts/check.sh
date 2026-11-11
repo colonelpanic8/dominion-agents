@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 set -euo pipefail
+shopt -s nullglob
 cd "$(dirname "$0")/.."
 
 fail=0
@@ -9,6 +10,13 @@ for link in .agents/skills .claude/skills; do
   [[ "$(readlink "$link")" == "../skills" ]] || err "$link must be a symlink to ../skills"
 done
 [[ "$(readlink CLAUDE.md)" == "AGENTS.md" ]] || err "CLAUDE.md must be a symlink to AGENTS.md"
+
+for ctx in context/*; do
+  grep -qF "@$ctx" AGENTS.md || err "$ctx is not linked from AGENTS.md as @$ctx"
+done
+while IFS= read -r ref; do
+  [[ -e "$ref" ]] || err "AGENTS.md links missing file $ref"
+done < <(grep -o '@context/[^[:space:]`]*' AGENTS.md | cut -c2- || true)
 
 for skill in skills/*/; do
   dir=$(basename "$skill")
