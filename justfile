@@ -10,3 +10,6 @@ lint:
     ./scripts/check.sh
 
 check: fmt-check lint
+
+refresh-power:
+    ./scripts/fetch-card-glicko.sh

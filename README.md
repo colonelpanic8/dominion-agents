@@ -9,14 +9,17 @@ files shared by Claude Code and OpenAI Codex.
 | Path | Purpose |
 | --- | --- |
 | `context/rules.md` | Rules reference for every expansion through Rising Sun (Arcana provisional) |
+| `context/strategy.md` | Strategy fundamentals: Big Money baseline, archetypes, openings, endgame |
+| `context/card-power.md` | Card power levels, their sources and how to read them |
+| `data/card-glicko/` | Snapshot of the community [Card Glicko](https://docs.google.com/spreadsheets/d/1CaVOd1pgAgmjJHXPM1tVMVnlJOLDZaq8BxjW4I1NI1E) ratings |
 | `AGENTS.md` / `CLAUDE.md` | Repository instructions that load the context (one file, symlinked) |
 | `skills/` | Optional task-specific skills |
 
 ## How agents load it
 
-- **Context**: `AGENTS.md` requires reading `context/rules.md`. Claude Code
-  inlines it automatically through an `@context/rules.md` import. Codex
-  reads it when following the instruction.
+- **Context**: `AGENTS.md` requires reading every file in `context/`.
+  Claude Code inlines them automatically through `@context/...` imports.
+  Codex reads them when following the instruction.
 - **Skills**: Codex finds them through `.agents/skills` and Claude Code
   through `.claude/skills`. Both point to `skills/`.
 - **Outside this repo**: `packages.default` installs the context and skills
