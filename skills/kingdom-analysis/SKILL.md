@@ -49,7 +49,19 @@ Look up power priors with
 `grep -i '<name>' data/card-glicko/*.csv`, but judge each card by its role
 on *this* board.
 
-## 3. Answer the gate questions
+## 3. Look for interactions
+
+Check pairs of cards on the board, landscapes included, against the
+interaction patterns in `context/strategy.md`: benefits from trashing,
+gainers with on-gain effects, cost reduction, multiplier targets, draw-to-X
+with cards that shrink your hand, discard for benefit, alternative VP
+enablers, landscapes changing cards, and counters to the opponent's plan.
+
+Each real interaction should either become a candidate strategy or change
+one. Don't take it on faith: it still has to beat the plain options in the
+comparison below.
+
+## 4. Answer the gate questions
 
 1. **Trashing**: is there strong trashing, and how fast is it?
 2. **Junking**: is there a junking attack? Can it be blocked, trashed away
@@ -60,10 +72,10 @@ on *this* board.
 4. **Payload ceiling**: given the deck control available, what's the best
    achievable payload per turn? Is there +Buy or gaining to cash in a big
    turn? One Province per turn is a ceiling, not a plan.
-5. **Combos and outliers**: is there a known strong combo, a top-tier or
-   "broken" card, or a way to end the game fast (three-pile, rush, alt VP)?
+5. **Outliers**: is there a top-tier or "broken" card, a strong interaction
+   from step 3, or a way to end the game fast (three-pile, rush, alt VP)?
 
-## 4. Explore candidate strategies
+## 5. Explore candidate strategies
 
 Build two to four candidates that are realistic on this board. Always
 include the strongest Big Money + X as the baseline, plus any engine, slog,
@@ -77,7 +89,7 @@ bad plans. For each candidate, give:
 - **Weaknesses**: bad shuffles, terminal collisions, dependence on one
   contested pile, and attacks it is exposed to.
 
-## 5. Speed and scoring potential
+## 6. Speed and scoring potential
 
 Estimate these for each candidate. Rough turn numbers are fine: they exist
 to make plans comparable, not to be precise.
@@ -95,14 +107,14 @@ to make plans comparable, not to be precise.
   score little and race to end the game. The intersection of two plans'
   curves is when the slower plan must be ahead in VP.
 
-## 6. Matchups: how the opponent's choice changes things
+## 7. Matchups: how the opponent's choice changes things
 
 A plan is only viable relative to what the opponent does. For each pair of
 candidates, judge who is favored and why:
 
 - **Race**: does the faster plan end the game, or take an unbeatable lead,
   before the slower one comes online? Compare speed with the scoring
-  crossover from step 5.
+  crossover from step 6.
 - **Interference**: attacks that hit one plan much harder than the other.
   Junking cripples thin engines. Handsize attacks hurt money more than
   decks that draw after the attack.
@@ -118,7 +130,7 @@ plan; cells: favored / even / unfavored plus a reason). Then note which
 plans are **robust** (fine against everything) and which are **fragile**
 (good only if the opponent cooperates).
 
-## 7. Recommend
+## 8. Recommend
 
 - Pick the plan with the best result against the opponent's best response.
   Against a strong opponent prefer robust plans, and say whether that is
@@ -126,7 +138,7 @@ plans are **robust** (fine against everything) and which are **fragile**
 - Say what would flip the choice: a 5/2 opening, seeing the opponent commit
   to a plan, more players, or a key pile running low.
 
-## 8. Openings and buy priorities
+## 9. Openings and buy priorities
 
 - Give the best 4/3 and 5/2 openings for the recommended plan, with one
   line of reasoning each.
@@ -134,7 +146,7 @@ plans are **robust** (fine against everything) and which are **fragile**
   when to start greening.
 - Note how to adapt once the opponent's opening shows their plan.
 
-## 9. Endgame and piles
+## 10. Endgame and piles
 
 - Three-pile risk: which piles could empty, and who benefits.
 - The end condition: Provinces or Colonies, Duchy dancing, alt-VP piles.

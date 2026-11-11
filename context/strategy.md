@@ -113,8 +113,43 @@ benchmark every plan should be measured against.
 - **Rush**: race to empty three piles, e.g. Workshop/Gardens or a cheap
   pile plus +Buy. Strong only when the kingdom enables it and the opponent
   can't punish it.
-- **Combos**: specific card interactions (e.g. Hermit/Market Square). Always
+- **Combos**: a plan built around a specific interaction (see below). Always
   look for them, but check that they beat the plain options.
+
+## Interactions to look for
+
+Many boards are decided by how two cards (or a card and a landscape) work
+together. Scan the kingdom for these patterns:
+
+- **Benefits from trashing**: trashers paired with cards that reward being
+  trashed or trashing. Fortress returns to hand when trashed. Market Square
+  gains a Gold when one of your cards is trashed. Procession + Fortress
+  plays Fortress twice and gains a card costing $1 more.
+- **Gainers + on-gain effects**: Workshop-style gainers feeding "when you
+  gain this" cards, e.g. Border Village also gains a cheaper card.
+- **Cost reduction + gainers or +Buy**: lower costs let "gain a card
+  costing up to $4" reach better cards and stretch each $, e.g. Highway or
+  Bridge with Ironworks, King's Court + Bridge.
+- **Multipliers on the right target**: Throne Room, King's Court and
+  Procession on strong terminals, Durations and one-shots. Watch the risk
+  of drawing a multiplier with nothing to multiply.
+- **Draw-to-X + cards that shrink your hand**: Library draws up to 7, so it
+  loves Festival and other villages that don't draw.
+- **Discard for benefit + discarders**: Tunnel gains a Gold when discarded
+  outside Clean-up, so it pairs with Warehouse or Vault, or an opponent's
+  Militia.
+- **Alternative VP + enablers**: Gardens + Workshop (a rush), Duke +
+  Duchy, and cards that make a cheap pile score.
+- **Landscapes changing what cards do**: Way of the Mouse borrows a
+  set-aside card. A Way can turn junk Actions such as Ruins into something
+  useful. Events can supply +Buy where the Kingdom has none. A Trait such as
+  Cheap can land on a key pile.
+- **Counters**: cards that blunt the opponent's attack or plan. Library
+  refills after a handsize attack, trashing removes Curses, and on-gain
+  Reactions can swap a Curse for a Silver.
+
+An interaction is only worth building around if the result beats the plain
+options, starting with Big Money + X.
 
 ## Openings
 
