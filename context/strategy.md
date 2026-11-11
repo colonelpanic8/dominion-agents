@@ -135,9 +135,9 @@ way to check whether a board can support an engine at all:
   result positive: Festival + Moat gives no draw, since Festival doesn't
   draw a card and Moat's +2 Cards just replaces the two cards played.
 - **A village** is anything that lets you play more than one terminal in a
-  turn. That includes Throne Room and King's Court. Cards that only give
-  +Actions without enabling another terminal, like Conspirator, Ruined
-  Village or Vassal, are not villages.
+  turn. That includes Throne Room and King's Court. Cards that at best
+  replace the Action they use, like Conspirator, Ruined Village or Vassal,
+  are not villages.
 - Many cards draw or act as villages only with support: an action-dense
   deck, a way to line cards up, a pile emptying, Favors, a specific trasher.
   Before relying on one, check that this board provides that support.
