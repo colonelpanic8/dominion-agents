@@ -21,6 +21,37 @@ kingdom is different: treat these as defaults to check, not laws.
 - **Reliability.** A strategy that hits $8 on 70% of turns usually beats one
   that alternates between $11 and $4.
 
+## Cantrips: the "free effect" baseline
+
+A **cantrip** is a card that gives at least +1 Card and +1 Action. Playing
+one replaces itself: your hand stays the same size and you keep your Action.
+
+- A *pure* cantrip (+1 Card +1 Action and nothing else) is almost the same
+  as not having the card at all. It takes a slot in your deck but costs you
+  nothing when you draw it.
+- So whatever a cantrip adds on top (+$1, +Buy, trashing, an attack, a
+  token) is close to a **free effect**: it improves the deck without
+  diluting it. That's why "cantrip plus a bonus" cards (Peddler, Market,
+  Sentry, Mill) rarely hurt.
+- Familiar shapes built on this baseline: **village** = cantrip + another
+  Action, **Laboratory** = cantrip + another Card (non-terminal draw),
+  **Market** = cantrip + $1 + Buy.
+- Cantrips never cause terminal collision, so they count as deck control
+  even when their bonus is payload.
+
+Exceptions, where the "free" effect isn't free:
+
+- **Opportunity cost**: buying the cantrip spends a gain that could have
+  been a Silver, Gold or a key card. Early on, a weak cantrip is usually
+  worse than Silver for a money deck.
+- **Nothing left to draw**: once you've drawn your whole deck, +1 Card does
+  nothing, and the card is only its bonus.
+- **Reshuffle timing**: a cantrip that draws into a reshuffle can leave
+  your best cards (still in play or in hand) out of the next shuffle.
+- **Card-count effects**: some cards care about how many cards you have
+  (Gardens and other alt VP, "draw until N in hand"), or about what's in
+  hand. Check these interactions.
+
 ## Payload and deck control
 
 A way to classify what each card does for your deck, from Adam Horton's
