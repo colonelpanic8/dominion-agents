@@ -31,6 +31,12 @@ Before doing any Dominion work, read all of these in full:
 - `skills/<name>/SKILL.md`: optional, task-specific workflows (YAML
   frontmatter with `name` and `description`, then instructions). Supporting
   material goes in `skills/<name>/references/`.
+- `protocol/`: the agent-view@2 protocol. `agent-view.schema.json` is canonical;
+  `README.md` is its spec (fields, knowledge, answers, text rendering);
+  `examples/` holds a view, its text rendering and an answer, produced by
+  dominion-engine. Change the schema here first; producers (dominion-engine's
+  `just sync-protocol`, dominion-navigator) vendor it. Keep it producer- and
+  provider-neutral.
 - `.agents/skills` (Codex) and `.claude/skills` (Claude Code) are both
   symlinks to `skills/`. Never put files in them directly.
 - `CLAUDE.md` is a symlink to this file.
@@ -51,5 +57,6 @@ Before doing any Dominion work, read all of these in full:
 ## Checks
 
 `just check` validates the shared symlinks, the context links and skill
-frontmatter, and checks Nix formatting. Run it inside the dev shell
+frontmatter, the protocol schema (and that the example view matches it), and
+checks Nix formatting. Run it inside the dev shell
 (`direnv allow`, or `nix develop -c just check`).
