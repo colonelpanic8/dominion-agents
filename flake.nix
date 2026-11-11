@@ -18,10 +18,11 @@
         mkdir -p $out/share/dominion-agents
         cp -r ${./context} $out/share/dominion-agents/context
         cp -r ${./skills} $out/share/dominion-agents/skills
+        cp -r ${./protocol} $out/share/dominion-agents/protocol
       '';
 
       devShells.default = pkgs.mkShell {
-        packages = with pkgs; [just alejandra];
+        packages = with pkgs; [just alejandra check-jsonschema];
       };
 
       formatter = pkgs.alejandra;
