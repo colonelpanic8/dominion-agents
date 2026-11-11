@@ -39,6 +39,11 @@ especially `context/strategy.md` for the plan and the endgame.
   turn still needs.
 - Play a gainer just before a reshuffle if you want the gained card soon,
   and late if you don't.
+- With more than one Buy, or before buying an Event or Project, play all
+  the Treasures you mean to use before the first purchase. Buying anything
+  ends Treasure play for the turn (`context/rules.md`, "Buy phase"), so
+  paying for one purchase with just the Treasures it needs strands the
+  rest. Hold back only a Treasure that hurts you to play.
 
 ## 3. Control the reshuffle
 
