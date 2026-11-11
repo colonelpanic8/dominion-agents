@@ -13,7 +13,7 @@ files shared by Claude Code and OpenAI Codex.
 | `context/card-power.md` | Card power levels, their sources and how to read them |
 | `data/card-glicko/` | Snapshot of the community [Card Glicko](https://docs.google.com/spreadsheets/d/1CaVOd1pgAgmjJHXPM1tVMVnlJOLDZaq8BxjW4I1NI1E) ratings |
 | `AGENTS.md` / `CLAUDE.md` | Repository instructions that load the context (one file, symlinked) |
-| `skills/` | Optional task-specific skills |
+| `skills/kingdom-analysis/` | Skill: analyze a kingdom before the game and recommend a plan and opening |
 
 ## How agents load it
 
