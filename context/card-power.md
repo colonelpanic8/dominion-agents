@@ -5,6 +5,10 @@ from. Ratings describe a card's strength in an average kingdom. A specific
 kingdom always matters more: a low-rated card can be the key to a board, and
 a top card can be useless in it.
 
+Use ratings as a check, not as a starting point. Read the card and work out
+what it does on the board first. Then compare your view with the rating, and
+explain any large gap. A low rating is never a reason to skip a card.
+
 ## Primary source: Dominion Card Glicko
 
 A live community rating system by the Dominion Strategy community. Raters
@@ -13,11 +17,15 @@ rating. Ratings are on one scale across costs, and landscapes are rated
 separately.
 
 - Spreadsheet: <https://docs.google.com/spreadsheets/d/1CaVOd1pgAgmjJHXPM1tVMVnlJOLDZaq8BxjW4I1NI1E>
-- Local snapshot: `data/card-glicko/*.csv`. The fetch date is in
-  `data/card-glicko/FETCHED`, and `just refresh-power` updates it.
-- Coverage: kingdom cards through Rising Sun, including first-edition cards
-  (expansion "deprecated"). Separate files cover Events/Projects, Ways,
-  Landmarks, Traits, Prophecies and Allies. Arcana is not rated yet.
+- Local snapshot: `data/card-glicko/*.csv`. `data/card-glicko/FETCHED` is
+  the day we downloaded it, and `just refresh-power` updates it. The sheet's
+  own "Last Update" date is in the header row of `cards.csv` and can be
+  months older.
+- Coverage: kingdom cards through Rising Sun. First-edition cards are listed
+  with expansion "deprecated", no rank and a large `phi`: few raters still
+  compare them, so give those ratings little weight. Separate files cover
+  Events/Projects, Ways, Landmarks, Traits, Prophecies and Allies. Arcana is
+  not rated yet.
 - Columns: `rating` (higher is stronger) and `phi` (uncertainty: treat
   ratings within about one phi as tied). `beats median` is the estimated
   chance of beating a median card. `Qvist category` is the cost bracket.
