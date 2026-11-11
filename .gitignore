@@ -1,0 +1,6 @@
+.direnv/
+.worktrees/
+result
+result-*
+.envrc.local
+.envrc.override
