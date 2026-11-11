@@ -21,6 +21,38 @@ kingdom is different: treat these as defaults to check, not laws.
 - **Reliability.** A strategy that hits $8 on 70% of turns usually beats one
   that alternates between $11 and $4.
 
+## Payload and deck control
+
+A way to classify what each card does for your deck, from Adam Horton's
+[Payload and Deck Control](https://adamhorton.com/flog/dominion-payload-and-control/).
+
+- **Payload**: cards that do the things that win the game. Usually that's
+  money plus +Buy to buy Victory cards, cards that gain Victory cards, or VP
+  tokens. Payload counts *relative* to the opponent, so attacks, denying a
+  key pile, and the ability to end (or threaten to end) the game on piles
+  while ahead are payload too. Early in the game, gainers such as Workshop
+  are payload that builds the deck rather than scoring.
+- **Deck control**: cards whose job is to let you play your other cards.
+  That means draw, villages, cantrips, trashing and sifting. Junking the
+  opponent attacks *their* deck control.
+- **Dead cards**: neither of the above. Examples are Victory cards and
+  Curses once they're in your deck, and a trasher you no longer need.
+- **Hybrids** (e.g. Grand Market, Torturer) are both payload and deck
+  control. They're usually very strong, and often the right move is to add
+  them as fast as possible.
+
+How to use it:
+
+- **Before the game**, work out the best payload this kingdom allows, given
+  its deck control. Ten Bridges is no payload without villages to play them.
+  If the ceiling is about one Province per turn, a complex deck rarely beats
+  Big Money. Without +Buy or gaining, a perfect engine still scores slowly.
+- **If deck control is weak** (no villages, draw or trashing), you won't
+  reliably play your full payload, so build less.
+- **Once your deck is under control**, balance adding payload against still
+  drawing most or all of your deck each turn. Name the role of each card you
+  add.
+
 ## The Big Money baseline
 
 "Big Money" means buying only Treasures and Victory cards. It's the
@@ -36,8 +68,8 @@ benchmark every plan should be measured against.
 
 ## Archetypes
 
-- **Engine**: villages, draw, thinning, +Buy and "payload" (what the deck
-  produces once it's drawn). Aim to draw most of your deck each turn and
+- **Engine**: heavy deck control (villages, draw, thinning) plus +Buy and
+  payload. Aim to draw most of your deck each turn and
   gain several cards, often more than one Province, per turn. Engines start
   slower but win long games. They need reliable draw and, almost always,
   +Buy or gaining.
