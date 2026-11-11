@@ -16,6 +16,7 @@ files shared by Claude Code and OpenAI Codex.
 | `AGENTS.md` / `CLAUDE.md` | Repository instructions that load the context (one file, symlinked) |
 | `skills/kingdom-analysis/` | Skill: analyze a kingdom before the game and recommend a plan and opening |
 | `skills/play-turn/` | Skill: recommend play order, buys and attack responses for a turn in progress |
+| `evals/kotw/` | Eval set: blind kingdom analyses scored against Reddit Kingdom of the Week threads |
 | `protocol/` | `dominion/agent-view@2`: the JSON Schema and spec for the game views, decisions and answers agents play through, with examples |
 
 ## How agents load it

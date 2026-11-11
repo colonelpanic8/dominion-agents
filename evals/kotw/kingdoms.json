@@ -1,0 +1,50 @@
+[
+  {
+    "id": "k1",
+    "thread": "pn49ed",
+    "cards": ["Butcher", "City Quarter", "Embassy", "Faithful Hound", "Fool's Gold", "Merchant Guild", "Night Watchman", "Nomad Camp", "Pooka", "Tunnel"],
+    "landscapes": ["Ritual", "Tower"],
+    "related": ["Cursed Gold"],
+    "setup": "Event: Ritual. Landmark: Tower. No Colonies/Platinum. No Shelters. Heirloom: each player starts with Cursed Gold in place of one Copper (Pooka). Sets: Hinterlands (1st ed. cards included), Guilds, Empires, Nocturne."
+  },
+  {
+    "id": "k2",
+    "thread": "qab4vv",
+    "cards": ["Contraband", "Fortress", "Golem", "Hermit", "Hunting Grounds", "Monument", "Quarry", "Sage", "Scrying Pool", "Vineyard"],
+    "landscapes": [],
+    "related": ["Madman", "Potion", "Hovel", "Necropolis", "Overgrown Estate"],
+    "setup": "Shelters are used (Hovel, Necropolis, Overgrown Estate replace the starting Estates). No Colonies/Platinum. Potion is in the Supply. Sets: Alchemy, Prosperity (1st ed.), Dark Ages."
+  },
+  {
+    "id": "k3",
+    "thread": "xc05mq",
+    "cards": ["Artificer", "Collection", "Experiment", "Forge", "Grand Market", "Lackeys", "Port", "Raze", "Scholar", "Tiara"],
+    "landscapes": ["Pilgrimage", "Silos"],
+    "related": ["Platinum", "Colony"],
+    "setup": "Event: Pilgrimage. Project: Silos. Colonies and Platinum ARE used (Platinum makes $5; Colony is worth 10 VP). No Shelters. Sets: Prosperity (2nd ed.), Adventures, Renaissance."
+  },
+  {
+    "id": "k4",
+    "thread": "rf58en",
+    "cards": ["Animal Fair", "Black Cat", "Cardinal", "Cartographer", "Cellar", "Gardens", "Grand Market", "Patrol", "Trader", "Worker's Village"],
+    "landscapes": ["Invest", "Way of the Goat"],
+    "related": [],
+    "setup": "Event: Invest. Way: Way of the Goat. No Colonies/Platinum. No Shelters. Sets: Dominion, Intrigue, Prosperity, Hinterlands, Menagerie."
+  },
+  {
+    "id": "k5",
+    "thread": "witniz",
+    "cards": ["Berserker", "Crossroads", "Guard Dog", "Sailor", "Salvager", "Sea Witch", "Trail", "Warehouse", "Weaver", "Wharf"],
+    "landscapes": [],
+    "related": [],
+    "setup": "No landscapes. No Colonies/Platinum. No Shelters. Sets: Seaside (2nd ed.), Hinterlands (2nd ed.)."
+  },
+  {
+    "id": "k6",
+    "thread": "ub77bx",
+    "cards": ["Barge", "Cardinal", "Courtier", "Displace", "Lurker", "Mandarin", "Silk Road", "Steward", "Tunnel", "Village Green"],
+    "landscapes": ["Gamble", "Way of the Goat"],
+    "related": [],
+    "setup": "Event: Gamble. Way: Way of the Goat. No Colonies/Platinum. No Shelters. Sets: Intrigue, Hinterlands (1st ed. cards included), Menagerie."
+  }
+]
