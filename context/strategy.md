@@ -95,6 +95,17 @@ benchmark every plan should be measured against.
   Smithy, a good attack or a strong draw card. It is a solid default when
   the kingdom offers nothing better. A good BM+X deck takes 4 Provinces by
   roughly turn 14–17.
+- **Choosing X when the opponent also plays money**: count what each X
+  takes from their turns as well as what it adds to yours. A money deck
+  has no draw to recover lost cards, so a hand-size attack turns many of
+  its Province hands into Gold hands and its Gold hands into Silver hands.
+  That is often worth more than a second draw card.
+  Plan enough copies to play the attack on most turns, within the terminal
+  limit (see "Terminal collision"), rather than one copy that is played
+  about one turn in three.
+  Hypothesis, from a rough simulation of one board without villages
+  against a money bot: Militia with Smithy beat Smithy-BM, and two Militias
+  beat both by a wide margin. The size of the gap is unconfirmed.
 - **Big Money doesn't choke.** Optimized plain Big Money keeps taking about
   one Province every other turn for as long as the game lasts. On its own
   it empties all 8 Provinces in roughly 21–23 turns

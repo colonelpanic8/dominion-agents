@@ -8,7 +8,8 @@ description: Analyze a Dominion kingdom before the game starts and recommend a p
 Turn a kingdom into a recommended plan, an opening for each split the
 starting deck can produce, and the risks to watch. Rely on the repo context
 (`context/rules.md`, `context/strategy.md`, `context/card-power.md` and
-`context/combos.md`). This skill adds the procedure.
+`context/combos.md`). This skill adds the procedure. Once the game starts,
+use the `play-turn` skill for each decision.
 
 Defaults, unless the user says otherwise:
 
@@ -18,7 +19,8 @@ Defaults, unless the user says otherwise:
   on a guess about how fast a plan is.
 - Work from card text. Community ratings come in at step 4, as a check on a
   view you have already formed.
-- Keep the reasoning short and checkable. Don't give a tutorial.
+- Keep the reasoning short and checkable. Don't give a tutorial. A short
+  write-up shortens each slot of the output format, never drops one.
 
 ## 1. Inventory
 
@@ -122,7 +124,17 @@ If the sweep turns up a new loop, take it back through step 3.
   right opening, the cheapest set of pieces, every helper the board offers.
   For each, say how it works, what it needs by when (including the minimum
   number of copies of any scarce card, and whether the opponent wants them
-  too), and its main weakness.
+  too), and its main weakness. Write every candidate down, even in a short
+  write-up. A recommendation with no rivals beside it skipped this step.
+- **No village**: when step 2 found no way to play two terminals in a turn,
+  the realistic plans are mostly money decks and the choice of X matters
+  most. If the board has an attack, compare at least X as a draw card, X as
+  the attack, and two copies of the attack. Give each a rough worked line:
+  the opening, the turns it first hits $6 and $8, and how often it plays
+  its attack. k copies in an N-card deck reach a 5-card hand in at most
+  5k/N of turns, less once copies collide (one copy in 15 cards: 1 turn in
+  3; two copies: over half). Judge each against an opponent who also plays
+  money (see "The Big Money baseline" in `context/strategy.md`).
 - **Pick** the plan with the best result against the opponent's best
   response. Against a strong opponent prefer a plan that holds up whatever
   they do.
@@ -205,7 +217,8 @@ Quick analysis:
 **Key interactions:**
 - <A + B: the loop, with numbers>
 **Other cards:** <one line each: its best partner here, or "none">
-**Plans considered:** <each in one line: how it works · needs · weakness>
+**Plans considered:** <each in one line: how it works · rough line ($6 and
+$8 turns, attack plays) · needs · weakness>
 **Recommendation:** <plan, and why it holds up against the best response>
 **Open:** <split>: <cards> · <split>: <cards>
 **Buy priorities:** <first two or three shuffles, then when to green>
