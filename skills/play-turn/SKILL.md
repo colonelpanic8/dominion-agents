@@ -67,6 +67,14 @@ especially `context/strategy.md` for the plan and the endgame.
 
 - Follow the plan from the kingdom analysis, adjusted to what has happened
   since: did the opponent commit to a plan, did a key pile run low?
+- When a buy departs from the plan (a card it didn't name, or a default
+  such as Silver in place of a card it did), give a one-line reason. If no
+  reason holds up, buy what the plan says.
+- Before buying a terminal, count the terminals in your deck including
+  this one. Without villages, keep to roughly one per 8–10 cards
+  (`context/strategy.md`, "Terminal collision"). Past that, a new
+  terminal collides often enough that Treasure or a non-terminal is
+  usually the better buy.
 - Before a scoring buy, check the endgame (`context/strategy.md`, "Greening
   and the endgame"):
   - the Penultimate Province Rule and its exceptions;
@@ -92,7 +100,8 @@ especially `context/strategy.md` for the plan and the endgame.
 ```markdown
 **Goal this turn:** <e.g. "$8 + Buy for Province + Duchy">
 **Play:** 1. <card> — <why, if not obvious> 2. ...
-**Buy/gain:** <cards> — <why>
+**Buy/gain:** <cards> — <why; for a terminal, the count against deck size;
+for a departure from the plan, the reason>
 **Watch:** <endgame or reshuffle notes, if any>
 ```
 
