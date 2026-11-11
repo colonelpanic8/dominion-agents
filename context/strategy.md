@@ -112,6 +112,12 @@ benchmark every plan should be measured against.
 - **Money / BM+X**: few Actions, lots of Treasure, greens early. Strongest
   when the kingdom lacks villages, draw or thinning, or when attacks punish
   slow decks.
+- **Good-stuff deck**: no real draw, but several good non-drawing
+  terminals, cantrips and Silver-like cards. Buy whatever helps your next
+  turn most, add Silver and better Treasure, and skip terminal draw.
+  Junking attacks push toward this deck. A lone village earns its place only
+  once you have several terminals worth playing together
+  ([Wandering Winder](http://wanderingwindergames.blogspot.com/2015/07/dominion-good-stuff-deck.html)).
 - **Slog**: heavy junking (Curses, Ruins) or no good draw make big turns
   impossible. Gain many cards, value cheap or alternative VP, and expect a
   long game.
@@ -166,8 +172,8 @@ Build an engine when all of these hold:
 
 Don't build one, or build less, when:
 
-- The only "draw" is cantrips. Play a deck of non-terminals plus the best
-  terminal, with good money.
+- The only "draw" is cantrips. Play a good-stuff deck instead (see
+  Archetypes).
 - There are villages with no draw, or terminal draw with no villages.
 - There's no +Buy, gaining or alternative payload, so the payload ceiling is
   one Province per turn.
@@ -176,13 +182,52 @@ Don't build one, or build less, when:
 ### How to build one
 
 - Open with trashing and economy, so you can afford the parts.
-- Add villages and draw together, keeping enough Actions for your
-  terminals.
-- Get +Buy, and add payload once the deck draws itself reliably.
-- Green only once you can take several Provinces per turn, and keep adding
-  draw so greening doesn't stall the deck.
-- Don't overbuild: stop once the payload ceiling is reached, and start
-  scoring.
+- **Build fast.** Gaining one card per turn is too slow. +Buy and
+  Workshop-style gainers roughly double the build rate, and Remodel-style
+  gainers turn Estates into engine parts. Prefer a $5 engine piece over
+  Gold.
+- Keep at least as many villages as terminal draw cards. Get draw before
+  payload, unless the payload is a strong attack.
+- **Actions and cards at the start of the turn are worth the most**,
+  because that's when turns stall. Duration villages and duration draw
+  (Fishing Village, Wharf) give them before you draw anything. Spread them
+  across turns rather than bunching them.
+- Aim for one or two cards of spare draw beyond exactly enough. That makes
+  the deck consistent, which matters most against attacks and when you're
+  ahead. Spare draw can be spent by gaining a card mid-turn and drawing it.
+  If you're drawing everything but short on money, you trashed Coppers too
+  fast.
+- Stop adding Treasure once the deck draws itself, and add payload once it
+  does so reliably.
+- Don't overbuild past the payload ceiling. But when unsure whether to
+  green, one more building turn usually costs less than it seems.
+
+### Building for one huge turn
+
+Some decks save resources for a single game-winning turn: cards on mats
+(Native Village), Reserve cards, banked Coffers, Villagers or Favors.
+
+- Saving up means you don't use those resources while building, so playing
+  your payload every turn usually builds faster.
+- It's worth it mainly with an explosive finisher such as cost reduction
+  (Bridge, Highway, Bridge Troll) stacked many times.
+- Attacks of every kind hurt a saving deck badly. Check the opponent's
+  attacks before committing.
+- Start the big turn only when you can see it through, since a turn that
+  fizzles partway can lose on the spot. If it can't end the game, make sure
+  the opponent's best reply can't win.
+
+## Economy: Gold, Treasure gainers and Coffers
+
+- **Gold in an engine** is a card that doesn't draw, so it can stop your
+  turn. Add it late, once draw can absorb it, and prefer gaining it free
+  over buying it.
+- **Treasure gainers**: time them for when the deck can draw the gained
+  Treasure that turn. In money decks they free your buys for other things.
+- **Coffers**: spend them early, because early gains compound. In the
+  midgame keep one or two to hit key prices. Late, hoard them to guarantee
+  $8 or to threaten a turn with several Provinces (with +Buy). A second
+  source of Coffers adds less than the first.
 
 ## Interactions to look for
 
@@ -217,46 +262,121 @@ together. Scan the kingdom for these patterns:
   Reactions can swap a Curse for a Silver.
 
 An interaction is only worth building around if the result beats the plain
-options, starting with Big Money + X.
+options, starting with Big Money + X. Known game-deciding combos are listed
+in `context/combos.md`.
 
 ## Openings
 
+Sources: Adam Horton's
+[Discipline in the Opening](https://adamhorton.com/flog/dominion-discipline-in-the-opening/)
+and general community consensus.
+
 - Turns 1–2 give $7 between them, split 4/3 or 5/2 (5/2 is about 1 in 6).
-- High-value opening buys: trashers, gainers, strong attacks (especially
-  junking ones like Witch or Sea Witch), and economy that scales, such as
-  Silver-plus-effect cards and Coffers.
+- **What the opening is for**, in order: trashing or a junking attack
+  first, then gainers. Draw and payload rarely drive the opening. Buying
+  Silver to reach $5 for a key $5 trasher or junker counts as working
+  toward that goal. Opening a plain village is almost never right.
+- **The turn 3–4 test**: if an opening buy won't do something useful on
+  turn 3 or 4, look hard for something better. Durations and Reserves often
+  miss the second shuffle. Know which price you need on turns 3–4 and avoid
+  openings unlikely to hit it.
+- **Turn order**: going first, an attack like Militia drawn on turn 3 can
+  deny the opponent's first $5. Going second, it's much weaker, because you
+  must draw it on turn 3 exactly.
 - With 5/2, a strong $5 (Witch, Laboratory-class draw) plus a $2 trasher
   (Chapel, Lookout) can be much stronger than 4/3. Avoid a 5/2 that leaves
   the $2 slot weak.
 - Don't open with two terminals that collide often unless their payoff is
   worth it.
 
+## Trashing in practice
+
+- With Chapel, on turn 3 or 4 trash your whole hand, even if it's only
+  Coppers. The exception is a hand holding your other opener.
+- After the first big trashing turn, keep enough money to buy what you
+  need. Don't thin so hard you lose your economy.
+- A trasher that goes dead late in the game has usually already paid for
+  itself.
+
 ## Attacks and defense
 
 - **Junking** (Curses, Ruins) is the strongest attack class: it costs the
-  victim tempo and points. Mirror it early, or plan to trash the junk.
-- **Hand-size attacks** (Militia, Ninja) hurt money decks and are weaker
-  against decks that draw after the attack.
-- **Trashing and deck attacks** (Knights, Swindler) are swingy.
+  victim tempo and points.
+  - Take a junker even when the board has trashing: slowing the opponent is
+    still worth it.
+  - You can ignore a junker only if your deck will draw itself before more
+    than about one junk card per turn arrives.
+  - Trashing Curses as your main plan usually loses, unless the trasher is
+    very efficient. Lower your sights instead (Duchies).
+  - The Curse pile will empty. Curses plus Duchies make two of the three
+    piles, so a three-pile ending is the money player's main weapon against
+    an engine.
+  - With a stacking attack like Torturer, don't always take the option that
+    keeps your deck clean if it costs you your own attack plays.
+- **Play an attack every turn**: if you can only play one attack per turn,
+  still buy several copies so you play one every turn. The first copy of an
+  attack on the opponent's economy is high priority, because it can stop
+  them reaching the price of their own copy.
+- **Hand-size attacks** (Militia, Ninja) hurt money decks and are usually
+  weaker against decks that draw after the attack. The exception is
+  attacks that punish drawing (Frigate): there, an attacking money deck can
+  beat draw-heavy decks.
+- **Trashing attacks** (Knights, Swindler): lean on gainers and rely less
+  on Treasure.
 - Defend with draw that refills your hand, with trashing, and with
-  Reactions only when they're actually good.
+  Reactions only when they're actually good. Attacks lengthen the game and
+  make three-pile endings likelier.
 
 ## Greening and the endgame
 
 - Start buying Victory cards ("greening") when the remaining turns are few
-  enough that the points beat the economy you give up. Engines green late
-  and fast. Money greens early.
+  enough that the points beat the economy you give up. The faster your deck
+  can still improve, the later you green:
+  - Gardens rush: immediately.
+  - Duke/Duchy slog: once you reliably hit $5.
+  - One-buy money decks: once you reliably hit $8.
+  - Engines: once they reliably produce enough for two or three Provinces
+    per turn ($13–18+).
+  - Decks aiming for one huge final turn: only on that turn.
+- Engines green late and fast. In engine mirrors, green earlier than you
+  would against money. When behind against money, don't panic-green.
 - Track the score, the Province count and how close any piles are to empty,
   every turn.
 - **Penultimate Province Rule**: don't buy the second-to-last Province if
   that lets your opponent win by buying the last one. A Duchy can be better.
+  Exceptions:
+  - If your deck has less future potential than theirs, take the Province
+    now.
+  - If you need both of the last two Provinces anyway, go for them.
+  - In a tied game with one Buy each, player two buying the second-to-last
+    Province can force a win, since taking the last one only ties and ties
+    go to fewer turns.
+- **Check the opponent's whole next turn**, not just the Province pile:
+  unused extra turns (Seize the Day), stored Coffers, Villagers or Favors,
+  cards on mats, and how many +Buys and Golds they have left this shuffle.
 - Three-pile endings are a real threat with +Buy and cheap piles. Count how
-  many gains each player can make to empty the piles.
+  many gains each player can make to empty the piles. In mirrors, the
+  number of gains often matters more than money.
 - Colony games last longer and favor engines and Platinum economies.
+
+## Risk and luck
+
+- When ahead, cut variance: add a spare village, stop drawing to avoid a
+  bad reshuffle, keep spare draw.
+- When behind, take higher-variance lines. Late in the game, play for the
+  luck you need: if you need both of the last Provinces, go for them.
+- Player two starts at a disadvantage and can justify a little more risk.
+- Judge decisions by their expected result, not their outcome. A good
+  result doesn't prove a choice right.
 
 ## Multiplayer (3–6 players)
 
-- Attacks hit more opponents, so junkers are stronger and games are longer.
-- There's less interaction with any one opponent's plan, and each player
-  gets fewer turns relative to the end conditions.
+- Each opponent's attacks hit you, so defenses like Moat get better as the
+  player count rises.
+- Your own junker adds less, since the Curses split more evenly. One-card
+  trashers can't keep up with several junkers.
+- Key piles get contested, so value boards with substitutes for them. A thin
+  deck adapts more easily than a bloated one.
+- There's less time to build and less control over the ending: ask when you
+  must green, given what the others are doing.
 - Three-pile endings (four with 5–6 players) come sooner than you'd expect.

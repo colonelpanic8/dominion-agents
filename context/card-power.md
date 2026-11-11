@@ -56,10 +56,29 @@ Look cards up in the CSVs rather than relying on memory, e.g.
   forum.dominionstrategy.com): per-card articles with strategy and synergy
   notes. These are the best qualitative source. The wiki blocks some
   automated fetchers.
-- Simulators (Geronimoo's, Dominiate) are useful for Big Money benchmarks
-  and less so for engines.
+- **Simulators** (Geronimoo's, Dominiate): trust their win rates only when
+  both bots aim at the same end condition and neither tries for more than
+  one Province per turn, e.g. Big Money or a slog against Big Money.
+  Otherwise the results mostly show which bot was easier to write, since
+  bots don't adapt to the opponent
+  ([Horton](https://adamhorton.com/flog/dominion-the-dangers-of-simulation/)).
 - Avoid casual tier lists (TierMaker, listicles), which come from tiny
   samples.
+
+## Commonly misjudged effects
+
+Comparing community ratings before and after a set has been played shows
+consistent mistakes (Horton's first-impressions and revisited articles):
+
+- **Underrated**: gaining a card without spending an Action (Cobbler,
+  Ironworks), Villagers or Coffers you get when gaining a card (Lackeys,
+  Silk Merchant), plain consistency (Star Chart, Merchant Camp), Silver and
+  Gold, and mandatory trashing that looks like a drawback (Cathedral).
+- **Overrated**: huge effects that don't matter on most boards
+  (Capitalism), and cards that "do lots of things" without doing one thing
+  well (Rope).
+- When the community disagrees sharply about a card, treat its rating as
+  unreliable.
 
 ## Caveats
 

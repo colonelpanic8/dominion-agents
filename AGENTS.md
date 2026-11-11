@@ -11,6 +11,7 @@ Before doing any Dominion work, read all of these in full:
 - Rules reference: @context/rules.md
 - Strategy basics: @context/strategy.md
 - Card power levels and where they come from: @context/card-power.md
+- Known game-deciding combos: @context/combos.md
 
 - Card text overrides general rules. When a question hinges on exact card
   wording, quote or ask for the card text rather than reciting it from memory.

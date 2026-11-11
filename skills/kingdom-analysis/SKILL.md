@@ -7,8 +7,8 @@ description: Analyze a Dominion kingdom before the game starts and recommend a p
 
 Turn a kingdom into a recommended plan, an opening for both 4/3 and 5/2, and
 the risks to watch. Rely on the repo context (`context/rules.md`,
-`context/strategy.md` and `context/card-power.md`). This skill adds the
-procedure.
+`context/strategy.md`, `context/card-power.md` and `context/combos.md`).
+This skill adds the procedure.
 
 Defaults, unless the user says otherwise:
 
@@ -45,6 +45,11 @@ For each card and landscape, tag **payload**, **deck control**, **both** or
   any Action into a village or draw, Allies that give Favors-powered
   effects, Prophecies that change the economy once active.
 
+Also mark which cards a plan could be **built around** (Chapel, Witch,
+Goons, Masquerade) and which only **support** a plan. A support card can be
+stronger than a centerpiece (Laboratory vs. Bridge) and still not define the
+plan.
+
 Look up power priors with
 `grep -i '<name>' data/card-glicko/*.csv`, but judge each card by its role
 on *this* board.
@@ -56,6 +61,7 @@ interaction patterns in `context/strategy.md`: benefits from trashing,
 gainers with on-gain effects, cost reduction, multiplier targets, draw-to-X
 with cards that shrink your hand, discard for benefit, alternative VP
 enablers, landscapes changing cards, and counters to the opponent's plan.
+Check `context/combos.md` for known game-deciding combos.
 
 Each real interaction should either become a candidate strategy or change
 one. Don't take it on faith: it still has to beat the plain options in the
@@ -75,6 +81,12 @@ comparison below.
    turn? One Province per turn is a ceiling, not a plan.
 5. **Outliers**: is there a top-tier or "broken" card, a strong interaction
    from step 3, or a way to end the game fast (three-pile, rush, alt VP)?
+6. **Scoring routes and piles**: list every way to score on this board
+   (Provinces or Colonies, other Victory cards, VP tokens, Landmarks, Curses
+   as minus points). Forecast which piles will run out: junkers drain
+   Curses, and cards that gain copies of themselves or cheap must-buy cards
+   drain their own piles. Plan backwards from how the game will be scored
+   and end.
 
 ## 5. Explore candidate strategies
 
@@ -86,7 +98,10 @@ bad plans. For each candidate, give:
 - **How it works**: its key cards, split into payload and deck control, and
   how a typical good turn looks once the deck is built.
 - **What it needs, by when**: e.g. "Chapel down to ~8 cards by turn 7,
-  3 villages and 2 draw by turn 10, then +Buy."
+  3 villages and 2 draw by turn 10, then +Buy." Name the minimum number of
+  copies it needs of any scarce card (e.g. 5–6 Hermits, the only village),
+  and whether the opponent will want them too. If both players do, the
+  split decides the game.
 - **Weaknesses**: bad shuffles, terminal collisions, dependence on one
   contested pile, and attacks it is exposed to.
 
@@ -102,7 +117,10 @@ to make plans comparable, not to be precise.
 - **Scoring ceiling**: how much VP is actually available to it. Count
   Provinces and Duchies, alternative VP (Gardens, Duke, Landmarks, VP
   tokens), and VP it denies the opponent (Curses, contested piles). A plan
-  with a high rate but a low ceiling must end the game on its own terms.
+  with a high rate but a low ceiling must end the game on its own terms. A
+  money plan wins by taking about half the available VP before the
+  opponent's big turns arrive, so VP that keeps scaling (Colonies, VP
+  tokens, Fairgrounds-style alt VP) raises that bar and favors engines.
 - **Shape of the curve**: money plans score early and flatten. Engines
   score late and steeply. Slogs score slowly but for a long time. Rushes
   score little and race to end the game. The intersection of two plans'
@@ -127,6 +145,19 @@ candidates, judge who is favored and why:
 - **Game-length control**: who decides when the game ends. A rusher or
   money deck can shorten the game. An engine with pile control can end it
   on its own terms, or deny the opponent the end.
+
+Common matchup patterns to check:
+
+- Slog vs. money: the slog wants the money deck to buy out the Provinces
+  while it takes everything else.
+- Slog or rush vs. engine: threaten a three-pile before the engine is
+  online.
+- Rush: an opponent draining a cheap pile hands the rush its third pile.
+- Alternative-VP mirrors: the split of the key VP pile decides the game.
+- Engine vs. money: the engine shouldn't panic-green when behind early.
+- Engine mirror: green earlier than against money, and a Duchy can be a
+  weapon, since a three-pile threat stops the opponent buying components.
+- Trashing attacks hurt slogs most. Rushes shrug off most attacks.
 
 Summarize this as a matchup table (rows: your plan; columns: opponent's
 plan; cells: favored / even / unfavored plus a reason). Then note which
