@@ -21,6 +21,12 @@ especially `context/strategy.md` for the plan and the endgame.
   memory. If something needed is missing, say what you assumed.
 - Decide what this turn is for: building, greening, or ending the game.
   Name the price or gains it needs (e.g. "$8 + a Buy", "gain 2 villages").
+- When a card that wasn't part of the plan shows up (a Black Market reveal,
+  a Loot, a Reward, a card an attack hands you, something the opponent just
+  started buying), check it against the board before judging it: what here
+  supplies what it wants, and what wants what it supplies? See
+  "Interactions to look for" in `context/strategy.md`. A card that is weak
+  on most boards can be the best buy on this one.
 
 ## 2. Order the plays
 
