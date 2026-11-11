@@ -95,15 +95,20 @@ benchmark every plan should be measured against.
   Smithy, a good attack or a strong draw card. It is a solid default when
   the kingdom offers nothing better. A good BM+X deck takes 4 Provinces by
   roughly turn 14–17.
+- **Big Money doesn't choke.** Optimized plain Big Money keeps taking about
+  one Province every other turn for as long as the game lasts. On its own
+  it empties all 8 Provinces in roughly 21–23 turns
+  ([ragingduckd, "The Myth of Big Money Choking"](http://forum.dominionstrategy.com/index.php?topic=9512.0)).
+  Don't assume a money opponent stalls once they green. Use these numbers as
+  the race clock any slower plan has to beat.
 - Any plan that can't beat a competent BM+X in this kingdom is a mistake.
 
 ## Archetypes
 
 - **Engine**: heavy deck control (villages, draw, thinning) plus +Buy and
-  payload. Aim to draw most of your deck each turn and
-  gain several cards, often more than one Province, per turn. Engines start
-  slower but win long games. They need reliable draw and, almost always,
-  +Buy or gaining.
+  payload. Aim to draw most of your deck each turn and gain several cards,
+  often more than one Province, per turn. Engines start slower but win long
+  games (see "Engines" below).
 - **Money / BM+X**: few Actions, lots of Treasure, greens early. Strongest
   when the kingdom lacks villages, draw or thinning, or when attacks punish
   slow decks.
@@ -115,6 +120,69 @@ benchmark every plan should be measured against.
   can't punish it.
 - **Combos**: a plan built around a specific interaction (see below). Always
   look for them, but check that they beat the plain options.
+
+## Engines
+
+### What counts as draw and villages
+
+Adam Horton's articles on [draw](https://adamhorton.com/flog/dominion-draw/)
+and [villages](https://adamhorton.com/flog/dominion-villages/) give a useful
+way to check whether a board can support an engine at all:
+
+- **Draw** is any combination of cards that increases your hand size
+  without reducing the Actions you have left. A Laboratory does this alone.
+  Smithy does it only alongside a village, and only one that leaves the net
+  result positive: Festival + Moat gives no draw, since Festival doesn't
+  draw a card and Moat's +2 Cards just replaces the two cards played.
+- **A village** is anything that lets you play more than one terminal in a
+  turn. That includes Throne Room and King's Court. Cards that only give
+  +Actions without enabling another terminal, like Conspirator, Ruined
+  Village or Vassal, are not villages.
+- Many cards draw or act as villages only with support: an action-dense
+  deck, a way to line cards up, a pile emptying, Favors, a specific trasher.
+  Before relying on one, check that this board provides that support.
+- So ask "which combination of cards here actually increases hand size?"
+  rather than "is there a draw card?". If the answer is none, no engine is
+  possible.
+- Once an engine draws its whole deck each turn, its output depends on
+  *everything* in the deck, not the average card. Each payload card adds
+  directly, which is why engines keep growing. Greening and junk erode
+  this, so it has to be maintained.
+
+### When to build one
+
+Build an engine when all of these hold:
+
+1. Real draw exists, by the test above, with villages that actually work
+   with it.
+2. There is trashing, or the draw is strong enough to beat the junk. Strong
+   engines can overcome Curses.
+3. Payload scales past one Province per turn: +Buy, gainers, VP tokens or a
+   repeatable attack.
+4. It wins the race against the Big Money baseline: it can take double
+   Provinces by the mid-teens, or control when the game ends.
+5. The pieces are affordable and available: not all at $5+, and not one
+   contested split pile.
+
+Don't build one, or build less, when:
+
+- The only "draw" is cantrips. Play a deck of non-terminals plus the best
+  terminal, with good money.
+- There are villages with no draw, or terminal draw with no villages.
+- There's no +Buy, gaining or alternative payload, so the payload ceiling is
+  one Province per turn.
+- The opponent can three-pile or rush faster than the engine comes online.
+
+### How to build one
+
+- Open with trashing and economy, so you can afford the parts.
+- Add villages and draw together, keeping enough Actions for your
+  terminals.
+- Get +Buy, and add payload once the deck draws itself reliably.
+- Green only once you can take several Provinces per turn, and keep adding
+  draw so greening doesn't stall the deck.
+- Don't overbuild: stop once the payload ceiling is reached, and start
+  scoring.
 
 ## Interactions to look for
 

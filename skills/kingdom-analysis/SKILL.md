@@ -66,9 +66,10 @@ comparison below.
 1. **Trashing**: is there strong trashing, and how fast is it?
 2. **Junking**: is there a junking attack? Can it be blocked, trashed away
    or outpaced?
-3. **Draw your deck**: can a deck reliably draw itself, either with
-   villages plus draw or with non-terminal draw? What breaks it (terminal
-   draw only, villages without draw)?
+3. **Draw**: which combination of cards actually increases hand size
+   without costing Actions (see "Engines" in `context/strategy.md`)? Can a
+   deck reliably draw itself? What breaks it (terminal draw only, villages
+   without draw, support the board doesn't provide)?
 4. **Payload ceiling**: given the deck control available, what's the best
    achievable payload per turn? Is there +Buy or gaining to cash in a big
    turn? One Province per turn is a ceiling, not a plan.
@@ -114,7 +115,9 @@ candidates, judge who is favored and why:
 
 - **Race**: does the faster plan end the game, or take an unbeatable lead,
   before the slower one comes online? Compare speed with the scoring
-  crossover from step 6.
+  crossover from step 6. Use the Big Money clock as the baseline: BM+X takes
+  4 Provinces by about turn 14–17, and plain Big Money keeps taking a
+  Province every other turn without stalling.
 - **Interference**: attacks that hit one plan much harder than the other.
   Junking cripples thin engines. Handsize attacks hurt money more than
   decks that draw after the attack.
