@@ -5,16 +5,19 @@ description: Analyze a Dominion kingdom before the game starts and recommend a p
 
 # Kingdom analysis
 
-Turn a kingdom into a recommended plan, an opening for both 4/3 and 5/2, and
-the risks to watch. Rely on the repo context (`context/rules.md`,
-`context/strategy.md`, `context/card-power.md` and `context/combos.md`).
-This skill adds the procedure.
+Turn a kingdom into a recommended plan, an opening for each split the
+starting deck can produce, and the risks to watch. Rely on the repo context
+(`context/rules.md`, `context/strategy.md`, `context/card-power.md` and
+`context/combos.md`). This skill adds the procedure.
 
 Defaults, unless the user says otherwise:
 
 - Assume 2 players. Name what would change with more players.
-- Explore before deciding: lay out two to four real candidate strategies,
-  then recommend one.
+- Do the quick analysis (steps 1–5). Go deeper (steps 6–8) when the user
+  asks for a full analysis, or when step 5 leaves two plans close or rests
+  on a guess about how fast a plan is.
+- Work from card text. Community ratings come in at step 4, as a check on a
+  view you have already formed.
 - Keep the reasoning short and checkable. Don't give a tutorial.
 
 ## 1. Inventory
@@ -22,192 +25,207 @@ Defaults, unless the user says otherwise:
 - List every Kingdom pile with its cost, plus every landscape (Events,
   Projects, Ways, Landmarks, Traits, Allies, Prophecies) and any non-Supply
   piles they bring (Spoils, Horses, Loot, Rewards, Spirits, ...).
-- Note setup effects: Colony/Platinum, Shelters, Young Witch's Bane, a
-  Prophecy and its Sun count, which pile a Trait is on, split piles, and
-  added piles (Approaching Army, Ferryman, Riverboat, ...).
+- Note setup effects: Colony/Platinum, Shelters, Heirlooms, Young Witch's
+  Bane, a Prophecy and its Sun count, which pile a Trait is on, split piles,
+  and added piles (Approaching Army, Ferryman, Riverboat, ...).
 - Note special rules in play: Debt, Potion, Night, Favors, Exile, Coffers,
   Villagers, Durations.
+- Note the price points: which costs are crowded (every key card at $5) and
+  which are empty (nothing worth buying at $2, nothing above $5).
+- Write down the actual starting deck and the turn 1–2 splits it produces.
+  The default is 4/3 or 5/2, but Heirlooms and Shelters change the deck, and
+  some change the money.
 - Get exact card text from the user, the log or the client. Never
   reconstruct it from memory. If text is missing, ask or state your
   assumption.
 
-## 2. Tag roles
+## 2. First read: what is this board about?
 
-For each card and landscape, tag **payload**, **deck control**, **both** or
-**neither**, and give its specific role:
+Answer these quickly from the card text, before studying any card in depth.
+The answers decide where to look harder.
 
-- Deck control: village / +Actions, draw (terminal or non-terminal),
-  cantrip, trashing, sifting, handsize refill after an attack.
-- Payload: +$ / economy, +Buy, gaining (to what cost), VP tokens or
-  alternative VP, cost reduction, attacks (junking, handsize, deck, trash),
-  pile control.
-- Remember landscape roles: Events that give +Buy or gains, Ways that turn
-  any Action into a village or draw, Allies that give Favors-powered
-  effects, Prophecies that change the economy once active.
+1. **Scoring and ending**: every way to score here (Provinces or Colonies,
+   other Victory cards, VP tokens, Landmarks, Curses as minus points), and
+   which of them add no card to the deck. Which piles will run out, and how
+   does the game most likely end?
+2. **Payload**: the biggest sources of $, gains or VP per turn. Is there
+   +Buy or gaining to cash in a big turn? One Province per turn is a
+   ceiling, not a plan.
+3. **Draw and Actions**: which combination of cards actually increases hand
+   size without costing Actions (see "Engines" in `context/strategy.md`)?
+   Which villages are there, including conditional ones?
+4. **Trashing**: is there any, and how fast is it?
+5. **Attacks**: is there a junker? Can it be blocked, trashed away or
+   outpaced? What do the other attacks hit?
+6. **Standouts**: a card the whole board bends around, an unusual setup, a
+   landscape that changes scoring, or a way to end the game fast.
 
-Also mark which cards a plan could be **built around** (Chapel, Witch,
-Goons, Masquerade) and which only **support** a plan. A support card can be
-stronger than a centerpiece (Laboratory vs. Bridge) and still not define the
-plan.
+Then write one or two sentences: what the board is about, and what is still
+open ("the only village is conditional", "no +Buy", "the payoff needs a
+discard outlet"). Those open points are what step 3 goes looking for.
 
-Look up power priors with
-`grep -i '<name>' data/card-glicko/*.csv`, but judge each card by its role
-on *this* board.
+## 3. Work backwards from the payload
 
-## 3. Look for interactions
+For each scoring route and payload source from step 2, ask:
 
-Check pairs of cards on the board, landscapes included, against the
-interaction patterns in `context/strategy.md`: benefits from trashing,
-gainers with on-gain effects, cost reduction, multiplier targets, draw-to-X
-with cards that shrink your hand, discard for benefit, alternative VP
-enablers, landscapes changing cards, and counters to the opponent's plan.
-Check `context/combos.md` for known game-deciding combos.
+- What is the most this could do in one turn if the rest of the board
+  served it?
+- What stands in the way: Actions, hand size, having it in hand every turn,
+  its price, the number of gains?
+- Which card or landscape here removes that obstacle?
 
-Each real interaction should either become a candidate strategy or change
-one. Don't take it on faith: it still has to beat the plain options in the
-comparison below.
+To answer the third question, read cards for what they **supply** and what
+they **want**, not only for their role:
 
-## 4. Answer the gate questions
+- Supplies: gains (and where they land: discard, hand, top of deck),
+  discards from hand or deck, trashes, putting cards on top of the deck or
+  ordering it, playing another card, extra Actions or Buys, tokens, anything
+  carried to the next turn, forced discards or gains for the opponent.
+- Wants: when-gained, when-discarded and when-trashed triggers; counts of
+  cards, types or names; a particular cost or type in hand, in play or on
+  top of the deck; an Action-dense hand; an Action already in play; a pile
+  running out; the opponent doing something.
 
-1. **Trashing**: is there strong trashing, and how fast is it?
-2. **Junking**: is there a junking attack? Can it be blocked, trashed away
-   or outpaced?
-3. **Draw**: which combination of cards actually increases hand size
-   without costing Actions (see "Engines" in `context/strategy.md`)? Can a
-   deck reliably draw itself? What breaks it (terminal draw only, villages
-   without draw, support the board doesn't provide)?
-4. **Payload ceiling**: given the deck control available, what's the best
-   achievable payload per turn? Is there +Buy or gaining to cash in a big
-   turn? One Province per turn is a ceiling, not a plan.
-5. **Outliers**: is there a top-tier or "broken" card, a strong interaction
-   from step 3, or a way to end the game fast (three-pile, rush, alt VP)?
-6. **Scoring routes and piles**: list every way to score on this board
-   (Provinces or Colonies, other Victory cards, VP tokens, Landmarks, Curses
-   as minus points). Forecast which piles will run out: junkers drain
-   Curses, and cards that gain copies of themselves or cheap must-buy cards
-   drain their own piles. Plan backwards from how the game will be scored
-   and end.
+Consistency is a supply too. Cards that put cards on the deck, order it, set
+cards aside or act at the start of the next turn can make one key card show
+up every turn, and that is often what makes an awkward engine work.
 
-## 5. Explore candidate strategies
+Write each real interaction as a loop with numbers: "A does X, which
+triggers B, for Y per turn, from about turn T".
 
-Build two to four candidates that are realistic on this board. Always
-include the strongest Big Money + X as the baseline, plus any engine, slog,
-rush or combo the gate answers support. Don't pad the list with obviously
-bad plans. For each candidate, give:
+## 4. Sweep what's left
 
-- **How it works**: its key cards, split into payload and deck control, and
-  how a typical good turn looks once the deck is built.
-- **What it needs, by when**: e.g. "Chapel down to ~8 cards by turn 7,
-  3 villages and 2 draw by turn 10, then +Buy." Name the minimum number of
-  copies it needs of any scarce card (e.g. 5–6 Hermits, the only village),
-  and whether the opponent will want them too. If both players do, the
-  split decides the game.
-- **Weaknesses**: bad shuffles, terminal collisions, dependence on one
-  contested pile, and attacks it is exposed to.
+Step 3 finds what you were looking for. This pass finds what you weren't.
 
-## 6. Speed and scoring potential
+- For every card and landscape that step 3 didn't use, answer in one line:
+  which other card here makes this better than its text alone? "None" is an
+  allowed answer only after checking it against each of the others. Read the
+  whole card first: the type line, the text below the dividing line, and
+  where it goes when gained.
+- Check the patterns in `context/strategy.md` ("Interactions to look for")
+  and the combos in `context/combos.md`. That list shows kinds of
+  interaction and is not complete. Don't drop an interaction because it
+  isn't listed.
+- Look the cards up with `grep -i '<name>' data/card-glicko/*.csv`. Where
+  your view and the rating differ by a lot, in either direction, take a
+  second look and give the board-specific reason. A rating is never a
+  reason to skip a card or to buy one. Ratings marked "deprecated" or with
+  a large `phi` carry little weight.
 
-Estimate these for each candidate. Rough turn numbers are fine: they exist
-to make plans comparable, not to be precise.
+If the sweep turns up a new loop, take it back through step 3.
+
+## 5. Decide
+
+- **Candidates**: two or three plans that are realistic here. Always
+  include the strongest Big Money + X as the baseline, and one plan for
+  each strong loop. Build the best version of each before judging it: the
+  right opening, the cheapest set of pieces, every helper the board offers.
+  For each, say how it works, what it needs by when (including the minimum
+  number of copies of any scarce card, and whether the opponent wants them
+  too), and its main weakness.
+- **Pick** the plan with the best result against the opponent's best
+  response. Against a strong opponent prefer a plan that holds up whatever
+  they do.
+- **Openings**: the best opening for each split from step 1, with one line
+  of reasoning each. If a split leaves nothing worth buying at one price,
+  say so.
+- **Buy priorities** for the first two or three shuffles, and roughly when
+  to start greening.
+- **Ending**: which piles could empty, who benefits, and how the game ends.
+- **What would flip the choice**: a different split, the opponent's
+  opening, more players, a key pile running low.
+- **Least sure of**: the one conclusion most likely to be wrong, and what
+  would show it. If that is the choice between two plans, or a guess about
+  speed, go on to step 6 for those plans.
+
+## Going deeper
+
+### 6. Play the candidates out
+
+Don't estimate speed from impressions. Play a solo game on paper with
+average draws, for every candidate you are comparing and most carefully for
+the one that is hardest to estimate (usually the engine). Comparing a worked
+money plan with a guessed engine always favors the money plan.
+
+- Turns 1 to about 8, one line per turn: the money or key cards in hand,
+  what you play, what you buy or gain, and the deck list after each shuffle.
+- One typical built turn, card by card, with the resulting $, Buys and VP.
+- If the line stalls (a price never reached, a key card missing its
+  shuffle, terminals colliding), try to fix it with what the board offers
+  before you call the plan slow.
+
+Read these off the lines you wrote:
 
 - **Speed**: the turn it starts scoring in earnest, and the earliest turn it
   can realistically end the game, or force the opponent to.
-- **Scoring rate**: VP per turn at its peak, e.g. "Province + Duchy per
-  turn from turn 12", or "about 6 VP of tokens per turn".
-- **Scoring ceiling**: how much VP is actually available to it. Count
-  Provinces and Duchies, alternative VP (Gardens, Duke, Landmarks, VP
-  tokens), and VP it denies the opponent (Curses, contested piles). A plan
-  with a high rate but a low ceiling must end the game on its own terms. A
-  money plan wins by taking about half the available VP before the
-  opponent's big turns arrive, so VP that keeps scaling (Colonies, VP
-  tokens, Fairgrounds-style alt VP) raises that bar and favors engines.
-- **Shape of the curve**: money plans score early and flatten. Engines
-  score late and steeply. Slogs score slowly but for a long time. Rushes
-  score little and race to end the game. The intersection of two plans'
-  curves is when the slower plan must be ahead in VP.
+- **Scoring rate and ceiling**: VP per turn at its peak, and how much VP is
+  actually available to it. A money plan wins by taking about half the
+  available VP before the opponent's big turns arrive, so VP that keeps
+  scaling (Colonies, VP tokens, Fairgrounds-style alt VP) raises that bar
+  and favors engines.
+- **Where the curves cross**: money scores early and flattens, engines
+  score late and steeply, slogs score slowly for a long time, rushes score
+  little and race to the end. The crossing point is when the slower plan
+  must be ahead.
 
-## 7. Matchups: how the opponent's choice changes things
+### 7. Test the pick against the opponent's best plan
 
-A plan is only viable relative to what the opponent does. For each pair of
-candidates, judge who is favored and why:
+Name the best plan against your pick and judge the matchup. Do the same for
+the runner-up. A full grid of every plan against every other is only worth
+it with three or more live plans.
 
 - **Race**: does the faster plan end the game, or take an unbeatable lead,
-  before the slower one comes online? Compare speed with the scoring
-  crossover from step 6. Use the Big Money clock as the baseline: BM+X takes
-  4 Provinces by about turn 14–17, and plain Big Money keeps taking a
-  Province every other turn without stalling.
-- **Interference**: attacks that hit one plan much harder than the other.
-  Junking cripples thin engines. Handsize attacks hurt money more than
-  decks that draw after the attack.
-- **Shared resources**: contested piles (split piles, the only village,
-  limited Rewards or Loot), mirrored attacks (whoever plays Witch more
-  wins the Curse split), and three-pile risk created by either side.
-- **Game-length control**: who decides when the game ends. A rusher or
-  money deck can shorten the game. An engine with pile control can end it
-  on its own terms, or deny the opponent the end.
+  before the slower one comes online? Use the Big Money clock in
+  `context/strategy.md` as the baseline.
+- **Interference**: attacks that hit one plan much harder than the other,
+  and anything of yours that helps the opponent.
+- **Shared resources**: contested piles, mirrored attacks, and three-pile
+  risk created by either side.
+- **Game-length control**: who decides when the game ends.
 
-Common matchup patterns to check:
+Patterns to check: a slog wants the money deck to buy out the Provinces. A
+slog or rush threatens a three-pile before an engine is online. In
+alternative-VP mirrors the split of the VP pile decides the game. An engine
+shouldn't panic-green against money, and should green earlier in a mirror.
 
-- Slog vs. money: the slog wants the money deck to buy out the Provinces
-  while it takes everything else.
-- Slog or rush vs. engine: threaten a three-pile before the engine is
-  online.
-- Rush: an opponent draining a cheap pile hands the rush its third pile.
-- Alternative-VP mirrors: the split of the key VP pile decides the game.
-- Engine vs. money: the engine shouldn't panic-green when behind early.
-- Engine mirror: green earlier than against money, and a Duchy can be a
-  weapon, since a three-pile threat stops the opponent buying components.
-- Trashing attacks hurt slogs most. Rushes shrug off most attacks.
+### 8. Challenge the result
 
-Summarize this as a matchup table (rows: your plan; columns: opponent's
-plan; cells: favored / even / unfavored plus a reason). Then note which
-plans are **robust** (fine against everything) and which are **fragile**
-(good only if the opponent cooperates).
-
-## 8. Recommend
-
-- Pick the plan with the best result against the opponent's best response.
-  Against a strong opponent prefer robust plans, and say whether that is
-  a different plan than you would pick against an unknown or weak player.
-- Say what would flip the choice: a 5/2 opening, seeing the opponent commit
-  to a plan, more players, or a key pile running low.
-
-## 9. Openings and buy priorities
-
-- Give the best 4/3 and 5/2 openings for the recommended plan, with one
-  line of reasoning each.
-- Give the buy priority for the first two or three shuffles, and roughly
-  when to start greening.
-- Note how to adapt once the opponent's opening shows their plan.
-
-## 10. Endgame and piles
-
-- Three-pile risk: which piles could empty, and who benefits.
-- The end condition: Provinces or Colonies, Duchy dancing, alt-VP piles.
+- Make one more attempt at the rejected plan with the highest ceiling,
+  using the fix-ups from step 6. Most wrong calls on a board come from
+  rejecting the stronger, harder plan after a shallow look.
+- Ask how your pick loses, and whether the opponent can see that from your
+  opening.
 
 ## Output format
 
+Quick analysis:
+
 ```markdown
-**Board summary:** <2–3 sentences: the gate answers and the payload ceiling>
+**Board:** <what it is about, from step 2, in 2–3 sentences>
+**Key interactions:**
+- <A + B: the loop, with numbers>
+**Other cards:** <one line each: its best partner here, or "none">
+**Plans considered:** <each in one line: how it works · needs · weakness>
+**Recommendation:** <plan, and why it holds up against the best response>
+**Open:** <split>: <cards> · <split>: <cards>
+**Buy priorities:** <first two or three shuffles, then when to green>
+**Ending:** <how it ends, which piles are at risk>
+**Watch out for:** <1–3 risks, and what would change the plan>
+**Least sure of:** <the conclusion most likely to be wrong, and the test>
+**Assumed:** <rules readings or card text you weren't sure of, and anything
+you needed that the repo context didn't cover>
+```
 
-| Card | Cost | Role | Notes |
-| --- | --- | --- | --- |
-| ... | ... | deck control: village | ... |
+A deeper analysis adds, before the recommendation:
 
-### Candidate strategies
-1. **<name>**: how it works · needs · weaknesses
-2. ...
+```markdown
+### Build lines
+- **<plan>**: T1–2 <buys> · T3–4 <...> · ... · built turn: <$, Buys, VP>
 
 | Plan | Starts scoring | Can end by | Peak VP/turn | VP ceiling |
 | --- | --- | --- | --- | --- |
 | ... | ~T10 | ~T16 | Province+Duchy | all Provinces + Duchies |
 
-| You \ Opponent | Plan A | Plan B | ... |
-| --- | --- | --- | --- |
-| Plan A | even | favored: <why> | ... |
-
-**Robust vs. fragile:** <which plans hold up regardless of the opponent>
-**Recommendation:** <plan, and why it holds up against the best response>
-**Open:** 4/3: <cards> · 5/2: <cards>
-**Watch out for:** <1–3 risks, and what would change the plan>
+**Against their best plan:** <the matchup for the pick and the runner-up>
+**Challenged:** <the rejected plan you re-tested, and how the pick loses>
 ```

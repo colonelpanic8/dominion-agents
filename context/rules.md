@@ -43,7 +43,8 @@ Play goes clockwise. Each turn has phases in this order:
    in any order, to produce $. Then buy cards. Each card costs one Buy plus
    its price, and "+N Buys" gives you more Buys. Unspent $ is lost at end of
    turn. **Once you buy anything (a card, Event or Project), you can't play
-   more Treasures that turn.**
+   more Treasures that turn.** An effect that tells you to play a card
+   (e.g. Gamble) still works after a buy.
 3. **Night phase** (Nocturne+): play any number of Night cards. No Actions
    are needed.
 4. **Clean-up**: discard all cards from play and from your hand, except
@@ -66,10 +67,12 @@ Voyage, Seize the Day etc. can't follow another extra turn.
   says otherwise. Buying a card means paying for it and then gaining it.
   "When you buy" triggers only on buys. "When you gain" triggers on every
   gain, including buys.
-- **Costs**: "costing up to $X" means it costs $X or less and has no Potion
-  or Debt in its cost. Cost reductions never take a cost below $0. A card's
-  cost can be compared with another's only when both have the same
-  components: $, Potion and Debt.
+- **Costs**: a cost has up to three parts: $, Potion and Debt. "Costing up
+  to $X" means it costs $X or less and has no Potion or Debt in its cost.
+  Costs compare part by part: one cost is at least another only if it is at
+  least as much in every part. So $4 + Potion is more than $3, but
+  $2 + Potion is neither more nor less than $3. Cost reductions never take a
+  cost below $0.
 - **Do as much as you can**: if an instruction can't be fully done, do as
   much of it as you can.
 - **Optional instructions**: "you may" is optional. Everything else is
@@ -82,8 +85,14 @@ Voyage, Seize the Day etc. can't follow another extra turn.
   chooses the order of their own triggers.
 - **Attacks**: affect other players in turn order. **Reactions** such as
   Moat are revealed in response, at the time the Reaction card states.
+- **Playing a card on another player's turn**: some cards can be played
+  outside your turn (Black Cat, Guard Dog, a discarded Village Green). Cards
+  it draws stay in your hand for your next turn. The played card is discarded
+  in that turn's Clean-up, unless it is a Duration with work left to do.
 - **Empty pile**: an empty pile still exists and its cost can still be
-  checked. It just can't be bought or gained from.
+  checked. It just can't be bought or gained from. A pile with no cards at
+  the end of a turn counts as empty even if cards will return to it later
+  (e.g. Experiment).
 - **Non-Supply cards** (Prizes/Rewards, Spoils, Horses, Loot, Spirits,
   Travellers beyond Page/Peasant, etc.) live in piles outside the Supply.
   They can't be bought, and they don't count toward the three-pile ending.
@@ -228,8 +237,10 @@ Second editions replaced some cards (see the edition notes at the end).
 
 - **Horses**: a non-Supply pile (+2 Cards, +1 Action). A played Horse
   returns to its pile.
-- **Exile** mat: Exiled cards stay out of your deck but still score. When you
-  gain a card, you may discard all your Exiled copies of it.
+- **Exile** mat: Exiled cards stay out of your deck but are still yours.
+  They score, and they count for anything that counts your cards (Gardens,
+  Silk Road). When you gain a card, you may discard all your Exiled copies
+  of it.
 - **Ways**: when you play an Action card, you may use the Way's text instead
   of the card's.
 - Also adds Events.

@@ -1,0 +1,433 @@
+{
+  "schema": "dominion/agent-view@2",
+  "game": {
+    "id": "g1",
+    "running": true,
+    "kingdom": [
+      "Cellar",
+      "Market",
+      "Militia",
+      "Mine",
+      "Moat",
+      "Remodel",
+      "Smithy",
+      "Village",
+      "Workshop",
+      "Witch"
+    ],
+    "landscapes": []
+  },
+  "seat": 1,
+  "spectating": false,
+  "turn": {
+    "number": 3,
+    "player": 0,
+    "activePlayer": "Ada",
+    "yourTurn": false,
+    "phase": "action",
+    "actions": 0,
+    "buys": 1,
+    "coins": 2,
+    "potions": 0
+  },
+  "you": {
+    "index": 1,
+    "name": "Bo",
+    "vp": 3,
+    "hand": {
+      "count": 5,
+      "known": {
+        "Copper": 3,
+        "Estate": 1,
+        "Militia": 1
+      },
+      "unknown": 0
+    },
+    "inPlay": {
+      "count": 0,
+      "known": {},
+      "unknown": 0
+    },
+    "deck": {
+      "count": 7,
+      "known": {
+        "Copper": 4,
+        "Estate": 2,
+        "Silver": 1
+      },
+      "unknown": 0,
+      "orderKnown": false
+    },
+    "discard": {
+      "count": 0,
+      "known": {},
+      "unknown": 0
+    },
+    "otherZones": {},
+    "owned": {
+      "known": {
+        "Copper": 7,
+        "Estate": 3,
+        "Militia": 1,
+        "Silver": 1
+      },
+      "unknown": 0
+    },
+    "uncertain": [],
+    "turnsTaken": 2,
+    "counters": {}
+  },
+  "opponents": [
+    {
+      "index": 0,
+      "name": "Ada",
+      "vp": 3,
+      "hand": {
+        "count": 4,
+        "known": {},
+        "unknown": 4
+      },
+      "inPlay": {
+        "count": 1,
+        "known": {
+          "Militia": 1
+        },
+        "unknown": 0
+      },
+      "deck": {
+        "count": 7,
+        "known": {},
+        "unknown": 7,
+        "orderKnown": false
+      },
+      "discard": {
+        "count": 0,
+        "known": {},
+        "unknown": 0
+      },
+      "otherZones": {},
+      "owned": {
+        "known": {
+          "Copper": 7,
+          "Estate": 3,
+          "Militia": 1,
+          "Silver": 1
+        },
+        "unknown": 0
+      },
+      "uncertain": [
+        {
+          "zones": [
+            "deck",
+            "hand"
+          ],
+          "count": 11,
+          "candidates": {
+            "Copper": 7,
+            "Estate": 3,
+            "Silver": 1
+          },
+          "outside": 0
+        }
+      ],
+      "turnsTaken": 3,
+      "counters": {}
+    }
+  ],
+  "supply": [
+    {
+      "card": "Copper",
+      "count": 46,
+      "cost": {
+        "coins": 0
+      },
+      "types": [
+        "Treasure"
+      ]
+    },
+    {
+      "card": "Silver",
+      "count": 38,
+      "cost": {
+        "coins": 3
+      },
+      "types": [
+        "Treasure"
+      ]
+    },
+    {
+      "card": "Gold",
+      "count": 30,
+      "cost": {
+        "coins": 6
+      },
+      "types": [
+        "Treasure"
+      ]
+    },
+    {
+      "card": "Estate",
+      "count": 8,
+      "cost": {
+        "coins": 2
+      },
+      "types": [
+        "Victory"
+      ]
+    },
+    {
+      "card": "Duchy",
+      "count": 8,
+      "cost": {
+        "coins": 5
+      },
+      "types": [
+        "Victory"
+      ]
+    },
+    {
+      "card": "Province",
+      "count": 8,
+      "cost": {
+        "coins": 8
+      },
+      "types": [
+        "Victory"
+      ]
+    },
+    {
+      "card": "Curse",
+      "count": 10,
+      "cost": {
+        "coins": 0
+      },
+      "types": [
+        "Curse"
+      ]
+    },
+    {
+      "card": "Cellar",
+      "count": 10,
+      "cost": {
+        "coins": 2
+      },
+      "types": [
+        "Action"
+      ],
+      "kingdom": true
+    },
+    {
+      "card": "Market",
+      "count": 10,
+      "cost": {
+        "coins": 5
+      },
+      "types": [
+        "Action"
+      ],
+      "kingdom": true
+    },
+    {
+      "card": "Militia",
+      "count": 8,
+      "cost": {
+        "coins": 4
+      },
+      "types": [
+        "Action",
+        "Attack"
+      ],
+      "kingdom": true
+    },
+    {
+      "card": "Mine",
+      "count": 10,
+      "cost": {
+        "coins": 5
+      },
+      "types": [
+        "Action"
+      ],
+      "kingdom": true
+    },
+    {
+      "card": "Moat",
+      "count": 10,
+      "cost": {
+        "coins": 2
+      },
+      "types": [
+        "Action",
+        "Reaction"
+      ],
+      "kingdom": true
+    },
+    {
+      "card": "Remodel",
+      "count": 10,
+      "cost": {
+        "coins": 4
+      },
+      "types": [
+        "Action"
+      ],
+      "kingdom": true
+    },
+    {
+      "card": "Smithy",
+      "count": 10,
+      "cost": {
+        "coins": 4
+      },
+      "types": [
+        "Action"
+      ],
+      "kingdom": true
+    },
+    {
+      "card": "Village",
+      "count": 10,
+      "cost": {
+        "coins": 3
+      },
+      "types": [
+        "Action"
+      ],
+      "kingdom": true
+    },
+    {
+      "card": "Workshop",
+      "count": 10,
+      "cost": {
+        "coins": 3
+      },
+      "types": [
+        "Action"
+      ],
+      "kingdom": true
+    },
+    {
+      "card": "Witch",
+      "count": 10,
+      "cost": {
+        "coins": 5
+      },
+      "types": [
+        "Action",
+        "Attack"
+      ],
+      "kingdom": true
+    }
+  ],
+  "nonSupply": [],
+  "landscapes": [],
+  "trash": {
+    "count": 0,
+    "known": {},
+    "unknown": 0
+  },
+  "decision": {
+    "id": "d20",
+    "player": 1,
+    "prompt": "Militia: choose 2 card(s) to discard",
+    "kind": "cards",
+    "purpose": "discard",
+    "source": "Militia",
+    "ordered": false,
+    "nameAny": false,
+    "min": 2,
+    "max": 2,
+    "groups": [
+      {
+        "group": 0,
+        "kind": "cards",
+        "prompt": "Militia: choose 2 card(s) to discard",
+        "min": 2,
+        "max": 2
+      }
+    ],
+    "options": [
+      {
+        "index": 0,
+        "group": 0,
+        "action": "select",
+        "label": "Copper",
+        "card": "Copper",
+        "zone": "hand"
+      },
+      {
+        "index": 1,
+        "group": 0,
+        "action": "select",
+        "label": "Copper",
+        "card": "Copper",
+        "zone": "hand"
+      },
+      {
+        "index": 2,
+        "group": 0,
+        "action": "select",
+        "label": "Militia",
+        "card": "Militia",
+        "zone": "hand"
+      },
+      {
+        "index": 3,
+        "group": 0,
+        "action": "select",
+        "label": "Copper",
+        "card": "Copper",
+        "zone": "hand"
+      },
+      {
+        "index": 4,
+        "group": 0,
+        "action": "select",
+        "label": "Estate",
+        "card": "Estate",
+        "zone": "hand"
+      }
+    ]
+  },
+  "sinceLastDecision": [
+    {
+      "seq": 28,
+      "type": "bought",
+      "player": 1,
+      "card": "Silver",
+      "text": "Bo buys Silver"
+    },
+    {
+      "seq": 29,
+      "type": "gained",
+      "player": 1,
+      "card": "Silver",
+      "text": "Bo gains Silver"
+    },
+    {
+      "seq": 30,
+      "type": "shuffled",
+      "player": 1,
+      "text": "Bo shuffles"
+    },
+    {
+      "seq": 31,
+      "type": "drew",
+      "player": 1,
+      "text": "Bo draws 5 card(s)"
+    },
+    {
+      "seq": 32,
+      "type": "turn-start",
+      "player": 0,
+      "text": "Ada starts turn 3"
+    },
+    {
+      "seq": 33,
+      "type": "played",
+      "player": 0,
+      "card": "Militia",
+      "text": "Ada plays Militia"
+    }
+  ]
+}

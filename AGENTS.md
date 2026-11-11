@@ -31,6 +31,15 @@ Before doing any Dominion work, read all of these in full:
 - `skills/<name>/SKILL.md`: optional, task-specific workflows (YAML
   frontmatter with `name` and `description`, then instructions). Supporting
   material goes in `skills/<name>/references/`.
+- `protocol/`: the agent-view@2 protocol. `agent-view.schema.json` is canonical;
+  `README.md` is its spec (fields, knowledge, answers, text rendering);
+  `examples/` holds a view, its text rendering and an answer, produced by
+  dominion-engine. Change the schema here first; producers (dominion-engine's
+  `just sync-protocol`, dominion-navigator) vendor it. Keep it producer- and
+  provider-neutral.
+- `evals/`: test sets for the skills and context. `evals/kotw/` compares
+  blind kingdom analyses with Reddit Kingdom of the Week threads. An agent
+  being evaluated must not read anything under `evals/`.
 - `.agents/skills` (Codex) and `.claude/skills` (Claude Code) are both
   symlinks to `skills/`. Never put files in them directly.
 - `CLAUDE.md` is a symlink to this file.
@@ -48,8 +57,37 @@ Before doing any Dominion work, read all of these in full:
 - Keep the rules reference concise: mechanics and edge cases, not card
   lists. Card-specific data belongs in a separate data file.
 
+## Writing skills and context
+
+Working guidelines from one round of `evals/kotw/`. The skill changes they
+led to have not been re-tested, so treat them as hypotheses:
+
+- Put the questions that narrow the search first, then a cheap sweep over
+  everything the narrowing skipped. A focused search alone misses the
+  unexpected card, and an exhaustive one is slow and shallow.
+- Don't rely on a list of patterns to match. Agents treat a list as
+  complete, so say that it isn't, and give a question to ask of each card.
+- Make the cheap version the default and the thorough one opt-in.
+- When a step needs a number (a turn count, a VP rate), ask for the worked
+  line that produces it. An estimate with no working behind it is a guess.
+- End with a step that attacks the conclusion: the cards that were skipped
+  and the plan that was rejected.
+- Apply the worked-line rule to the plan that is hardest to estimate, not
+  the easiest. Agents put numbers on money plans, guess at engines, and
+  then trust the plan that has numbers.
+- Use ratings and tier lists as a check after the agent has its own view.
+  Withholding them did not fix any missed interaction, so don't blame or
+  remove them when an analysis goes wrong.
+- Give the output format a slot for everything the procedure asks for,
+  including assumptions.
+- Card names used as examples steer analyses of boards that contain them.
+  Prefer a general statement plus one example.
+- `evals/kotw/` is for occasional checks, not every edit. A blind run costs
+  roughly 100k tokens and five minutes per kingdom.
+
 ## Checks
 
 `just check` validates the shared symlinks, the context links and skill
-frontmatter, and checks Nix formatting. Run it inside the dev shell
+frontmatter, the protocol schema (and that the example view matches it), and
+checks Nix formatting. Run it inside the dev shell
 (`direnv allow`, or `nix develop -c just check`).

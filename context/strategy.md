@@ -147,6 +147,15 @@ way to check whether a board can support an engine at all:
 - Many cards draw or act as villages only with support: an action-dense
   deck, a way to line cards up, a pile emptying, Favors, a specific trasher.
   Before relying on one, check that this board provides that support.
+- A village that works once per turn (Crossroads), or only under a
+  condition, caps how many terminals you can play. Count the Actions a real
+  turn gets, not the number of village cards.
+- **Setting up the next hand counts too.** Durations that draw at the start
+  of the turn, gains that land on top of your deck, and cards that order the
+  top of your deck all put chosen cards into your next hand without using
+  Actions. If something can put the same key card (the only village, the
+  trasher, the payoff) in your hand every turn, an engine that looks
+  inconsistent may be reliable.
 - So ask "which combination of cards here actually increases hand size?"
   rather than "is there a draw card?". If the answer is none, no engine is
   possible.
@@ -169,6 +178,9 @@ Build an engine when all of these hold:
    Provinces by the mid-teens, or control when the game ends.
 5. The pieces are affordable and available: not all at $5+, and not one
    contested split pile.
+
+Check these by writing the build out turn by turn. An expensive or
+conditional village looks slow, but how it looks is not evidence either way.
 
 Don't build one, or build less, when:
 
@@ -232,7 +244,20 @@ Some decks save resources for a single game-winning turn: cards on mats
 ## Interactions to look for
 
 Many boards are decided by how two cards (or a card and a landscape) work
-together. Scan the kingdom for these patterns:
+together. Nearly every interaction is one card supplying something another
+card wants: a gain, a discard, a trash, a card on top of the deck, a type, a
+card in play.
+
+Look for them before the game, and again during it whenever a new card
+appears: a Black Market reveal, a Loot, a card the opponent starts buying.
+
+**This list is not complete.** It shows the kinds of things cards care
+about, so that you recognise the same shape in cards that aren't named
+here. Expect a board to have interactions that fit none of these. When a
+card on the board cares about something, find what on the board supplies
+it, whether or not the pair appears below.
+
+### Something happens to a card
 
 - **Benefits from trashing**: trashers paired with cards that reward being
   trashed or trashing. Fortress returns to hand when trashed. Market Square
@@ -240,26 +265,86 @@ together. Scan the kingdom for these patterns:
   plays Fortress twice and gains a card costing $1 more.
 - **Gainers + on-gain effects**: Workshop-style gainers feeding "when you
   gain this" cards, e.g. Border Village also gains a cheaper card.
+- **Discard for benefit + discarders**: Tunnel gains a Gold when discarded
+  outside Clean-up, so it pairs with Warehouse or Vault, or an opponent's
+  Militia. Discards from the top of the deck count too.
+- **Cards that play themselves**: a card that plays itself when gained or
+  discarded (Trail) uses no Action. A terminal gainer that gains one gets
+  its Action back, and any discard effect becomes a way to play it.
+- **VP per gain or per play + cheap repeats**: VP tokens earned each time
+  you gain or play something (Collection, Groundskeeper, Monument) pair with
+  +Buy, cheap piles, cards that gain two at once, and anything that replays
+  the scoring card.
+
+### Where cards are
+
+- **Top-of-deck control + a key card**: a gain that lands on your deck
+  (Artificer, Tiara), a card put back from your hand (Courtyard), or the top
+  of the deck put in order (Cartographer) decides part of your next hand.
+  Use it to draw this turn's gains next turn, or to have the key card every
+  turn.
+- **Using a card twice**: anything that returns a played card to your deck
+  or hand, or plays a card from somewhere other than your hand, can make
+  one card work twice. Scheme puts an Action back on your deck, Herbalist
+  does it for a Treasure, and Royal Carriage replays an Action. Check
+  whether something else on the board can draw or play the returned card
+  again in the same turn.
+- **Where a gained card lands**: some cards are gained to your hand or onto
+  your deck. A Night card gained to hand (Ghost Town, Guardian) works the
+  turn you buy it, because Night comes after the Buy phase.
+- **Draw-to-X + cards that shrink your hand**: Library draws up to 7, so it
+  loves Festival and other villages that don't draw.
+- **Hand contents**: cards that reward a particular hand (Menagerie wants
+  no duplicates, Shanty Town wants no Actions) pair with trashing,
+  discarding and Villagers.
+- **Cards in play**: cards that check or count what is in play (Peddler's
+  cost, Berserker's "an Action in play") pair with cheap cantrips and with
+  Durations still out from last turn.
+
+### What a card is
+
+- **Cost**: trash-for-benefit cards (Salvager, Apprentice) want cards whose
+  cost is high compared with what you paid: a Gold gained for free, Border
+  Village, Peddler at its full $8 in the Action phase.
 - **Cost reduction + gainers or +Buy**: lower costs let "gain a card
   costing up to $4" reach better cards and stretch each $, e.g. Highway or
   Bridge with Ironworks, King's Court + Bridge.
+- **Types**: cards that count or check types want multi-type cards or a
+  deck dense in one type. Courtier pays out per type, Ironworks gives both
+  bonuses for an Action–Victory card, Vineyard counts Actions, and
+  Crossroads draws per Victory card.
+- **Names**: cards that reward differently named cards (Fairgrounds) want
+  cheap variety, mixed piles and +Buy.
 - **Multipliers on the right target**: Throne Room, King's Court and
-  Procession on strong terminals, Durations and one-shots. Watch the risk
+  Procession on strong terminals, Durations and one-shots. Tiara and Crown
+  do the same for Treasures that do something when played. Watch the risk
   of drawing a multiplier with nothing to multiply.
-- **Draw-to-X + cards that shrink your hand**: Library draws up to 7, so it
-  loves Festival and other villages that don't draw.
-- **Discard for benefit + discarders**: Tunnel gains a Gold when discarded
-  outside Clean-up, so it pairs with Warehouse or Vault, or an opponent's
-  Militia.
+
+### Resources and piles
+
+- **Tokens standing in for a missing piece**: Villagers let terminal draw
+  work on a board with no village. Coffers smooth out awkward prices.
+- **Piles**: cards that improve as piles empty (City, Animal Fair) pair
+  with piles that drain fast: Curses under a junker, cheap piles, cards
+  that gain copies of themselves. Cards that take from or return to the
+  Supply (Lurker, Experiment) change who can end the game.
 - **Alternative VP + enablers**: Gardens + Workshop (a rush), Duke +
   Duchy, and cards that make a cheap pile score.
+
+### Landscapes and the opponent
+
 - **Landscapes changing what cards do**: Way of the Mouse borrows a
   set-aside card. A Way can turn junk Actions such as Ruins into something
   useful. Events can supply +Buy where the Kingdom has none. A Trait such as
   Cheap can land on a key pile.
+- **The opponent's turn**: some Reactions act when the opponent does
+  something you can predict, such as gaining a Province (Fool's Gold) or any
+  Victory card (Black Cat). They change what greening costs the opponent.
 - **Counters**: cards that blunt the opponent's attack or plan. Library
   refills after a handsize attack, trashing removes Curses, and on-gain
-  Reactions can swap a Curse for a Silver.
+  Reactions can swap a Curse for a Silver. Check the other direction too:
+  your discard attack triggers the opponent's when-discarded cards, and
+  cards you make them gain can help them.
 
 An interaction is only worth building around if the result beats the plain
 options, starting with Big Money + X. Known game-deciding combos are listed
@@ -271,7 +356,10 @@ Sources: Adam Horton's
 [Discipline in the Opening](https://adamhorton.com/flog/dominion-discipline-in-the-opening/)
 and general community consensus.
 
-- Turns 1–2 give $7 between them, split 4/3 or 5/2 (5/2 is about 1 in 6).
+- With the standard starting deck, turns 1–2 give $7 between them, split
+  4/3 or 5/2 (5/2 is about 1 in 6). Heirlooms and Shelters change the
+  starting deck, and some Heirlooms change the money: Cursed Gold makes the
+  total $9. Work the splits out from the actual deck.
 - **What the opening is for**, in order: trashing or a junking attack
   first, then gainers. Draw and payload rarely drive the opening. Buying
   Silver to reach $5 for a key $5 trasher or junker counts as working
@@ -286,6 +374,8 @@ and general community consensus.
 - With 5/2, a strong $5 (Witch, Laboratory-class draw) plus a $2 trasher
   (Chapel, Lookout) can be much stronger than 4/3. Avoid a 5/2 that leaves
   the $2 slot weak.
+- Buying nothing is a real option. A card that doesn't help the plan makes
+  the deck worse, so with nothing useful at a price, pass.
 - Don't open with two terminals that collide often unless their payoff is
   worth it.
 
@@ -308,13 +398,16 @@ and general community consensus.
     than about one junk card per turn arrives.
   - Trashing Curses as your main plan usually loses, unless the trasher is
     very efficient. Lower your sights instead (Duchies).
-  - The Curse pile will empty. Curses plus Duchies make two of the three
-    piles, so a three-pile ending is the money player's main weapon against
-    an engine.
+  - With a junker in play, the Curse pile will empty. Curses plus Duchies
+    make two of the three piles, so a three-pile ending is the money
+    player's main weapon against an engine. Curses that players give
+    themselves (Cursed Gold, Ritual) drain the pile much more slowly.
   - With a stacking attack like Torturer, don't always take the option that
     keeps your deck clean if it costs you your own attack plays.
 - **Play an attack every turn**: if you can only play one attack per turn,
-  still buy several copies so you play one every turn. The first copy of an
+  still buy several copies so you play one every turn. A Duration attack
+  stays in play through your next turn, so it takes two copies to attack
+  every turn. The first copy of an
   attack on the opponent's economy is high priority, because it can stop
   them reaching the price of their own copy.
 - **Hand-size attacks** (Militia, Ninja) hurt money decks and are usually
@@ -340,6 +433,10 @@ and general community consensus.
   - Decks aiming for one huge final turn: only on that turn.
 - Engines green late and fast. In engine mirrors, green earlier than you
   would against money. When behind against money, don't panic-green.
+- **VP that adds no card to your deck** (VP tokens, and Landmarks or Events
+  that pay them) has no greening cost. It can be taken while still building,
+  so scoring starts much earlier than the list above suggests, and the
+  Province pile stops being the VP ceiling.
 - Track the score, the Province count and how close any piles are to empty,
   every turn.
 - **Penultimate Province Rule**: don't buy the second-to-last Province if

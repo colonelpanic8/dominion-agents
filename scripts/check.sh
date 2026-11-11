@@ -32,4 +32,9 @@ for skill in skills/*/; do
   done < <(grep -o '`references/[^`]*`' "$file" | tr -d '`' || true)
 done
 
+schema=protocol/agent-view.schema.json
+check-jsonschema --check-metaschema "$schema" >/dev/null || err "$schema is not a valid JSON Schema"
+check-jsonschema --schemafile "$schema" protocol/examples/view.json >/dev/null \
+  || err "protocol/examples/view.json does not match $schema"
+
 exit $fail
