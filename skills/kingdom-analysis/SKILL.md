@@ -13,8 +13,8 @@ procedure.
 Defaults, unless the user says otherwise:
 
 - Assume 2 players. Name what would change with more players.
-- Be prescriptive: give one recommended plan and mention at most one or two
-  alternatives with the reason they lose.
+- Explore before deciding: lay out two to four real candidate strategies,
+  then recommend one.
 - Keep the reasoning short and checkable. Don't give a tutorial.
 
 ## 1. Inventory
@@ -63,15 +63,26 @@ on *this* board.
 5. **Combos and outliers**: is there a known strong combo, a top-tier or
    "broken" card, or a way to end the game fast (three-pile, rush, alt VP)?
 
-## 4. Choose the plan
+## 4. Explore candidate strategies, then choose
 
-- Name the candidate plans: engine, Big Money + X (name the X), slog, rush,
-  combo.
-- Compare each one with the Big Money + X baseline on this board. Pick the
-  plan with the best expected result against a competent opponent playing
-  their best plan.
-- State what the plan needs and by when, e.g. "Chapel down to ~8 cards by
-  turn 7, 3 villages and 2 draw by turn 10, then +Buy."
+Build two to four candidates that are realistic on this board. Always
+include the strongest Big Money + X as the baseline, plus any engine, slog,
+rush or combo the gate answers support. Don't pad the list with obviously
+bad plans. For each candidate, give:
+
+- **How it works**: its key cards, split into payload and deck control, and
+  how a typical good turn looks once the deck is built.
+- **What it needs, by when**: e.g. "Chapel down to ~8 cards by turn 7,
+  3 villages and 2 draw by turn 10, then +Buy."
+- **Speed and ceiling**: roughly when it starts scoring, how much it scores
+  per turn at its peak, and how it finishes the game.
+- **Weaknesses**: what goes wrong (bad shuffles, collisions, attacks it is
+  exposed to), and how it fares against each of the other candidates.
+
+Then choose: pick the plan with the best expected result against a
+competent opponent who picks *their* best plan. Say what would flip the
+choice, e.g. a 5/2 opening, more players, or the opponent going for a
+particular plan.
 
 ## 5. Openings and buy priorities
 
@@ -91,17 +102,17 @@ on *this* board.
 ## Output format
 
 ```markdown
-**Plan:** <one sentence>
-**Open:** 4/3: <cards> · 5/2: <cards>
-**Key cards:** <3–5 cards and why>
-**Watch out for:** <1–3 risks>
+**Board summary:** <2–3 sentences: the gate answers and the payload ceiling>
 
 | Card | Cost | Role | Notes |
 | --- | --- | --- | --- |
 | ... | ... | deck control: village | ... |
 
-**Why this plan:** <short comparison with the alternatives and the BM+X
-baseline>
-```
+### Candidate strategies
+1. **<name>**: how it works · needs · speed/ceiling · weaknesses
+2. ...
 
-Expand the analysis beyond this only when the user asks.
+**Recommendation:** <plan, and why it beats the other candidates>
+**Open:** 4/3: <cards> · 5/2: <cards>
+**Watch out for:** <1–3 risks, and what would change the plan>
+```
