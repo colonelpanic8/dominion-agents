@@ -16,6 +16,7 @@ files shared by Claude Code and OpenAI Codex.
 | `AGENTS.md` / `CLAUDE.md` | Repository instructions that load the context (one file, symlinked) |
 | `skills/kingdom-analysis/` | Skill: analyze a kingdom before the game and recommend a plan and opening |
 | `skills/play-turn/` | Skill: recommend play order, buys and attack responses for a turn in progress |
+| `protocol/` | `dominion/agent-view@2`: the JSON Schema and spec for the game views, decisions and answers agents play through, with examples |
 
 ## How agents load it
 
@@ -24,8 +25,15 @@ files shared by Claude Code and OpenAI Codex.
   Codex reads them when following the instruction.
 - **Skills**: Codex finds them through `.agents/skills` and Claude Code
   through `.claude/skills`. Both point to `skills/`.
-- **Outside this repo**: `packages.default` installs the context and skills
-  under `share/dominion-agents/`.
+- **Outside this repo**: `packages.default` installs the context, skills and
+  protocol under `share/dominion-agents/`.
+
+## Playing
+
+Agents play through `dominion/agent-view@2` ([`protocol/README.md`](protocol/README.md)):
+a JSON view of the game as one seat may know it, its open decision as indexed options,
+and an answer of option indices. `dominion-engine`'s `dominion serve` hosts games with
+it over MCP; dominion-navigator reads live games on dominion.games.
 
 ## Development
 
