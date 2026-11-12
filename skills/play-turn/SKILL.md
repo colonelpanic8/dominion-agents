@@ -41,6 +41,9 @@ or the piles change sharply, step back before playing:
   building toward, and the turn with the plan's milestones (first big
   turn, first Province, when to green). Without milestones in the plan, use
   "How fast decks are" in `context/strategy.md`.
+- **Set the target deck** in counts (villages, draw, payload, +Buy,
+  trashers) and name any pile you have to win a share of. Step 6 measures
+  each gain against it.
 - **Check the race.** Count the opponent's deck from the state: what they
   are building, their Provinces (or other VP) so far, and their pace. Work
   out roughly how many turns they need to end the game or take a lead you
@@ -115,13 +118,40 @@ this hand) and write it in one line:
 - **+Buy and gains**: how many a good turn gets, against how many the plan
   needs.
 
-Then name what the deck is shortest of for its plan (Actions, draw,
-money, +Buy, thinning, or nothing because it's time to green) and buy what
-fixes that. For example: "18 cards, 2 villages for 4 terminals, draws 8,
-$1.1 per card: short on villages, so Village over Gold even at $6." The
-card that is best in the abstract is often the wrong one: a third draw card
-with no villages, a Gold in a deck that already hits $8 but can't draw, a
-village with nothing to play.
+Then ask the questions that say what it needs:
+
+- **Am I over-terminaled?** More terminals than Actions to play them means
+  collisions; the next Action should be a village or a non-terminal, or
+  the next buy not an Action at all.
+- **Do I need more payload or more reliability?** A deck that reliably
+  draws and plays everything but can't reach its price needs payload
+  (money, +Buy, gainers, attacks). A deck with strong cards it can't put in
+  the same hand needs reliability: draw, villages, thinning, or fewer dead
+  cards.
+- **Is it short of +Buy or gains** to use the money a good turn makes?
+
+Weigh three goals. They often pull different ways:
+
+1. **What most improves the deck as it is now**, for its next shuffle.
+2. **The eventual target deck**: what the finished deck holds (from the
+   plan and your last review), and which counts are furthest from it.
+   A card that fixes this turn but leaves the deck no closer to its target
+   is a short-term buy.
+3. **Crucial piles**: a pile both players want (a key Action, a pile of
+   alternative VP), or one running low, where winning the split decides the
+   game. Count how many you need, how many are left and how fast the
+   opponent takes them. Take a pile card over a better card when the pile
+   will be gone before you'd otherwise get your share.
+
+Early, favor what compounds: deck control and thinning before payload,
+unless the payload is a strong attack. Favor a contested pile when the
+split decides the game. Favor payload once the deck is reliable. Write the
+choice as the goal it serves, for example: "18 cards, 2 villages for 4
+terminals, draws 8, $1.1 per card: over-terminaled and unreliable, target
+is 5 villages, so Village over Gold even at $6." The card that is best in
+the abstract is often the wrong one: a third draw card with no villages, a
+Gold in a deck that already hits $8 but can't draw, a village with nothing
+to play.
 
 Also:
 
@@ -167,9 +197,10 @@ decide the endgame without them.
 **Review:** <reshuffle turns only: plan vs deck, both clocks, build/green/switch>
 **Goal this turn:** <e.g. "$8 + Buy for Province + Duchy">
 **Play:** 1. <card> — <why, if not obvious> 2. ...
-**Deck:** <the one-line stock-take, then what it is shortest of>
-**Buy/gain:** <cards> — <why, in terms of that shortage; for a departure
-from the plan, the reason>
+**Deck:** <the one-line stock-take; over-terminaled? payload or
+reliability? how far from the target deck; any contested pile>
+**Buy/gain:** <cards> — <which of the three goals it serves and why that
+one wins this turn; for a departure from the plan, the reason>
 **Endgame:** <when step 7 applies: scores after each option and what the
 opponent needs>
 ```
