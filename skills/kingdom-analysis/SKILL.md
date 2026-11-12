@@ -55,8 +55,10 @@ The answers decide where to look harder.
    ceiling, not a plan.
 3. **Draw and Actions**: which combination of cards actually increases hand
    size without costing Actions (see "Engines" in `context/strategy.md`)?
-   Which villages are there, including conditional ones?
-4. **Trashing**: is there any, and how fast is it?
+   What gives a spare Action: villages, including conditional ones,
+   Actions that arrive at the start of the next turn, and Villagers?
+4. **Thinning**: what takes cards out of your deck (trashing, Exile, mats,
+   swapping a card for a better one), and how fast is it?
 5. **Attacks**: is there a junker? Can it be blocked, trashed away or
    outpaced? What do the other attacks hit?
 6. **Standouts**: a card the whole board bends around, an unusual setup, a
@@ -65,6 +67,13 @@ The answers decide where to look harder.
 Then write one or two sentences: what the board is about, and what is still
 open ("the only village is conditional", "no +Buy", "the payoff needs a
 discard outlet"). Those open points are what step 3 goes looking for.
+
+An answer of "none" needs more care than any other, because it rules a plan
+out before anyone has looked at it: "no village" or "no thinning" ends the
+engine there. Before writing one, go through every card and say why it
+doesn't supply the piece, reading the type line, the text below the dividing
+line, what happens when it is gained, and what it does next turn. The piece
+often comes from a card that doesn't look the part.
 
 ## 3. Work backwards from the payload
 

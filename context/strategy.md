@@ -16,8 +16,10 @@ kingdom is different: treat these as defaults to check, not laws.
   Draw two terminals together without a village and one of them is dead.
   Without villages, keep roughly one terminal per 8–10 cards.
 - **Junk and thinning.** Coppers, Estates, Curses and Ruins dilute your good
-  cards. *Trashing* them (Chapel, Sentry, Steward, …) concentrates your deck.
-  It costs tempo at first and pays off later.
+  cards. *Thinning* takes them out of the cards you draw and concentrates
+  your deck. Trashing (Chapel, Sentry, Steward, …) is the usual way, but
+  Exile, a mat, or swapping a card for a better one does the same job (see
+  "Trashing in practice"). It costs tempo at first and pays off later.
 - **Reliability.** A strategy that hits $8 on 70% of turns usually beats one
   that alternates between $11 and $4.
 
@@ -155,6 +157,14 @@ way to check whether a board can support an engine at all:
   turn. That includes Throne Room and King's Court. Cards that at best
   replace the Action they use, like Conspirator, Ruined Village or Vassal,
   are not villages.
+- **A village doesn't have to be an Action card that says +2 Actions.** A
+  spare Action can arrive at the start of your next turn from a Duration or
+  Night card, or come from Villagers. A Night card costs no Action to play,
+  so one that leaves +1 Card and +1 Action for next turn (Ghost Town) nets
+  the same as a Village, and it can't be drawn dead after your Actions run
+  out. Its Action comes a turn late, so it doesn't rescue the hand it is
+  drawn in. Find villages by reading every card's whole text for Actions
+  and Villagers, not by its name or type line.
 - Many cards draw or act as villages only with support: an action-dense
   deck, a way to line cards up, a pile emptying, Favors, a specific trasher.
   Before relying on one, check that this board provides that support.
@@ -181,8 +191,8 @@ Build an engine when all of these hold:
 
 1. Real draw exists, by the test above, with villages that actually work
    with it.
-2. There is trashing, or the draw is strong enough to beat the junk. Strong
-   engines can overcome Curses.
+2. There is thinning of any kind (see "Trashing in practice"), or the draw
+   is strong enough to beat the junk. Strong engines can overcome Curses.
 3. Payload scales past one Province per turn: +Buy, gainers, VP tokens or a
    repeatable attack.
 4. It wins the race against the Big Money baseline: it can take double
@@ -375,6 +385,16 @@ and general community consensus.
   first, then gainers. Draw and payload rarely drive the opening. Buying
   Silver to reach $5 for a key $5 trasher or junker counts as working
   toward that goal. Opening a plain village is almost never right.
+- **A turn 1 buy that acts before the shuffle changes turn 2.** A card
+  gained to your hand or onto your deck, a when-gain effect, or a Night
+  card played the turn it is bought makes the turn 2 hand something other
+  than the leftover five cards. Work that hand out before choosing, and
+  the hands after it. Example: on a $3 turn 1, Ghost Town is gained to
+  hand and played that Night. Turn 2 is then the known $4 hand plus one
+  card from the reshuffled turn 1 hand (3 Coppers, 2 Estates), so it has
+  $5 three times in five, a turn or two before a Silver opening can reach
+  it. The cost is turn 3, which draws the other four of those cards plus
+  one.
 - **The turn 3–4 test**: if an opening buy won't do something useful on
   turn 3 or 4, look hard for something better. Durations and Reserves often
   miss the second shuffle. Know which price you need on turns 3–4 and avoid
@@ -398,6 +418,14 @@ and general community consensus.
   need. Don't thin so hard you lose your economy.
 - A trasher that goes dead late in the game has usually already paid for
   itself.
+- **Thinning without a trasher.** Anything that takes a card out of your
+  deck for good thins it: Exile, a mat, or a card that turns one card into
+  another (Remodel; Displace Exiles a card and gains one costing up to $2
+  more). A swap removes one card per play, which is slow, but each play
+  also adds a part: a Copper becomes a $2 engine piece and an Estate a $3
+  or $4 one. Exiled Victory cards still score, so Exiling Estates costs no
+  points. Before calling a board "no trashing", check every card for one of
+  these.
 
 ## Attacks and defense
 
