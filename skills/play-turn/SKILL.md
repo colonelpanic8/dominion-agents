@@ -1,13 +1,18 @@
 ---
 name: play-turn
-description: Choose plays in a Dominion game in progress, including play order, which cards to play or hold, what to buy or gain, and responses to attacks (e.g. what to discard to Militia). Use for every decision while playing or advising on a game, each turn and each prompt, not only when asked; also when given a hand and game state and asked what to do, or when reviewing a played turn.
+description: Choose plays in a Dominion game in progress, including play order, which cards to play or hold, what to buy or gain, when to change plan, the endgame, and responses to attacks (e.g. what to discard to Militia). Use for every decision while playing or advising on a game, each turn and each prompt, not only when asked; also when given a hand and game state and asked what to do, or when reviewing a played turn.
 ---
 
 # Play a turn
 
-Turn the current game state into a play sequence and a buy, with a one-line
-reason for each decision that isn't obvious. Rely on the repo context,
-especially `context/strategy.md` for the plan and the endgame.
+Turn the current game state into plays and a buy, with a one-line reason
+for each decision that isn't obvious. Rely on the repo context, especially
+`context/strategy.md` for the plan and the endgame.
+
+Decide one play at a time. Work out what the hand could do, then look at
+the state again after anything that draws, reveals or asks for a choice.
+Only moves that can't change what you know, such as playing Treasures, can
+be decided together.
 
 ## 1. Read the situation
 
@@ -19,8 +24,11 @@ especially `context/strategy.md` for the plan and the endgame.
   Favors.
 - Use the card text supplied with the state. Don't reconstruct it from
   memory. If something needed is missing, say what you assumed.
-- Decide what this turn is for: building, greening, or ending the game.
-  Name the price or gains it needs (e.g. "$8 + a Buy", "gain 2 villages").
+- Decide what this turn is for: building, greening, ending the game, or
+  several of these. Name the price or gains it needs (e.g. "$8 + a Buy",
+  "gain 2 villages"). A good draw can make room for both an engine piece
+  and a Duchy; a bad one can make the best play a modest gain and a strong
+  next hand.
 - When a card that wasn't part of the plan shows up (a Black Market reveal,
   a Loot, a Reward, a card an attack hands you, something the opponent just
   started buying), check it against the board before judging it: what here
@@ -59,7 +67,18 @@ especially `context/strategy.md` for the plan and the endgame.
   those cards plus the top of the new shuffle. Buy what improves that hand.
   Early in the game, buy what improves your very next shuffle.
 
-## 4. Don't play everything
+## 4. Review the plan at each reshuffle
+
+On the first turn after you reshuffle, compare your deck with the plan:
+
+- Is it on schedule? Check it against the plan's milestones, or "How fast
+  decks are" in `context/strategy.md`.
+- What does the opponent's deck threaten, and by when?
+- Being behind on score while building is expected. Not reaching your
+  payoff before the opponent's clock runs out is the reason to change. A
+  new plan starts from the deck you have.
+
+## 5. Don't play everything
 
 - Skip plays that hurt you, such as forced trashing of a card you need, or
   that help the opponent, such as a "steal or swap" attack while they hold a
@@ -68,8 +87,14 @@ especially `context/strategy.md` for the plan and the endgame.
   cards stay in your deck for next turn.
 - Don't play dead cards that only reveal information to the opponent.
 
-## 5. Choose the buy or gains
+## 6. Choose the buy or gains
 
+- Before a gain the plan doesn't settle, look at your whole deck, not just
+  this hand. Say what it has and lacks, and what this gain is for: the next
+  shuffle, the finished deck, or a pile that decides the game. Early, deck
+  control and thinning usually beat payload; once the deck is reliable,
+  payload usually wins. A card that is strong in general can be wrong for
+  this deck, such as more draw with nothing to play it with.
 - Follow the plan from the kingdom analysis, adjusted to what has happened
   since: did the opponent commit to a plan, did a key pile run low?
 - When a buy departs from the plan (a card it didn't name, or a default
@@ -86,8 +111,10 @@ especially `context/strategy.md` for the plan and the endgame.
   terminal collides often enough that Treasure or a non-terminal is
   usually the better buy.
 - Before a scoring buy, check the endgame (`context/strategy.md`, "Greening
-  and the endgame"):
-  - the Penultimate Province Rule and its exceptions;
+  and the endgame"). Once either player could end the game within a turn
+  or two, work out the scores after each option and what the opponent
+  would need on their next turn to win. Then apply:
+  - the Penultimate Province Rule and its exceptions, to those numbers;
   - the opponent's whole next turn: unused extra turns, stored Coffers,
     Villagers or Favors, cards on mats, and the +Buys and Golds left in
     their current shuffle;
@@ -95,7 +122,7 @@ especially `context/strategy.md` for the plan and the endgame.
 - Decide whether to spend or keep Coffers and Villagers for a later price
   point or a bigger turn.
 
-## 6. Responding to attacks
+## 7. Responding to attacks
 
 - **Discard attacks** (Militia): keep the best three-card *hand*, not the
   three best cards. A deck that draws can keep Village + Smithy and discard
@@ -112,7 +139,9 @@ especially `context/strategy.md` for the plan and the endgame.
 **Play:** 1. <card> — <why, if not obvious> 2. ...
 **Buy/gain:** <cards> — <why; for a terminal, the count against deck size;
 for a departure from the plan, the reason>
-**Watch:** <endgame or reshuffle notes, if any>
+**Review:** <first turn after a reshuffle: deck vs plan, both clocks, the call>
+**Endgame:** <once the game could end: scores after each option, and what
+the opponent would need>
 ```
 
 If the best line depends on unknown information, give the line for the

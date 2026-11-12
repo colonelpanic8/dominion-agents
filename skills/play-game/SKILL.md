@@ -19,7 +19,8 @@ turns, and this skill decides how much thought each decision gets.
 - Don't sit down against human opponents unless the operator said to. A
   `REFUSED` error is the server enforcing that, so report it and stop.
 - Trust the view over your memory. It tracks every card you could know about,
-  including your own deck. Your notes only need to hold the plan.
+  including your own deck. Your notes only need to hold the plan and the
+  deck it is building toward.
 
 ## 1. Start or rejoin
 
@@ -52,10 +53,11 @@ them are routine.
   the choice. Examples are playing Treasures when no card reacts to their
   order, ending a phase with nothing worth playing, or the only sensible play.
   Answer it straight away.
-- **Turn plan**: at the start of a turn with real choices (Actions to order,
-  a buy the plan doesn't settle), work out the whole turn with `play-turn`.
-  Then answer its decisions in order. Re-plan only when a draw or a reveal
-  changes what you know.
+- **Turn plan**: on a turn with real choices (Actions to order, a buy the
+  plan doesn't settle), use `play-turn`: work out what the hand could do,
+  then make each decision as it comes, looking at the state again after
+  every draw or reveal. Answer several moves in one call only when nothing
+  between them draws, reveals or asks for a choice.
 - **Full check**: run `play-turn`'s endgame and attack-response steps when the
   decision is any of these:
   - a buy or gain once the game could end within two turns;
@@ -78,6 +80,8 @@ Mechanics:
 
 Check the plan against the view, in one line, at each of these moments:
 
+- the first turn after each of your reshuffles (`play-turn`, "Review the
+  plan at each reshuffle");
 - the opponent's opening is visible (after their second turn), and whenever
   they start buying something new;
 - your deck starts drawing itself, so it is time to switch to payload;
