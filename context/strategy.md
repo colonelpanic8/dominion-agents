@@ -24,8 +24,9 @@ decides what every later hand can be.
 - **Proportions matter more than counts.** One copy of a key card is in a
   given 5-card hand one turn in three in a 15-card deck, and one turn in
   six in a 30-card deck.
-- **Tempo compounds.** A typical 2-player game lasts about 15–20 turns per
-  player, and strong decks end it sooner. A card gained early is drawn many
+- **Tempo compounds.** Games between strong players mostly end between
+  turns 11 and 15, and the fastest decks end them by turn 8 or 9 (see "How
+  fast decks are"). A card gained early is drawn many
   more times than one gained late, so early gains should improve the deck
   and late gains mostly need to be points.
 
@@ -337,6 +338,29 @@ so look for one first.
   to look for"). Always look for them, but check that they beat the plain
   options.
 
+## How fast decks are
+
+Reference points for a race, from commentated top-level games and designers'
+solo playtests. They assume a strong player and no interference.
+
+- **Money**: BM+X has 4 Provinces around turn 14–17 and doesn't speed up
+  (see "The Big Money baseline").
+- **Engines**: a well-built engine has its first big turn (two or more
+  Provinces, or the same in other VP) around turn 8–11, and wins or ends the
+  game by turn 11–14. No trashing, pieces at $5 or a junker each cost it a
+  turn or two. They rarely cost it the race.
+- **Combos and one-huge-turn decks**: the fast ones finish in 8–10 turns,
+  and a few have their one turn as early as turn 7.
+- **Whole games** between strong players mostly end between turns 11 and
+  15. A plan still building on turn 14 is usually too slow. So is a money
+  deck that needs until turn 17 on a board where any of the above exists.
+
+An estimate of an unfamiliar deck runs late, often by five turns or more:
+it counts one gain per turn, leaves out the helpers and stops at the first
+stall. For money it is about right, because money is simple. So "the engine
+arrives around turn 15" is weak evidence against the engine. Check it
+against these numbers before trusting it.
+
 ## Engines
 
 Engines are usually the strongest decks a board allows, and most boards
@@ -370,8 +394,8 @@ price limit: some engines are built entirely from $5 cards.
 Engines are harder to estimate than money, and that is the usual way they
 get underrated. Write the build out turn by turn: the opening, when the
 deck first draws itself, how often it does after that, and what a built
-turn produces. Compare that with the Big Money clock and the board's other
-plans. An engine that looks slow or awkward (expensive parts, a
+turn produces. Compare that with the reference speeds in "How fast decks
+are" and with the board's other plans. An engine that looks slow or awkward (expensive parts, a
 conditional village, no village at all) is not evidence either way.
 
 Things that weaken an engine, to weigh rather than to rule it out:

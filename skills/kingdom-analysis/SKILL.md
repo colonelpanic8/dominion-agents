@@ -79,8 +79,8 @@ board is whether a deck here can draw itself, how soon, and how often.
   the cheapest set of them, and their prices. If a piece is missing, name
   it.
 - **Speed**: roughly when it first draws its deck, from the opening and
-  the number of parts it must gain. Compare that with the Big Money clock
-  in `context/strategy.md`.
+  the number of parts it must gain. Compare that with "How fast decks
+  are" in `context/strategy.md`.
 - **Reliability**: once built, how often does it draw its deck? Check what
   can stall it (see "Reliability" in `context/strategy.md`): copies of the
   key cards, Actions against terminals, spare draw, junk, and the

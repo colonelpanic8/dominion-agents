@@ -62,6 +62,10 @@ consistent mistakes (Horton's first-impressions and revisited articles):
   well (Rope).
 - When the community disagrees sharply about a card, treat its rating as
   unreliable.
+- **A card the board has changed**: a rating describes the printed card on
+  an average board. A Trait on its pile, a Way, a cost reducer, or a partner
+  that supplies the one thing it lacks can make it a different card. Rate
+  what it does on this board.
 
 ## Caveats
 
