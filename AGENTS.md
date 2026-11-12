@@ -59,8 +59,8 @@ Before doing any Dominion work, read all of these in full:
 
 ## Writing skills and context
 
-Working guidelines from one round of `evals/kotw/`. The skill changes they
-led to have not been re-tested, so treat them as hypotheses:
+Working guidelines from one round of `evals/kotw/` and one dominion-bench
+run of 16 kingdoms. Treat them as hypotheses until a run confirms them:
 
 - Put the questions that narrow the search first, then a cheap sweep over
   everything the narrowing skipped. A focused search alone misses the
@@ -80,6 +80,16 @@ led to have not been re-tested, so treat them as hypotheses:
   remove them when an analysis goes wrong.
 - Give the output format a slot for everything the procedure asks for,
   including assumptions.
+- A warning doesn't move a default. The skill already said that a guessed
+  engine loses to a worked money line, and analysts still picked money on
+  boards where experts built engines. Say which plan gets the benefit of
+  the doubt and what evidence overturns it.
+- A list of conditions that must all hold gets used as a list of reasons to
+  say no. Keep the real requirements few, and give the rest as obstacles
+  with ways round them.
+- Give reference numbers for whatever agents have to estimate (how long
+  games last, how fast each kind of deck is). Without them they guess
+  cautiously.
 - Card names used as examples steer analyses of boards that contain them.
   Prefer a general statement plus one example.
 - `evals/kotw/` is for occasional checks, not every edit. A blind run costs
