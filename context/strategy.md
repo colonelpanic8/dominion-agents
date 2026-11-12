@@ -58,13 +58,16 @@ Exceptions, where the "free" effect isn't free:
 
 A way to classify what each card does for your deck, from Adam Horton's
 [Payload and Deck Control](https://adamhorton.com/flog/dominion-payload-and-control/).
+Every card you add either helps you play your other cards or is one of the
+cards worth playing.
 
-- **Payload**: cards that do the things that win the game. Usually that's
-  money plus +Buy to buy Victory cards, cards that gain Victory cards, or VP
-  tokens. Payload counts *relative* to the opponent, so attacks, denying a
-  key pile, and the ability to end (or threaten to end) the game on piles
-  while ahead are payload too. Early in the game, gainers such as Workshop
-  are payload that builds the deck rather than scoring.
+- **Payload**: what a turn produces once you have played your cards. That
+  means $ to spend, Buys to spend it with, cards gained, VP tokens, and harm
+  to the opponent. Every deck has some, and in a plain money deck the
+  payload is its Treasure. Payload counts *relative* to the opponent, so
+  attacks, denying a key pile, and the ability to end (or threaten to end)
+  the game on piles while ahead are payload too. Early in the game, gainers
+  such as Workshop are payload that builds the deck rather than scoring.
 - **Deck control**: cards whose job is to let you play your other cards.
   That means draw, villages, cantrips, trashing and sifting. Junking the
   opponent attacks *their* deck control.
@@ -74,12 +77,52 @@ A way to classify what each card does for your deck, from Adam Horton's
   control. They're usually very strong, and often the right move is to add
   them as fast as possible.
 
+### +Buy turns a big turn into points
+
+You score by gaining Victory cards, and each Buy gains one card. So
+without +Buy, gainers or VP tokens, a turn's payload is capped at one
+card, whatever $ it makes: $16 buys one Province, the same as $8. A deck
+that draws itself every turn then scores no faster than a money deck that
+hits $8, and the engine has lost the turns it spent building.
+
+With +Buy, each extra Buy raises the ceiling by one card: $16 and 2 Buys is
+two Provinces, $13 and 2 Buys is a Province and a Duchy. That is what lets
+an engine catch up with and pass a money deck that started scoring earlier.
+So the number of Buys a built turn can reach often decides whether an
+engine is worth building at all. +Buy also speeds the build itself (a
+village and a draw card in one turn, or several cheap parts), and it is
+what makes a three-pile ending possible.
+
+Other ways past one card per turn: gainers that gain without a Buy, Events
+and Projects bought with spare Buys, VP tokens, and Victory cards that
+gain or come with other cards. Count them alongside +Buy.
+
+### Payload depends on the deck
+
+Whether a payload card is good depends on whether the deck around it can
+play it many times per turn.
+
+- **Flat payload** pays about the same every time it is played: Gold, a
+  terminal that gives $2, a cantrip that gives $1. It is as useful in a
+  money deck as in an engine, and its value doesn't grow with copies.
+- **Stacking payload** pays off only when several copies, or several
+  plays, land in one turn: cost reduction, +Buy terminals with a small
+  bonus, multipliers, effects that count cards in play. Bridge is the usual
+  example. In a money deck it is a weak terminal: $1, a +Buy you rarely
+  use, and $1 off a single purchase. In an engine that plays four or five
+  Bridges, each one cuts every purchase that turn by $1 and adds a Buy,
+  which can take several Provinces at once.
+
+So judge payload cards after deciding whether the board supports an
+engine. A card that looks like the board's best payload may be close to
+useless in the deck the board actually wants, and the reverse.
+
 How to use it:
 
 - **Before the game**, work out the best payload this kingdom allows, given
   its deck control. Ten Bridges is no payload without villages to play them.
   If the ceiling is about one Province per turn, a complex deck rarely beats
-  Big Money. Without +Buy or gaining, a perfect engine still scores slowly.
+  Big Money.
 - **If deck control is weak** (no villages, draw or trashing), you won't
   reliably play your full payload, so build less.
 - **Once your deck is under control**, balance adding payload against still
