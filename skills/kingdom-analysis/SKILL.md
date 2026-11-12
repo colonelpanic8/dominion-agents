@@ -15,8 +15,9 @@ Defaults, unless the user says otherwise:
 
 - Assume 2 players. Name what would change with more players.
 - Do the quick analysis (steps 1–5). Go deeper (steps 6–8) when the user
-  asks for a full analysis, or when step 5 leaves two plans close or rests
-  on a guess about how fast a plan is.
+  asks for a full analysis, when step 5 leaves two plans close or rests on a
+  guess about how fast a plan is, or when the pick is a money deck on a
+  board that has a village and draw.
 - Work from card text. Community ratings come in at step 4, as a check on a
   view you have already formed.
 - Keep the reasoning short and checkable. Don't give a tutorial. A short
@@ -104,6 +105,12 @@ Step 3 finds what you were looking for. This pass finds what you weren't.
   allowed answer only after checking it against each of the others. Read the
   whole card first: the type line, the text below the dividing line, and
   where it goes when gained.
+- Judge a payoff card in the deck built for it. For an alternative Victory
+  card, a card that counts something (Actions, types, names, cards in
+  play), or a card that gives up this turn for a later one, sketch the deck
+  that card wants and ask whether this board can build it. "It doesn't fit
+  my plan" describes the plan, not the card. If the board can build that
+  deck, it is a candidate in step 5.
 - Check the patterns in `context/strategy.md` ("Interactions to look for")
   and the combos in `context/combos.md`. That list shows kinds of
   interaction and is not complete. Don't drop an interaction because it
@@ -112,15 +119,19 @@ Step 3 finds what you were looking for. This pass finds what you weren't.
   your view and the rating differ by a lot, in either direction, take a
   second look and give the board-specific reason. A rating is never a
   reason to skip a card or to buy one. Ratings marked "deprecated" or with
-  a large `phi` carry little weight.
+  a large `phi` carry little weight. When you and a low rating agree that a
+  card can be skipped, check once more: it is the easiest dismissal to make
+  and the least examined.
 
 If the sweep turns up a new loop, take it back through step 3.
 
 ## 5. Decide
 
 - **Candidates**: two or three plans that are realistic here. Always
-  include the strongest Big Money + X as the baseline, and one plan for
-  each strong loop. Build the best version of each before judging it: the
+  include the plan with the highest ceiling the board allows (the biggest
+  turn or the most VP, however awkward it looks), one plan for each strong
+  loop, and the strongest Big Money + X as the floor. Build the best
+  version of each before judging it: the
   right opening, the cheapest set of pieces, every helper the board offers.
   For each, say how it works, what it needs by when (including the minimum
   number of copies of any scarce card, and whether the opponent wants them
@@ -135,9 +146,12 @@ If the sweep turns up a new loop, take it back through step 3.
   5k/N of turns, less once copies collide (one copy in 15 cards: 1 turn in
   3; two copies: over half). Judge each against an opponent who also plays
   money (see "The Big Money baseline" in `context/strategy.md`).
-- **Pick** the plan with the best result against the opponent's best
-  response. Against a strong opponent prefer a plan that holds up whatever
-  they do.
+- **Pick** the plan with the best result against an opponent who also
+  finds the board's best plan. On a board with real draw, a village and
+  payload that scales, that is the engine or combo unless a worked line
+  shows it losing the race (see "When to build one" and "How fast decks
+  are" in `context/strategy.md`). Don't pick the simpler plan because its
+  numbers are easier to write down.
 - **Openings**: the best opening for each split from step 1, with one line
   of reasoning each. If a split leaves nothing worth buying at one price,
   say so.
@@ -165,6 +179,9 @@ money plan with a guessed engine always favors the money plan.
 - If the line stalls (a price never reached, a key card missing its
   shuffle, terminals colliding), try to fix it with what the board offers
   before you call the plan slow.
+- A paper line still runs late for the harder plan (see "How fast decks
+  are" in `context/strategy.md`). If yours puts the higher-ceiling plan's
+  first big turn by about turn 13, it is fast enough to beat money.
 
 Read these off the lines you wrote:
 
@@ -200,13 +217,29 @@ slog or rush threatens a three-pile before an engine is online. In
 alternative-VP mirrors the split of the VP pile decides the game. An engine
 shouldn't panic-green against money, and should green earlier in a mirror.
 
-### 8. Challenge the result
+### 8. Argue for the plan you rejected
 
-- Make one more attempt at the rejected plan with the highest ceiling,
-  using the fix-ups from step 6. Most wrong calls on a board come from
-  rejecting the stronger, harder plan after a shallow look.
-- Ask how your pick loses, and whether the opponent can see that from your
-  opening.
+Most wrong calls on a board come from rejecting the stronger, harder plan
+after a shallow look, and a second look from the same side confirms the
+first. So change sides.
+
+- Take the rejected plan with the highest ceiling. If you rejected none,
+  take a bigger version of your pick: more copies of the payload, a later
+  and larger turn.
+- Write its case as its advocate would: someone sure it is right and
+  looking for its fastest version. Choose the opening that serves it, not
+  the one you already picked. Use every helper on the board, including
+  cards step 4 marked "none". Count the copies of each piece it needs.
+- Give it a full line as in step 6, turn by turn, and fix each stall before
+  going on.
+- If you can hand this step to a fresh agent that sees only the kingdom and
+  these instructions, do that. It isn't anchored on your pick.
+- Then judge. The pick stands only if you can name the turn where the
+  advocate's line falls behind, and by how much, from the two lines. "Still
+  too slow" without that turn is not a verdict. If you can't name it,
+  recommend the advocate's plan.
+- Ask how the final pick loses, and whether the opponent can see that from
+  your opening.
 
 ## Output format
 
@@ -240,5 +273,7 @@ A deeper analysis adds, before the recommendation:
 | ... | ~T10 | ~T16 | Province+Duchy | all Provinces + Duchies |
 
 **Against their best plan:** <the matchup for the pick and the runner-up>
-**Challenged:** <the rejected plan you re-tested, and how the pick loses>
+**Advocate's case:** <the rejected plan's fastest version and its line ·
+the turn where it falls behind or pulls ahead of the pick, and by how much>
+**How the pick loses:** <and whether the opponent can see it coming>
 ```
