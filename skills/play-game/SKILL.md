@@ -36,7 +36,11 @@ short game plan, about ten lines:
 
 - the plan and the reason it beats Big Money here;
 - the opening for each split;
-- the build order, and the point at which you start greening;
+- the deck you are building toward, in a line: its shape and the
+  balances that matter (e.g. "a village per Smithy, 2 +Buys, Estates
+  gone"), and what it needs first. This is a direction, not an order of
+  buys: each gain is judged from the deck's composition at the time, and draws, prices and the opponent will call for changes;
+- when you start greening;
 - what to watch for: the opponent's possible attacks or plan, and key or
   contested piles.
 
@@ -45,25 +49,44 @@ its opening when you join, still write the plan, from the current view.
 
 ## 3. Answer decisions
 
-Each `step` result shows what changed and your next decision. Spend thought
-where it changes the outcome. A game has roughly 30–60 decisions, and most of
-them are routine.
+Each `step` result shows what changed and your next decision. A game has
+roughly 30–60 decisions. Most are routine, but the gains and a few plays
+decide the game, and those are where a deck drifts away from its plan.
 
-- **Routine**: the plan already settles it and nothing in view cares about
-  the choice. Examples are playing Treasures when no card reacts to their
-  order, ending a phase with nothing worth playing, or the only sensible play.
-  Answer it straight away.
-- **Turn plan**: on a turn with real choices (Actions to order, a buy the
-  plan doesn't settle), use `play-turn`: work out what the hand could do,
-  then make each decision as it comes, looking at the state again after
-  every draw or reveal. Answer several moves in one call only when nothing
-  between them draws, reveals or asks for a choice.
-- **Full check**: run `play-turn`'s endgame and attack-response steps when the
-  decision is any of these:
+Your thinking is what you write before you answer. A decision answered
+without its reasoning written out gets made from habit, not from the plan.
+So before each decision that isn't routine, write the reasoning its level
+asks for below, then call `step`. This is not the operator chatter that
+"Talking to the operator" limits.
+
+- **Routine**: no other answer could change the deck or this turn's
+  result. Examples are playing Treasures when no card reacts to their
+  order, ending a phase with nothing worth playing, or the only legal
+  answer. Answer it straight away, several in one call where allowed. If
+  you aren't sure a decision is routine, it isn't.
+- **Play**: which Action to play, in what order, which card to hold. Write
+  a line or two: what the hand could do this turn, and which play gets
+  there. Use `play-turn`: make each decision as it comes, and look at the
+  state again after every draw or reveal. Answer several moves in one call
+  only when nothing between them draws, reveals or asks for a choice.
+- **Deck change**: every buy or gain, including buying nothing and gains
+  from a card such as Workshop, and every choice of what to trash, Exile or
+  otherwise remove for good. These shape every hand for the rest of the
+  game, so even one the plan seems to settle gets `play-turn`'s written
+  gain check (step 6): what the deck's composition needs now, the
+  candidates, and the pick. Read the composition from your player view's
+  `owns` line (`owned` in JSON), which lists every card you own. It usually takes two to four lines. A choice that is close to this, such as a Throne Room target, a
+  Reaction to reveal or Coffers to spend, gets the same care.
+- **Full check**: also run `play-turn`'s endgame and attack-response steps,
+  and write out their numbers, when the decision is any of these:
   - a buy or gain once the game could end within two turns;
   - a response to an attack;
   - a choice involving a card you haven't judged yet (new `CARDS` lines, an
     unplanned Loot or Reward, a card the opponent just started buying).
+
+These lists aren't complete. For any decision they don't name, ask whether
+a different answer could change what your deck holds or what this turn
+produces. If it could, treat it as a play or a deck change.
 
 Mechanics:
 
@@ -78,7 +101,7 @@ Mechanics:
 
 ## 4. Revisit the plan
 
-Check the plan against the view, in one line, at each of these moments:
+Check the plan against the view, in a line or two, at each of these moments:
 
 - the first turn after each of your reshuffles (`play-turn`, "Review the
   plan at each reshuffle");
@@ -88,7 +111,10 @@ Check the plan against the view, in one line, at each of these moments:
 - a pile you or they need runs low;
 - someone buys the first Victory card.
 
-When the plan changes, say what changed and why, and update it.
+At the review on the first turn after a reshuffle, write the whole plan out
+again, updated, even if nothing changed. In a long game the plan you made at
+the start is far behind you, and the copy you just wrote is the one you will
+follow. When the plan changes, say what changed and why.
 
 ## 5. Finish and review
 
@@ -105,7 +131,9 @@ Keep the report short. Don't write lessons into the repository unless asked.
 
 ## Talking to the operator during play
 
-Say little while playing. Report the plan once it is made, any change to it,
-and the result. If the server breaks (errors that aren't about your answer, a
+Keep reports short: the plan once it is made, any change to it, and the
+result. That limit is on reports, not on reasoning. The reasoning that
+section 3 asks for is written as you go, and stays as long as the decision
+needs. If the server breaks (errors that aren't about your answer, a
 game that stops advancing), stop and report what you called and what came
 back, rather than guessing around it.

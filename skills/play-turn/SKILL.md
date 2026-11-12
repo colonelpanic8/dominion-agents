@@ -5,9 +5,13 @@ description: Choose plays in a Dominion game in progress, including play order, 
 
 # Play a turn
 
-Turn the current game state into plays and a buy, with a one-line reason
-for each decision that isn't obvious. Rely on the repo context, especially
-`context/strategy.md` for the plan and the endgame.
+Turn the current game state into plays and a buy. Write the reasoning
+before each decision, in proportion to what the decision can change:
+nothing for routine moves such as playing Treasures, a line or two for an
+Action play, and a worked check for every buy or gain (step 6). Writing it
+out is how the plan gets applied, so don't cut it to keep output short.
+Rely on the repo context, especially `context/strategy.md` for the plan and
+the endgame.
 
 Decide one play at a time. Work out what the hand could do, then look at
 the state again after anything that draws, reveals or asks for a choice.
@@ -71,7 +75,7 @@ be decided together.
 
 On the first turn after you reshuffle, compare your deck with the plan:
 
-- Is it on schedule? Check it against the plan's milestones, or "How fast
+- Is it on schedule? Check it against the plan, or against "How fast
   decks are" in `context/strategy.md`.
 - What does the opponent's deck threaten, and by when?
 - Being behind on score while building is expected. Not reaching your
@@ -89,17 +93,37 @@ On the first turn after you reshuffle, compare your deck with the plan:
 
 ## 6. Choose the buy or gains
 
-- Before a gain the plan doesn't settle, look at your whole deck, not just
-  this hand. Say what it has and lacks, and what this gain is for: the next
-  shuffle, the finished deck, or a pile that decides the game. Early, deck
+Every gain changes every later hand, so write this check out before every
+buy or gain, including one the plan seems to settle, gains from Action
+cards, and buying nothing. It usually takes two to four lines:
+
+- **Composition**: look at the whole deck as it is now, not just this
+  hand, and say what it most needs for the plan, with the counts that
+  show it, and only those. "3 villages,
+  Militia, Smithy: Actions to spare, short of draw" is enough. Early, deck
   control and thinning usually beat payload; once the deck is reliable,
   payload usually wins. A card that is strong in general can be wrong for
   this deck, such as more draw with nothing to play it with.
-- Follow the plan from the kingdom analysis, adjusted to what has happened
-  since: did the opponent commit to a plan, did a key pile run low?
-- When a buy departs from the plan (a card it didn't name, or a default
-  such as Silver in place of a card it did), give a one-line reason. If no
-  reason holds up, buy what the plan says.
+- **Candidates**: the card the plan names, and the best other card at each
+  price you can pay.
+- **Pick**: the gain, and what it is for: the next shuffle, the finished
+  deck, or a pile that decides the game. The plan gives direction, not a
+  shopping list. Any card that gives the deck what it needs serves it,
+  and a chance the plan didn't foresee can be worth taking: a price you
+  rarely hit, a pile about to run out, a card the opponent's play made
+  stronger. When the pick doesn't address what the deck needs, or
+  isn't what the plan would take, say why in a line. What to avoid is a
+  gain with no reason behind it, such as Silver by default, or a card
+  that is good in general but does nothing for this deck. If no reason
+  holds up, take what the plan says.
+
+Choosing what to trash or Exile gets the same check in short form: what
+leaves, and what the deck needs after.
+
+Also:
+
+- Read the plan as adjusted to what has happened since the kingdom
+  analysis: did the opponent commit to a plan, did a key pile run low?
 - When asked whether one buy is right ("is Silver right here?"), don't
   confirm it from the plan alone. Compare it with the best other card at
   each price you can pay, and work out the next hand for any candidate that
@@ -137,8 +161,9 @@ On the first turn after you reshuffle, compare your deck with the plan:
 ```markdown
 **Goal this turn:** <e.g. "$8 + Buy for Province + Duchy">
 **Play:** 1. <card> — <why, if not obvious> 2. ...
-**Buy/gain:** <cards> — <why; for a terminal, the count against deck size;
-for a departure from the plan, the reason>
+**Buy/gain:** <what the deck needs now, with the counts that show it ·
+candidates · pick, and the reason for any departure; for a terminal, the
+count against deck size>
 **Review:** <first turn after a reshuffle: deck vs plan, both clocks, the call>
 **Endgame:** <once the game could end: scores after each option, and what
 the opponent would need>
