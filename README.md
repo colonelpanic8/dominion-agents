@@ -9,7 +9,7 @@ files shared by Claude Code and OpenAI Codex.
 | Path | Purpose |
 | --- | --- |
 | `context/rules.md` | Rules reference for every expansion through Rising Sun (Arcana provisional) |
-| `context/strategy.md` | Strategy fundamentals: Big Money baseline, archetypes, openings, endgame |
+| `context/strategy.md` | Strategy fundamentals: deck composition, reliability, deck control, payload, archetypes, openings, endgame |
 | `context/card-power.md` | Card power levels, their sources and how to read them |
 | `context/combos.md` | Known game-deciding two-card combos and how to counter them |
 | `data/card-glicko/` | Snapshot of the community [Card Glicko](https://docs.google.com/spreadsheets/d/1CaVOd1pgAgmjJHXPM1tVMVnlJOLDZaq8BxjW4I1NI1E) ratings |

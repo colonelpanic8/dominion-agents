@@ -48,8 +48,8 @@ used as defined in "Payload and deck control" in `context/strategy.md`.
    other Victory cards, VP tokens, Landmarks, Curses as minus points), and
    which of them add no card to the deck. Which piles will run out, and how
    does the game most likely end?
-2. **Draw and Actions**: which combination of cards actually increases hand
-   size without costing Actions (see "Engines" in `context/strategy.md`)?
+2. **Draw and Actions**: what increases hand size, and is it terminal or
+   non-terminal (see "Draw and villages" in `context/strategy.md`)?
    What gives a spare Action: villages, including conditional ones,
    Actions that arrive at the start of the next turn, and Villagers?
 3. **Thinning**: what takes cards out of your deck (trashing, Exile, mats,

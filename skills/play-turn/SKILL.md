@@ -82,7 +82,7 @@ especially `context/strategy.md` for the plan and the endgame.
   comparison shows the plan misread a card, say so and redo the plan.
 - Before buying a terminal, count the terminals in your deck including
   this one. Without villages, keep to roughly one per 8–10 cards
-  (`context/strategy.md`, "Terminal collision"). Past that, a new
+  (`context/strategy.md`, "Terminal slots and collision"). Past that, a new
   terminal collides often enough that Treasure or a non-terminal is
   usually the better buy.
 - Before a scoring buy, check the endgame (`context/strategy.md`, "Greening

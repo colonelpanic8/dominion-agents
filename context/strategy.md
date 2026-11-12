@@ -1,82 +1,219 @@
 # Dominion Strategy Basics
 
-General principles that strong players broadly agree on. Unless noted, they
-assume 2-player games, which is how most competitive play happens. Every
-kingdom is different: treat these as defaults to check, not laws.
+Principles that strong players broadly agree on. Unless noted, they assume
+2-player games, which is how most competitive play happens. Every kingdom
+is different: treat these as defaults to check, not laws.
 
-## Core ideas
+## Deck composition
 
-- **Your deck is your engine of turns.** Each card you add changes the
-  average quality of the hands you draw. A card is good if decks that buy it
-  produce better turns than decks that don't.
-- **Tempo matters.** A typical 2-player game lasts about 15–20 turns per
-  player, and strong decks can end it much sooner. Gains early in the game
-  compound. Gains late in the game mostly need to be points.
-- **Terminal collision.** A *terminal* is an Action that gives no +Action.
-  Draw two terminals together without a village and one of them is dead.
-  Without villages, keep roughly one terminal per 8–10 cards.
-- **Junk and thinning.** Coppers, Estates, Curses and Ruins dilute your good
-  cards. *Thinning* takes them out of the cards you draw and concentrates
-  your deck. Trashing (Chapel, Sentry, Steward, …) is the usual way, but
-  Exile, a mat, or swapping a card for a better one does the same job (see
-  "Trashing in practice"). It costs tempo at first and pays off later.
-- **Reliability.** A plan that produces its intended turn most of the time
-  usually beats one with a bigger but less dependable turn (see
-  "Reliability" below).
+Dominion is a game about what is in your deck. You never choose your hand:
+each turn you draw five cards from a deck you built. So the decisions that
+last are what goes into the deck and what comes out of it. Every gain,
+trash and Victory card changes the deck's composition, and the composition
+decides what every later hand can be.
 
-## Cantrips: the "free effect" baseline
-
-A **cantrip** is a card that gives at least +1 Card and +1 Action. Playing
-one replaces itself: your hand stays the same size and you keep your Action.
-
-- A *pure* cantrip (+1 Card +1 Action and nothing else) is almost the same
-  as not having the card at all. It takes a slot in your deck but costs you
-  nothing when you draw it.
-- So whatever a cantrip adds on top (+$1, +Buy, trashing, an attack, a
-  token) is close to a **free effect**: it improves the deck without
-  diluting it. That's why "cantrip plus a bonus" cards (Peddler, Market,
-  Sentry, Mill) rarely hurt.
-- Familiar shapes built on this baseline: **village** = cantrip + another
-  Action, **Laboratory** = cantrip + another Card (non-terminal draw),
-  **Market** = cantrip + $1 + Buy.
-- Cantrips never cause terminal collision, so they count as deck control
-  even when their bonus is payload.
-
-Exceptions, where the "free" effect isn't free:
-
-- **Opportunity cost**: buying the cantrip spends a gain that could have
-  been a Silver, Gold or a key card. Early on, a weak cantrip is usually
-  worse than Silver for a money deck.
-- **Nothing left to draw**: once you've drawn your whole deck, +1 Card does
-  nothing, and the card is only its bonus.
-- **Reshuffle timing**: a cantrip that draws into a reshuffle can leave
-  your best cards (still in play or in hand) out of the next shuffle.
-- **Card-count effects**: some cards care about how many cards you have
-  (Gardens and other alt VP, "draw until N in hand"), or about what's in
-  hand. Check these interactions.
+- **A card is good if a deck with it produces better turns than a deck
+  without it.** No card is good in isolation. A Gold lifts a deck of Coppers
+  and Estates, and can stop a turn in a deck that draws itself. Judge every
+  gain, Treasure and Victory cards included, by what it does to the hands
+  you will draw.
+- **Every card dilutes the others.** Adding a card makes each other card
+  turn up less often. Junk (Coppers, Estates, Curses, Ruins) is pure
+  dilution. Victory cards are junk you choose to take, which is why
+  greening has a cost.
+- **Proportions matter more than counts.** One copy of a key card is in a
+  given 5-card hand one turn in three in a 15-card deck, and one turn in
+  six in a 30-card deck.
+- **Tempo compounds.** A typical 2-player game lasts about 15–20 turns per
+  player, and strong decks end it sooner. A card gained early is drawn many
+  more times than one gained late, so early gains should improve the deck
+  and late gains mostly need to be points.
 
 ## Payload and deck control
 
-A way to classify what each card does for your deck, from Adam Horton's
-[Payload and Deck Control](https://adamhorton.com/flog/dominion-payload-and-control/).
-Every card you add either helps you play your other cards or is one of the
-cards worth playing.
+Every card in a deck does one of two jobs: it is worth playing, or it helps
+you play the cards that are. This split, from Adam Horton's
+[Payload and Deck Control](https://adamhorton.com/flog/dominion-payload-and-control/),
+is the main tool for judging what a card does for a deck.
 
-- **Payload**: what a turn produces once you have played your cards. That
-  means $ to spend, Buys to spend it with, cards gained, VP tokens, and harm
-  to the opponent. Every deck has some, and in a plain money deck the
-  payload is its Treasure. Payload counts *relative* to the opponent, so
-  attacks, denying a key pile, and the ability to end (or threaten to end)
-  the game on piles while ahead are payload too. Early in the game, gainers
-  such as Workshop are payload that builds the deck rather than scoring.
-- **Deck control**: cards whose job is to let you play your other cards.
-  That means draw, villages, cantrips, trashing and sifting. Junking the
-  opponent attacks *their* deck control.
-- **Dead cards**: neither of the above. Examples are Victory cards and
-  Curses once they're in your deck, and a trasher you no longer need.
-- **Hybrids** (e.g. Grand Market, Torturer) are both payload and deck
-  control. They're usually very strong, and often the right move is to add
-  them as fast as possible.
+- **Payload** is what a turn produces once you have played your cards: $
+  to spend, Buys to spend it with, cards gained, VP tokens, and harm to the
+  opponent. In a plain money deck the payload is its Treasure (see
+  "Payload").
+- **Deck control** lets you play your other cards: draw, villages,
+  thinning, sifting and top-of-deck control (see "Deck control"). Junking
+  the opponent attacks *their* deck control.
+- **Dead cards** do neither: Victory cards and Curses once they're in your
+  deck, or a trasher you no longer need.
+- **Hybrids** (e.g. Grand Market, Torturer) do both. They're usually very
+  strong, and the right move is often to add them as fast as possible.
+
+The two limit each other. Payload is worth only as many plays as deck
+control gets it per turn, and deck control is worth only the payload it
+reaches. Name the job of each card before you add it, and ask which of the
+two the deck is short of.
+
+## Reliability
+
+Because every hand is drawn at random, a deck has a spread of possible
+turns, not one turn. How often it produces the turn you need matters as
+much as how big that turn is.
+
+- **Prices are thresholds.** $9 buys what $8 does, and $7 buys what $6
+  does. $ above a price is mostly wasted and $ below it loses the gain, so
+  a deck that hits $8 on 70% of turns beats one that alternates between $11
+  and $4.
+- **A plan is worth its typical turn, not its best one.** A deck built to
+  draw itself is only as good as how often it does. A stalled turn of
+  villages and draw is often worse than a money turn, because those cards
+  produce nothing on their own. A plan that completes on half its turns
+  usually loses to plain money (see "The Big Money baseline").
+- **What makes a deck reliable**: thinning, so draw finds draw; one or two
+  cards of spare draw beyond exactly enough; at least as many villages as
+  terminal draw; non-terminal draw, which can't collide; Actions and cards
+  that arrive at the start of the turn (Durations); top of deck control
+  that puts the key card in hand; and enough copies of any card the turn
+  can't do without.
+- **What makes it unreliable**: a single copy of a key card; terminal
+  draw with few villages; junk, which dilutes draw; handsize attacks,
+  which cut the hand a turn starts from; and draw that leaves the
+  reshuffle to chance late in the turn.
+- **Money's strength is reliability.** It never stalls, it only
+  fluctuates, which is why it is the baseline. A plan that beats money on
+  its good turns but not on average loses to it.
+- **Reliability decides when to stop building.** Add a spare village or
+  draw card before more payload whenever the deck still stalls, and
+  especially when ahead (see "Risk and luck").
+
+## Deck control
+
+Deck control is how much of your deck you can play in a turn, and how much
+say you have in which cards. Without it, a turn is a random five cards and
+the deck produces its average hand. With enough of it, a deck draws itself
+every turn and produces the sum of all its cards, so each payload card adds
+directly, which is why such decks keep growing. Junk, greening and the
+opponent's attacks erode deck control, so it has to be maintained.
+
+### Terminal slots and collision
+
+A *terminal* is an Action that gives no +Action. A turn starts with one
+Action, so without villages each turn has one **terminal slot**: room to
+play one terminal.
+
+- **Collision**: draw two terminals together without a village and one of
+  them is dead. Two terminal openers land in the same hand on turn 3 or 4
+  about 30% of the time.
+- **Over-terminaled**: a deck holding more terminals than its turns have
+  slots. Without villages, keep roughly one terminal per 8–10 cards. Past
+  that, a new terminal collides often enough that Treasure or a
+  non-terminal is usually the better gain.
+- **Slots are a budget.** Every terminal you add competes for the same
+  slots, so a terminal is worth only what it adds over the best other use
+  of the slot. A $2 terminal can cost you a turn's play of your draw card
+  or your attack.
+- **Villages add slots, and non-terminals use none.** Treasures and
+  *cantrips* (cards that give at least +1 Card and +1 Action, so they
+  replace themselves) never collide. A cantrip's bonus (+$1, +Buy,
+  trashing, an attack) is close to free: it costs a gain and a place in
+  the deck, but no slot and no space in the hand. Its +1 Card is worth
+  nothing once you draw your whole deck.
+
+### Draw and villages
+
+Further reading: Adam Horton on
+[draw](https://adamhorton.com/flog/dominion-draw/) and
+[villages](https://adamhorton.com/flog/dominion-villages/).
+
+- **Draw** is anything that increases your hand size. Most of it is
+  +Cards on an Action, but Durations, Night cards and Treasures can draw
+  too. A cantrip only replaces itself, so it isn't draw.
+- **Non-terminal draw** (Laboratory: +2 Cards +1 Action) grows your hand
+  and keeps your Action, so any number of copies can be played in a turn.
+- **Terminal draw** (Smithy: +3 Cards) grows your hand more per card but
+  uses your Action, so playing more than one needs Actions from elsewhere
+  (see "Terminal slots and collision").
+- **A village** is anything that lets you play more than one terminal in a
+  turn. That includes Throne Room and King's Court. Cards that at best
+  replace the Action they use, like Conspirator, Ruined Village or Vassal,
+  are not villages.
+- **A village doesn't have to be an Action card that says +2 Actions.** A
+  spare Action can arrive at the start of your next turn from a Duration or
+  Night card, or come from Villagers. A Night card costs no Action to play,
+  so one that leaves +1 Card and +1 Action for next turn (Ghost Town) nets
+  the same as a Village, and it can't be drawn dead after your Actions run
+  out. Its Action comes a turn late, so it doesn't rescue the hand it is
+  drawn in. Find villages by reading every card's whole text for Actions
+  and Villagers, not by its name or type line.
+- Many cards draw or act as villages only with support: an action-dense
+  deck, a way to line cards up, a pile emptying, Favors, a specific trasher.
+  Before relying on one, check that this board provides that support.
+- A village that works once per turn (Crossroads), or only under a
+  condition, caps how many terminals you can play. Count the Actions a real
+  turn gets, not the number of village cards.
+- **Setting up the next hand counts too.** Durations that draw at the start
+  of the turn, gains that land on top of your deck, and cards that order the
+  top of your deck all put chosen cards into your next hand without using
+  Actions. If something can put the same key card (the only village, the
+  trasher, the payoff) in your hand every turn, a deck that looks
+  inconsistent may be reliable.
+
+If nothing on the board increases hand size, no deck on it will play much
+more than five cards a turn.
+
+### Thinning: addition by subtraction
+
+*Thinning* removes cards from the deck you draw from. It looks like a loss:
+a trashing turn often buys nothing, and the deck ends up with fewer cards
+and less total money. But a hand is five cards drawn from the deck, so what
+matters is the average card, not the total. Removing any card worse than
+the average makes every later hand better.
+
+- **Each good card turns up more often.** One key card in a 12-card deck
+  is in a given hand 5 times in 12. Trash 3 Estates and 2 Coppers and it
+  is in 5 hands in 7.
+- **Copper is junk once the deck is better than Copper.** In the starting
+  deck the average card is worth $0.70, so trashing Estates alone lifts the
+  average hand from $3.50 to $5. Once your average card is worth more than
+  $1, every Copper drags hands down too.
+- **Every later gain is worth more.** In a 10-card deck a new Gold is drawn
+  about every other turn; in a 25-card deck about one turn in five. A thin
+  deck gets more plays out of everything it adds, and that compounds.
+- **Draw finds draw.** In a thin deck a few draw cards play the whole
+  deck, so thinning is what lets a deck reach "draws itself every turn".
+- **It's one of the strongest effects in the game.** Chapel costs $2 and
+  does nothing but trash, and it rates in the top tier (see
+  `context/card-power.md`). Don't pass up strong trashing because a turn
+  spent trashing looks empty.
+
+In practice:
+
+- **Trashing** (Chapel, Sentry, Steward, …) is the usual way. With Chapel,
+  on turn 3 or 4 trash your whole hand, even if it's only Coppers. The
+  exception is a hand holding your other opener.
+- After the first big trashing turn, keep enough money to buy what you
+  need. Don't thin so hard you lose your economy. If you're drawing
+  everything but short on money, you trashed Coppers too fast.
+- A trasher that goes dead late in the game has usually already paid for
+  itself.
+- Thinning matters less where the deck wants many cards: Gardens and other
+  card-count VP, and slogs where junk arrives faster than you can remove
+  it.
+- **Thinning without a trasher.** Anything that takes a card out of your
+  deck for good thins it: Exile, a mat, or a card that turns one card into
+  another (Remodel; Displace Exiles a card and gains one costing up to $2
+  more). A swap removes one card per play, which is slow, but each play
+  also adds a part: a Copper becomes a $2 piece and an Estate a $3 or $4
+  one. Exiled Victory cards still score, so Exiling Estates costs no
+  points. Before calling a board "no trashing", check every card for one of
+  these.
+
+## Payload
+
+Every deck has payload; in a plain money deck it is the Treasure. Payload
+counts *relative* to the opponent, so attacks, denying a key pile, and the
+ability to end (or threaten to end) the game on piles while ahead are
+payload too. Early in the game, gainers such as Workshop are payload that
+builds the deck rather than scoring.
 
 ### +Buy turns a big turn into points
 
@@ -84,7 +221,7 @@ You score by gaining Victory cards, and each Buy gains one card. So
 without +Buy, gainers or VP tokens, a turn's payload is capped at one
 card, whatever $ it makes: $16 buys one Province, the same as $8. A deck
 that draws itself every turn then scores no faster than a money deck that
-hits $8, and the engine has lost the turns it spent building.
+hits $8, and has lost the turns it spent building.
 
 With +Buy, each extra Buy raises the ceiling by one card: $16 and 2 Buys is
 two Provinces, $13 and 2 Buys is a Province and a Duchy. That is what lets
@@ -114,11 +251,9 @@ play it many times per turn.
   Bridges, each one cuts every purchase that turn by $1 and adds a Buy,
   which can take several Provinces at once.
 
-So judge payload cards after deciding whether the board supports an
-engine. A card that looks like the board's best payload may be close to
+So judge payload cards after deciding how much of the deck this board lets
+you play. A card that looks like the board's best payload may be close to
 useless in the deck the board actually wants, and the reverse.
-
-How to use it:
 
 - **Before the game**, work out the best payload this kingdom allows, given
   its deck control. Ten Bridges is no payload without villages to play them.
@@ -127,41 +262,19 @@ How to use it:
 - **If deck control is weak** (no villages, draw or trashing), you won't
   reliably play your full payload, so build less.
 - **Once your deck is under control**, balance adding payload against still
-  drawing most or all of your deck each turn. Name the role of each card you
-  add.
+  drawing most or all of your deck each turn.
 
-## Reliability
+### Gold, Treasure gainers and Coffers
 
-How often a deck produces its intended turn matters as much as how big that
-turn is.
-
-- **Prices are thresholds.** $9 buys what $8 does, and $7 buys what $6
-  does. $ above a price is mostly wasted and $ below it loses the gain, so
-  a deck that hits $8 on 70% of turns beats one that alternates between $11
-  and $4.
-- **An engine is only as good as how often it fires.** Its value comes from
-  drawing the whole deck every turn. A stalled engine turn is often worse
-  than a money turn, because its cards are villages and draw rather than
-  Treasure. An engine that completes on half its turns usually loses to
-  money. Judge an engine by how often the built turn happens, not by its
-  best turn.
-- **What makes a deck reliable**: thinning, so draw finds draw; one or two
-  cards of spare draw beyond exactly enough; at least as many villages as
-  terminal draw; non-terminal draw and cantrips, which can't collide;
-  Actions and cards that arrive at the start of the turn (Durations); top
-  of deck control that puts the key card in hand; and enough copies of
-  any card the turn can't do without. One copy in a 15-card deck is in a
-  given 5-card hand only one turn in three.
-- **What makes it unreliable**: a single copy of a key card; terminal
-  draw with few villages; junk, which dilutes draw; handsize attacks,
-  which cut the hand the engine starts from; and draw that leaves the
-  reshuffle to chance late in the turn.
-- **Money's strength is reliability.** It never stalls, it only
-  fluctuates, which is why it is the baseline (see below). A plan that
-  beats money on its good turns but not on average loses to it.
-- **Reliability decides when to stop building.** Add a spare village or
-  draw card before more payload whenever the deck still stalls, and
-  especially when ahead (see "Risk and luck").
+- **Gold in an engine** is a card that doesn't draw, so it can stop your
+  turn. Add it late, once draw can absorb it, and prefer gaining it free
+  over buying it.
+- **Treasure gainers**: time them for when the deck can draw the gained
+  Treasure that turn. In money decks they free your buys for other things.
+- **Coffers**: spend them early, because early gains compound. In the
+  midgame keep one or two to hit key prices. Late, hoard them to guarantee
+  $8 or to threaten a turn with several Provinces (with +Buy). A second
+  source of Coffers adds less than the first.
 
 ## The Big Money baseline
 
@@ -179,9 +292,9 @@ benchmark every plan should be measured against.
   has no draw to recover lost cards, so a hand-size attack turns many of
   its Province hands into Gold hands and its Gold hands into Silver hands.
   That is often worth more than a second draw card.
-  Plan enough copies to play the attack on most turns, within the terminal
-  limit (see "Terminal collision"), rather than one copy that is played
-  about one turn in three.
+  Plan enough copies to play the attack on most turns, within your
+  terminal slots (see "Terminal slots and collision"), rather than one copy
+  that is played about one turn in three.
   Hypothesis, from a rough simulation of one board without villages
   against a money bot: Militia with Smithy beat Smithy-BM, and two Militias
   beat both by a wide margin. The size of the gap is unconfirmed.
@@ -194,6 +307,9 @@ benchmark every plan should be measured against.
 - Any plan that can't beat a competent BM+X in this kingdom is a mistake.
 
 ## Archetypes
+
+Each archetype is a different answer to how much deck control the board
+supports and what payload it rewards.
 
 - **Engine**: heavy deck control (villages, draw, thinning) plus +Buy and
   payload. Aim to draw most of your deck each turn and gain several cards,
@@ -214,62 +330,21 @@ benchmark every plan should be measured against.
 - **Rush**: race to empty three piles, e.g. Workshop/Gardens or a cheap
   pile plus +Buy. Strong only when the kingdom enables it and the opponent
   can't punish it.
-- **Combos**: a plan built around a specific interaction (see below). Always
-  look for them, but check that they beat the plain options.
+- **Combos**: a plan built around a specific interaction (see "Interactions
+  to look for"). Always look for them, but check that they beat the plain
+  options.
 
 ## Engines
-
-### What counts as draw and villages
-
-Adam Horton's articles on [draw](https://adamhorton.com/flog/dominion-draw/)
-and [villages](https://adamhorton.com/flog/dominion-villages/) give a useful
-way to check whether a board can support an engine at all:
-
-- **Draw** is any combination of cards that increases your hand size
-  without reducing the Actions you have left. A Laboratory does this alone.
-  Smithy does it only alongside a village, and only one that leaves the net
-  result positive: Festival + Moat gives no draw, since Festival doesn't
-  draw a card and Moat's +2 Cards just replaces the two cards played.
-- **A village** is anything that lets you play more than one terminal in a
-  turn. That includes Throne Room and King's Court. Cards that at best
-  replace the Action they use, like Conspirator, Ruined Village or Vassal,
-  are not villages.
-- **A village doesn't have to be an Action card that says +2 Actions.** A
-  spare Action can arrive at the start of your next turn from a Duration or
-  Night card, or come from Villagers. A Night card costs no Action to play,
-  so one that leaves +1 Card and +1 Action for next turn (Ghost Town) nets
-  the same as a Village, and it can't be drawn dead after your Actions run
-  out. Its Action comes a turn late, so it doesn't rescue the hand it is
-  drawn in. Find villages by reading every card's whole text for Actions
-  and Villagers, not by its name or type line.
-- Many cards draw or act as villages only with support: an action-dense
-  deck, a way to line cards up, a pile emptying, Favors, a specific trasher.
-  Before relying on one, check that this board provides that support.
-- A village that works once per turn (Crossroads), or only under a
-  condition, caps how many terminals you can play. Count the Actions a real
-  turn gets, not the number of village cards.
-- **Setting up the next hand counts too.** Durations that draw at the start
-  of the turn, gains that land on top of your deck, and cards that order the
-  top of your deck all put chosen cards into your next hand without using
-  Actions. If something can put the same key card (the only village, the
-  trasher, the payoff) in your hand every turn, an engine that looks
-  inconsistent may be reliable.
-- So ask "which combination of cards here actually increases hand size?"
-  rather than "is there a draw card?". If the answer is none, no engine is
-  possible.
-- Once an engine draws its whole deck each turn, its output depends on
-  *everything* in the deck, not the average card. Each payload card adds
-  directly, which is why engines keep growing. Greening and junk erode
-  this, so it has to be maintained.
 
 ### When to build one
 
 Build an engine when all of these hold:
 
-1. Real draw exists, by the test above, with villages that actually work
-   with it.
-2. There is thinning of any kind (see "Trashing in practice"), or the draw
-   is strong enough to beat the junk. Strong engines can overcome Curses.
+1. Real draw exists, by the test in "Draw and villages", with villages
+   that actually work with it.
+2. There is thinning of any kind (see "Thinning: addition by
+   subtraction"), or the draw is strong enough to beat the junk. Strong
+   engines can overcome Curses.
 3. Payload scales past one Province per turn: +Buy, gainers, VP tokens or a
    repeatable attack.
 4. It wins the race against the Big Money baseline: it can take double
@@ -305,8 +380,6 @@ Don't build one, or build less, when:
 - Aim for one or two cards of spare draw beyond exactly enough. That makes
   the deck consistent, which matters most against attacks and when you're
   ahead. Spare draw can be spent by gaining a card mid-turn and drawing it.
-  If you're drawing everything but short on money, you trashed Coppers too
-  fast.
 - Stop adding Treasure once the deck draws itself, and add payload once it
   does so reliably.
 - Don't overbuild past the payload ceiling. But when unsure whether to
@@ -326,18 +399,6 @@ Some decks save resources for a single game-winning turn: cards on mats
 - Start the big turn only when you can see it through, since a turn that
   fizzles partway can lose on the spot. If it can't end the game, make sure
   the opponent's best reply can't win.
-
-## Economy: Gold, Treasure gainers and Coffers
-
-- **Gold in an engine** is a card that doesn't draw, so it can stop your
-  turn. Add it late, once draw can absorb it, and prefer gaining it free
-  over buying it.
-- **Treasure gainers**: time them for when the deck can draw the gained
-  Treasure that turn. In money decks they free your buys for other things.
-- **Coffers**: spend them early, because early gains compound. In the
-  midgame keep one or two to hit key prices. Late, hoard them to guarantee
-  $8 or to threaten a turn with several Provinces (with +Buy). A second
-  source of Coffers adds less than the first.
 
 ## Interactions to look for
 
@@ -454,6 +515,9 @@ Sources: Adam Horton's
 [Discipline in the Opening](https://adamhorton.com/flog/dominion-discipline-in-the-opening/)
 and general community consensus.
 
+Your two opening buys are a sixth of a 12-card deck, and each is drawn on
+turn 3 or 4 five times in six. No later gain shapes as many hands.
+
 - With the standard starting deck, turns 1–2 give $7 between them, split
   4/3 or 5/2 (5/2 is about 1 in 6). Heirlooms and Shelters change the
   starting deck, and some Heirlooms change the money: Cursed Gold makes the
@@ -487,24 +551,11 @@ and general community consensus.
 - Don't open with two terminals that collide often unless their payoff is
   worth it.
 
-## Trashing in practice
-
-- With Chapel, on turn 3 or 4 trash your whole hand, even if it's only
-  Coppers. The exception is a hand holding your other opener.
-- After the first big trashing turn, keep enough money to buy what you
-  need. Don't thin so hard you lose your economy.
-- A trasher that goes dead late in the game has usually already paid for
-  itself.
-- **Thinning without a trasher.** Anything that takes a card out of your
-  deck for good thins it: Exile, a mat, or a card that turns one card into
-  another (Remodel; Displace Exiles a card and gains one costing up to $2
-  more). A swap removes one card per play, which is slow, but each play
-  also adds a part: a Copper becomes a $2 engine piece and an Estate a $3
-  or $4 one. Exiled Victory cards still score, so Exiling Estates costs no
-  points. Before calling a board "no trashing", check every card for one of
-  these.
-
 ## Attacks and defense
+
+Attacks work on the opponent's deck. Junkers worsen its composition,
+handsize attacks cut how much of it they play, and trashing attacks take
+cards out of it.
 
 - **Junking** (Curses, Ruins) is the strongest attack class: it costs the
   victim tempo and points.
@@ -523,9 +574,9 @@ and general community consensus.
 - **Play an attack every turn**: if you can only play one attack per turn,
   still buy several copies so you play one every turn. A Duration attack
   stays in play through your next turn, so it takes two copies to attack
-  every turn. The first copy of an
-  attack on the opponent's economy is high priority, because it can stop
-  them reaching the price of their own copy.
+  every turn. The first copy of an attack on the opponent's economy is
+  high priority, because it can stop them reaching the price of their own
+  copy.
 - **Hand-size attacks** (Militia, Ninja) hurt money decks and are usually
   weaker against decks that draw after the attack. The exception is
   attacks that punish drawing (Frigate): there, an attacking money deck can
@@ -538,9 +589,12 @@ and general community consensus.
 
 ## Greening and the endgame
 
-- Start buying Victory cards ("greening") when the remaining turns are few
-  enough that the points beat the economy you give up. The faster your deck
-  can still improve, the later you green:
+Greening trades deck quality for points: every Victory card is a dead card
+you draw for the rest of the game.
+
+- Start buying Victory cards when the remaining turns are few enough that
+  the points beat the economy you give up. The faster your deck can still
+  improve, the later you green:
   - Gardens rush: immediately.
   - Duke/Duchy slog: once you reliably hit $5.
   - One-buy money decks: once you reliably hit $8.
@@ -579,8 +633,6 @@ and general community consensus.
 - When behind, take higher-variance lines. Late in the game, play for the
   luck you need: if you need both of the last Provinces, go for them.
 - Player two starts at a disadvantage and can justify a little more risk.
-- Judge decisions by their expected result, not their outcome. A good
-  result doesn't prove a choice right.
 
 ## Multiplayer (3–6 players)
 
