@@ -14,13 +14,10 @@ use the `play-turn` skill for each decision.
 Defaults, unless the user says otherwise:
 
 - Assume 2 players. Name what would change with more players.
-- Do the quick analysis (steps 1–5). Go deeper (steps 6–8) when the user
-  asks for a full analysis, or when step 5 leaves two plans close or rests
-  on a guess about how fast a plan is.
 - Work from card text. Community ratings come in at step 4, as a check on a
   view you have already formed.
-- Keep the reasoning short and checkable. Don't give a tutorial. A short
-  write-up shortens each slot of the output format, never drops one.
+- Keep the reasoning concise. Don't give a tutorial, assume an audience that is
+  proficient in the game.
 
 ## 1. Inventory
 
@@ -138,12 +135,17 @@ If the sweep turns up a new loop, take it back through step 3.
 - **No village**: when step 2 found no way to play two terminals in a turn,
   the realistic plans are mostly money decks and the choice of X matters
   most. If the board has an attack, compare at least X as a draw card, X as
-  the attack, and two copies of the attack. Give each a rough worked line:
-  the opening, the turns it first hits $6 and $8, and how often it plays
-  its attack. k copies in an N-card deck reach a 5-card hand in at most
+  the attack, and two copies of the attack. Estimate for each: the
+  opening, the turns it first hits $6 and $8, and how often it plays its
+  attack. k copies in an N-card deck reach a 5-card hand in at most
   5k/N of turns, less once copies collide (one copy in 15 cards: 1 turn in
   3; two copies: over half). Judge each against an opponent who also plays
   money (see "The Big Money baseline" in `context/strategy.md`).
+- **Matchups**: name the opponent's best plan against your pick and
+  against the runner-up. Check the race (does one plan end the game, or
+  take an unbeatable lead, before the other comes online?), attacks that
+  hit one plan much harder, contested piles and three-pile risk, and who
+  controls when the game ends.
 - **Pick** the plan with the best result against the opponent's best
   response. Against a strong opponent prefer a plan that holds up whatever
   they do.
@@ -155,71 +157,14 @@ If the sweep turns up a new loop, take it back through step 3.
 - **Ending**: which piles could empty, who benefits, and how the game ends.
 - **What would flip the choice**: a different split, the opponent's
   opening, more players, a key pile running low.
+- **Challenge the pick**: take one more look at the rejected plan with the
+  highest ceiling, with every fix the board offers. Most wrong calls come
+  from rejecting the stronger, harder plan after a shallow look. Then ask
+  how your pick loses.
 - **Least sure of**: the one conclusion most likely to be wrong, and what
-  would show it. If that is the choice between two plans, or a guess about
-  speed, go on to step 6 for those plans.
-
-## Going deeper
-
-### 6. Play the candidates out
-
-Don't estimate speed from impressions. Play a solo game on paper with
-average draws, for every candidate you are comparing and most carefully for
-the one that is hardest to estimate (usually the engine). Comparing a worked
-money plan with a guessed engine always favors the money plan.
-
-- Turns 1 to about 8, one line per turn: the money or key cards in hand,
-  what you play, what you buy or gain, and the deck list after each shuffle.
-- One typical built turn, card by card, with the resulting $, Buys and VP.
-- If the line stalls (a price never reached, a key card missing its
-  shuffle, terminals colliding), try to fix it with what the board offers
-  before you call the plan slow.
-
-Read these off the lines you wrote:
-
-- **Speed**: the turn it starts scoring in earnest, and the earliest turn it
-  can realistically end the game, or force the opponent to.
-- **Scoring rate and ceiling**: VP per turn at its peak, and how much VP is
-  actually available to it. A money plan wins by taking about half the
-  available VP before the opponent's big turns arrive, so VP that keeps
-  scaling (Colonies, VP tokens, Fairgrounds-style alt VP) raises that bar
-  and favors engines.
-- **Where the curves cross**: money scores early and flattens, engines
-  score late and steeply, slogs score slowly for a long time, rushes score
-  little and race to the end. The crossing point is when the slower plan
-  must be ahead.
-
-### 7. Test the pick against the opponent's best plan
-
-Name the best plan against your pick and judge the matchup. Do the same for
-the runner-up. A full grid of every plan against every other is only worth
-it with three or more live plans.
-
-- **Race**: does the faster plan end the game, or take an unbeatable lead,
-  before the slower one comes online? Use the Big Money clock in
-  `context/strategy.md` as the baseline.
-- **Interference**: attacks that hit one plan much harder than the other,
-  and anything of yours that helps the opponent.
-- **Shared resources**: contested piles, mirrored attacks, and three-pile
-  risk created by either side.
-- **Game-length control**: who decides when the game ends.
-
-Patterns to check: a slog wants the money deck to buy out the Provinces. A
-slog or rush threatens a three-pile before an engine is online. In
-alternative-VP mirrors the split of the VP pile decides the game. An engine
-shouldn't panic-green against money, and should green earlier in a mirror.
-
-### 8. Challenge the result
-
-- Make one more attempt at the rejected plan with the highest ceiling,
-  using the fix-ups from step 6. Most wrong calls on a board come from
-  rejecting the stronger, harder plan after a shallow look.
-- Ask how your pick loses, and whether the opponent can see that from your
-  opening.
+  would show it.
 
 ## Output format
-
-Quick analysis:
 
 ```markdown
 **Board:** <what it is about, from step 2, in 2–3 sentences>
@@ -229,25 +174,13 @@ Quick analysis:
 **Plans considered:** <each in one line: how it works · rough line ($6 and
 $8 turns, attack plays) · needs · weakness>
 **Recommendation:** <plan, and why it holds up against the best response>
+**Against their best plan:** <the matchup for the pick and the runner-up>
 **Open:** <split>: <cards> · <split>: <cards>
 **Buy priorities:** <first two or three shuffles, then when to green>
 **Ending:** <how it ends, which piles are at risk>
 **Watch out for:** <1–3 risks, and what would change the plan>
+**Challenged:** <the rejected plan you re-tested, and how the pick loses>
 **Least sure of:** <the conclusion most likely to be wrong, and the test>
 **Assumed:** <rules readings or card text you weren't sure of, and anything
 you needed that the repo context didn't cover>
-```
-
-A deeper analysis adds, before the recommendation:
-
-```markdown
-### Build lines
-- **<plan>**: T1–2 <buys> · T3–4 <...> · ... · built turn: <$, Buys, VP>
-
-| Plan | Starts scoring | Can end by | Peak VP/turn | VP ceiling |
-| --- | --- | --- | --- | --- |
-| ... | ~T10 | ~T16 | Province+Duchy | all Provinces + Duchies |
-
-**Against their best plan:** <the matchup for the pick and the runner-up>
-**Challenged:** <the rejected plan you re-tested, and how the pick loses>
 ```

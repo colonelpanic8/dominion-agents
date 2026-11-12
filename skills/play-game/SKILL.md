@@ -29,7 +29,7 @@ seats). Its result is your first full view.
 
 ## 2. Make the plan
 
-Run `kingdom-analysis`, quick version (its steps 1–5), on the kingdom in the
+Run `kingdom-analysis` on the kingdom in the
 first view. The `CARDS` block has the text of every card. Keep the result as a
 short game plan, about ten lines:
 
