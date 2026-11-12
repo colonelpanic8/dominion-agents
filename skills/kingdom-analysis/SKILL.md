@@ -41,48 +41,59 @@ Defaults, unless the user says otherwise:
 ## 2. First read: what is this board about?
 
 Answer these quickly from the card text, before studying any card in depth.
-The answers decide where to look harder.
+The answers decide where to look harder. "Payload" and "deck control" are
+used as defined in "Payload and deck control" in `context/strategy.md`.
 
 1. **Scoring and ending**: every way to score here (Provinces or Colonies,
    other Victory cards, VP tokens, Landmarks, Curses as minus points), and
    which of them add no card to the deck. Which piles will run out, and how
    does the game most likely end?
-2. **Payload**: the biggest sources of $, gains or VP per turn. Is there
-   +Buy or gaining to cash in a big turn? One Province per turn is a
-   ceiling, not a plan.
-3. **Draw and Actions**: which combination of cards actually increases hand
+2. **Draw and Actions**: which combination of cards actually increases hand
    size without costing Actions (see "Engines" in `context/strategy.md`)?
    What gives a spare Action: villages, including conditional ones,
    Actions that arrive at the start of the next turn, and Villagers?
-4. **Thinning**: what takes cards out of your deck (trashing, Exile, mats,
+3. **Thinning**: what takes cards out of your deck (trashing, Exile, mats,
    swapping a card for a better one), and how fast is it?
+4. **+Buy and gaining**: where does +Buy come from (Kingdom cards, Events,
+   tokens), and what gains cards or VP without a Buy? With none of these, a
+   turn scores at most one card, so an engine can't outscore money (see
+   "+Buy turns a big turn into points").
 5. **Attacks**: is there a junker? Can it be blocked, trashed away or
    outpaced? What do the other attacks hit?
 6. **Standouts**: a card the whole board bends around, an unusual setup, a
-   landscape that changes scoring, or a way to end the game fast.
+   landscape that changes scoring, a combo from `context/combos.md`, or a
+   way to end the game fast.
 
 Then write one or two sentences: what the board is about, and what is still
 open ("the only village is conditional", "no +Buy", "the payoff needs a
 discard outlet"). Those open points are what step 3 goes looking for.
 
-An answer of "none" needs more care than any other, because it rules a plan
-out before anyone has looked at it: "no village" or "no thinning" ends the
-engine there. Before writing one, go through every card and say why it
-doesn't supply the piece, reading the type line, the text below the dividing
-line, what happens when it is gained, and what it does next turn. The piece
-often comes from a card that doesn't look the part.
+## 3. Is there an engine, and is it fast and reliable enough?
 
-## 3. Work backwards from the payload
+This is usually the question that decides the board. Money plus +Buy is
+payload enough, so payload is rarely what's missing. What decides the
+board is whether a deck here can draw itself, how soon, and how often.
 
-For each scoring route and payload source from step 2, ask:
+- **Pieces**: the draw, villages, thinning and +Buy the engine would use,
+  the cheapest set of them, and their prices. If a piece is missing, name
+  it.
+- **Speed**: roughly when it first draws its deck, from the opening and
+  the number of parts it must gain. Compare that with the Big Money clock
+  in `context/strategy.md`.
+- **Reliability**: once built, how often does it draw its deck? Check what
+  can stall it (see "Reliability" in `context/strategy.md`): copies of the
+  key cards, villages against terminal draw, spare draw, junk, and the
+  opponent's attacks.
+- **Ceiling**: the $ and Buys of a built turn, and how many Provinces (or
+  other VP) that is per turn.
+- **Payload**: now judge the payload cards for the deck this board wants.
+  Note which pay off only when stacked (see "Payload depends on the
+  deck"), and so matter only if the engine works.
 
-- What is the most this could do in one turn if the rest of the board
-  served it?
-- What stands in the way: Actions, hand size, having it in hand every turn,
-  its price, the number of gains?
-- Which card or landscape here removes that obstacle?
-
-To answer the third question, read cards for what they **supply** and what
+When something stalls the engine (a missing or conditional village, no
++Buy, a key card not in hand every turn, a price that's hard to hit), look
+for the card or landscape that fixes it. Do the same for any other scoring
+route or combo from step 2. Read cards for what they **supply** and what
 they **want**, not only for their role:
 
 - Supplies: gains (and where they land: discard, hand, top of deck),
@@ -125,9 +136,10 @@ If the sweep turns up a new loop, take it back through step 3.
 ## 5. Decide
 
 - **Candidates**: two or three plans that are realistic here. Always
-  include the strongest Big Money + X as the baseline, and one plan for
-  each strong loop. Build the best version of each before judging it: the
-  right opening, the cheapest set of pieces, every helper the board offers.
+  include the strongest Big Money + X as the baseline, the engine from
+  step 3 if there is one, and one plan for each strong loop. Build the
+  best version of each before judging it: the right opening, the cheapest
+  set of pieces, every helper the board offers.
   For each, say how it works, what it needs by when (including the minimum
   number of copies of any scarce card, and whether the opponent wants them
   too), and its main weakness. Write every candidate down, even in a short
@@ -148,7 +160,7 @@ If the sweep turns up a new loop, take it back through step 3.
   controls when the game ends.
 - **Pick** the plan with the best result against the opponent's best
   response. Against a strong opponent prefer a plan that holds up whatever
-  they do.
+  they do. Between two plans that are close, prefer the more reliable one.
 - **Openings**: the best opening for each split from step 1, with one line
   of reasoning each. If a split leaves nothing worth buying at one price,
   say so.
@@ -168,6 +180,8 @@ If the sweep turns up a new loop, take it back through step 3.
 
 ```markdown
 **Board:** <what it is about, from step 2, in 2–3 sentences>
+**Engine:** <the pieces, when it draws its deck, how reliably, and a built
+turn's $ and Buys; or the missing piece>
 **Key interactions:**
 - <A + B: the loop, with numbers>
 **Other cards:** <one line each: its best partner here, or "none">
