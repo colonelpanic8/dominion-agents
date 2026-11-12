@@ -59,8 +59,10 @@ Before doing any Dominion work, read all of these in full:
 
 ## Writing skills and context
 
-Working guidelines from one round of `evals/kotw/` and one dominion-bench
-run of 16 kingdoms. Treat them as hypotheses until a run confirms them:
+Working guidelines from one round of `evals/kotw/` and four dominion-bench
+runs of 16 kingdoms (`results/2026-11-11-opus-5-5-0c0c5b7` there). The
+rewrite they led to scored 0.56 against 0.53 and 0.49 for the rules before
+it, which is inside the run-to-run noise, so treat them as hypotheses:
 
 - Put the questions that narrow the search first, then a cheap sweep over
   everything the narrowing skipped. A focused search alone misses the
@@ -90,6 +92,15 @@ run of 16 kingdoms. Treat them as hypotheses until a run confirms them:
 - Give reference numbers for whatever agents have to estimate (how long
   games last, how fast each kind of deck is). Without them they guess
   cautiously.
+- Don't hand an analyst a simulator to compare plans with. Analysts given
+  `dominion solo` (dominion-engine) to play lines out scored lower and
+  recommended money on 12 of 16 boards, against 5 without it: they play
+  the simple plan well and the hard plan once, badly, and then trust the
+  comparison. The skill step that did this is kept on the `solo-lines`
+  branch.
+- Rules like these move which plan gets picked. They haven't made an
+  analyst find an interaction it didn't see. The same tricks were missed
+  before and after the rewrite.
 - Card names used as examples steer analyses of boards that contain them.
   Prefer a general statement plus one example.
 - `evals/kotw/` is for occasional checks, not every edit. A blind run costs
