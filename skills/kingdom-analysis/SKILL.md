@@ -74,7 +74,8 @@ This is usually the question that decides the board. Money plus +Buy is
 payload enough, so payload is rarely what's missing. What decides the
 board is whether a deck here can draw itself, how soon, and how often.
 
-- **Pieces**: the draw, villages, thinning and +Buy the engine would use,
+- **Pieces**: the draw, the Actions its terminals need (none if draw and
+  payload are non-terminal), thinning and +Buy the engine would use,
   the cheapest set of them, and their prices. If a piece is missing, name
   it.
 - **Speed**: roughly when it first draws its deck, from the opening and
@@ -82,7 +83,7 @@ board is whether a deck here can draw itself, how soon, and how often.
   in `context/strategy.md`.
 - **Reliability**: once built, how often does it draw its deck? Check what
   can stall it (see "Reliability" in `context/strategy.md`): copies of the
-  key cards, villages against terminal draw, spare draw, junk, and the
+  key cards, Actions against terminals, spare draw, junk, and the
   opponent's attacks.
 - **Ceiling**: the $ and Buys of a built turn, and how many Provinces (or
   other VP) that is per turn.
@@ -145,7 +146,9 @@ If the sweep turns up a new loop, take it back through step 3.
   too), and its main weakness. Write every candidate down, even in a short
   write-up. A recommendation with no rivals beside it skipped this step.
 - **No village**: when step 2 found no way to play two terminals in a turn,
-  the realistic plans are mostly money decks and the choice of X matters
+  first check for non-terminal draw: with it, an engine of non-terminal
+  draw and payload needs no village. Without it, the realistic plans are
+  mostly money decks and the choice of X matters
   most. If the board has an attack, compare at least X as a draw card, X as
   the attack, and two copies of the attack. Estimate for each: the
   opening, the turns it first hits $6 and $8, and how often it plays its

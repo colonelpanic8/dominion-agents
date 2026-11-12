@@ -69,13 +69,13 @@ much as how big that turn is.
   produce nothing on their own. A plan that completes on half its turns
   usually loses to plain money (see "The Big Money baseline").
 - **What makes a deck reliable**: thinning, so draw finds draw; one or two
-  cards of spare draw beyond exactly enough; at least as many villages as
-  terminal draw; non-terminal draw, which can't collide; Actions and cards
+  cards of spare draw beyond exactly enough; an Action for every terminal
+  the turn plays; non-terminal draw, which can't collide; Actions and cards
   that arrive at the start of the turn (Durations); top of deck control
   that puts the key card in hand; and enough copies of any card the turn
   can't do without.
 - **What makes it unreliable**: a single copy of a key card; terminal
-  draw with few villages; junk, which dilutes draw; handsize attacks,
+  draw with too few Actions; junk, which dilutes draw; handsize attacks,
   which cut the hand a turn starts from; and draw that leaves the
   reshuffle to chance late in the turn.
 - **Money's strength is reliability.** It never stalls, it only
@@ -158,7 +158,8 @@ Further reading: Adam Horton on
   inconsistent may be reliable.
 
 If nothing on the board increases hand size, no deck on it will play much
-more than five cards a turn.
+more than five cards a turn. Villages matter only in proportion to
+terminals: non-terminal draw needs none.
 
 ### Thinning: addition by subtraction
 
@@ -259,7 +260,7 @@ useless in the deck the board actually wants, and the reverse.
   its deck control. Ten Bridges is no payload without villages to play them.
   If the ceiling is about one Province per turn, a complex deck rarely beats
   Big Money.
-- **If deck control is weak** (no villages, draw or trashing), you won't
+- **If deck control is weak** (little draw or trashing), you won't
   reliably play your full payload, so build less.
 - **Once your deck is under control**, balance adding payload against still
   drawing most or all of your deck each turn.
@@ -309,15 +310,17 @@ benchmark every plan should be measured against.
 ## Archetypes
 
 Each archetype is a different answer to how much deck control the board
-supports and what payload it rewards.
+supports and what payload it rewards. Engines are usually the strongest,
+so look for one first.
 
-- **Engine**: heavy deck control (villages, draw, thinning) plus +Buy and
-  payload. Aim to draw most of your deck each turn and gain several cards,
-  often more than one Province, per turn. Engines start slower but win long
-  games (see "Engines" below).
+- **Engine**: enough deck control (draw, thinning, and Actions for its
+  terminals) to play most of the deck, plus payload that scales past one
+  card per turn. Aim to draw most of your deck each turn and gain several
+  cards, often more than one Province, per turn. Engines start slower but
+  usually win (see "Engines" below).
 - **Money / BM+X**: few Actions, lots of Treasure, greens early. Strongest
-  when the kingdom lacks villages, draw or thinning, or when attacks punish
-  slow decks.
+  when the kingdom lacks draw or thinning, or when attacks punish slow
+  decks.
 - **Good-stuff deck**: no real draw, but several good non-drawing
   terminals, cantrips and Silver-like cards. Buy whatever helps your next
   turn most, add Silver and better Treasure, and skip terminal draw.
@@ -336,33 +339,50 @@ supports and what payload it rewards.
 
 ## Engines
 
-### When to build one
+Engines are usually the strongest decks a board allows, and most boards
+allow one. A deck that plays most of itself each turn gets the full value
+of every card in it, keeps growing as it adds payload, and can take
+several Provinces a turn where a money deck takes one. So start every board
+by looking for the engine, and settle for another archetype only when the
+board can't support one or a faster plan beats it.
 
-Build an engine when all of these hold:
+What an engine needs follows from payload and deck control, not from a
+fixed list of cards:
 
-1. Real draw exists, by the test in "Draw and villages", with villages
-   that actually work with it.
-2. There is thinning of any kind (see "Thinning: addition by
-   subtraction"), or the draw is strong enough to beat the junk. Strong
-   engines can overcome Curses.
-3. Payload scales past one Province per turn: +Buy, gainers, VP tokens or a
-   repeatable attack.
-4. It wins the race against the Big Money baseline: it can take double
-   Provinces by the mid-teens, or control when the game ends.
-5. The pieces are affordable and available: not all at $5+, and not one
-   contested split pile.
+- **Draw that reaches most of the deck** (see "Draw and villages").
+- **An Action for every terminal the built turn plays, and no more.**
+  Villages exist to give terminals slots. Payload that gives +Actions
+  (Festival) supplies its own. A deck whose draw and payload are all
+  non-terminal needs no village at all: Laboratories for draw, Treasure for
+  money and a non-terminal +Buy (a cantrip, a Treasure or an Event) are an
+  engine.
+- **Payload that scales past one card per turn**: +Buy from any source,
+  gainers, VP tokens or a repeatable attack.
+- **Thinning** of any kind (see "Thinning: addition by subtraction"), or
+  draw strong enough to beat the junk. Strong engines can overcome Curses.
 
-Check these by writing the build out turn by turn. An expensive or
-conditional village looks slow, but how it looks is not evidence either way.
+Any of these can come from a card that doesn't look like it, so read the
+whole board for each before deciding one is missing. None of them has a
+price limit: some engines are built entirely from $5 cards.
 
-Don't build one, or build less, when:
+### Judging one
 
-- The only "draw" is cantrips. Play a good-stuff deck instead (see
+Engines are harder to estimate than money, and that is the usual way they
+get underrated. Write the build out turn by turn: the opening, when the
+deck first draws itself, how often it does after that, and what a built
+turn produces. Compare that with the Big Money clock and the board's other
+plans. An engine that looks slow or awkward (expensive parts, a
+conditional village, no village at all) is not evidence either way.
+
+Things that weaken an engine, to weigh rather than to rule it out:
+
+- The only "draw" is cantrips. A good-stuff deck is usually better (see
   Archetypes).
-- There are villages with no draw, or terminal draw with no villages.
-- There's no +Buy, gaining or alternative payload, so the payload ceiling is
-  one Province per turn.
-- The opponent can three-pile or rush faster than the engine comes online.
+- Draw with nothing to pay its Actions, or villages with nothing to draw.
+- No +Buy, gaining or alternative payload, so a built turn still takes
+  one Province.
+- The opponent can three-pile or rush before the engine comes online.
+- A key piece sits in one pile the opponent also wants.
 
 ### How to build one
 
@@ -371,8 +391,9 @@ Don't build one, or build less, when:
   Workshop-style gainers roughly double the build rate, and Remodel-style
   gainers turn Estates into engine parts. Prefer a $5 engine piece over
   Gold.
-- Keep at least as many villages as terminal draw cards. Get draw before
-  payload, unless the payload is a strong attack.
+- Count terminals and Actions together: each terminal you add needs an
+  Action on the turns it is drawn. Get draw before payload, unless the
+  payload is a strong attack.
 - **Actions and cards at the start of the turn are worth the most**,
   because that's when turns stall. Duration villages and duration draw
   (Fishing Village, Wharf) give them before you draw anything. Spread them
@@ -380,8 +401,8 @@ Don't build one, or build less, when:
 - Aim for one or two cards of spare draw beyond exactly enough. That makes
   the deck consistent, which matters most against attacks and when you're
   ahead. Spare draw can be spent by gaining a card mid-turn and drawing it.
-- Stop adding Treasure once the deck draws itself, and add payload once it
-  does so reliably.
+- Stop adding Treasure once the deck draws itself, unless Treasure is the
+  payload, and add payload once it draws itself reliably.
 - Don't overbuild past the payload ceiling. But when unsure whether to
   green, one more building turn usually costs less than it seems.
 
