@@ -20,8 +20,9 @@ kingdom is different: treat these as defaults to check, not laws.
   your deck. Trashing (Chapel, Sentry, Steward, …) is the usual way, but
   Exile, a mat, or swapping a card for a better one does the same job (see
   "Trashing in practice"). It costs tempo at first and pays off later.
-- **Reliability.** A strategy that hits $8 on 70% of turns usually beats one
-  that alternates between $11 and $4.
+- **Reliability.** A plan that produces its intended turn most of the time
+  usually beats one with a bigger but less dependable turn (see
+  "Reliability" below).
 
 ## Cantrips: the "free effect" baseline
 
@@ -128,6 +129,39 @@ How to use it:
 - **Once your deck is under control**, balance adding payload against still
   drawing most or all of your deck each turn. Name the role of each card you
   add.
+
+## Reliability
+
+How often a deck produces its intended turn matters as much as how big that
+turn is.
+
+- **Prices are thresholds.** $9 buys what $8 does, and $7 buys what $6
+  does. $ above a price is mostly wasted and $ below it loses the gain, so
+  a deck that hits $8 on 70% of turns beats one that alternates between $11
+  and $4.
+- **An engine is only as good as how often it fires.** Its value comes from
+  drawing the whole deck every turn. A stalled engine turn is often worse
+  than a money turn, because its cards are villages and draw rather than
+  Treasure. An engine that completes on half its turns usually loses to
+  money. Judge an engine by how often the built turn happens, not by its
+  best turn.
+- **What makes a deck reliable**: thinning, so draw finds draw; one or two
+  cards of spare draw beyond exactly enough; at least as many villages as
+  terminal draw; non-terminal draw and cantrips, which can't collide;
+  Actions and cards that arrive at the start of the turn (Durations); top
+  of deck control that puts the key card in hand; and enough copies of
+  any card the turn can't do without. One copy in a 15-card deck is in a
+  given 5-card hand only one turn in three.
+- **What makes it unreliable**: a single copy of a key card; terminal
+  draw with few villages; junk, which dilutes draw; handsize attacks,
+  which cut the hand the engine starts from; and draw that leaves the
+  reshuffle to chance late in the turn.
+- **Money's strength is reliability.** It never stalls, it only
+  fluctuates, which is why it is the baseline (see below). A plan that
+  beats money on its good turns but not on average loses to it.
+- **Reliability decides when to stop building.** Add a spare village or
+  draw card before more payload whenever the deck still stalls, and
+  especially when ahead (see "Risk and luck").
 
 ## The Big Money baseline
 
