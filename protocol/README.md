@@ -135,7 +135,7 @@ possessing player sees what the possessed player sees.
 ## Glossary
 
 `{name, types, set, cost, text}` per card, with official text (lines separated by `\n`,
-`---` for the dividing line). Producers offer it on demand (the `card` tool).
+`---` for the dividing line). Producers offer it on demand (the `cards` tool).
 
 ## Text rendering
 
@@ -188,5 +188,7 @@ bounds (`order matters` for ordered decisions, `or answer with any card's name` 
   designed so it can produce it too: it leaves out what it can't read (the optional
   fields), uses `purpose: "other"` where it can't tell, `kind` from the client's question
   types, and `unlocated` for cards its tracker can't place.
+
+Every producer serves the MCP tools specified in [`tools.md`](tools.md) (dominion/play@1).
 
 Changes to the protocol go through the schema here first; producers vendor it.

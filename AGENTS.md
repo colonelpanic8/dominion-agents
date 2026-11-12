@@ -33,6 +33,7 @@ Before doing any Dominion work, read all of these in full:
   material goes in `skills/<name>/references/`.
 - `protocol/`: the agent-view@2 protocol. `agent-view.schema.json` is canonical;
   `README.md` is its spec (fields, knowledge, answers, text rendering);
+  `tools.md` specifies dominion/play@1, the MCP tools every producer serves;
   `examples/` holds a view, its text rendering and an answer, produced by
   dominion-engine. Change the schema here first; producers (dominion-engine's
   `just sync-protocol`, dominion-navigator) vendor it. Keep it producer- and

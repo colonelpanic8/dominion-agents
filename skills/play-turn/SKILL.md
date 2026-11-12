@@ -75,6 +75,11 @@ especially `context/strategy.md` for the plan and the endgame.
 - When a buy departs from the plan (a card it didn't name, or a default
   such as Silver in place of a card it did), give a one-line reason. If no
   reason holds up, buy what the plan says.
+- When asked whether one buy is right ("is Silver right here?"), don't
+  confirm it from the plan alone. Compare it with the best other card at
+  each price you can pay, and work out the next hand for any candidate that
+  changes it (gained to hand, a when-gain effect, a Night card). If the
+  comparison shows the plan misread a card, say so and redo the plan.
 - Before buying a terminal, count the terminals in your deck including
   this one. Without villages, keep to roughly one per 8–10 cards
   (`context/strategy.md`, "Terminal collision"). Past that, a new
