@@ -9,9 +9,10 @@ kingdom is different: treat these as defaults to check, not laws.
 - **Your deck is your engine of turns.** Each card you add changes the
   average quality of the hands you draw. A card is good if decks that buy it
   produce better turns than decks that don't.
-- **Tempo matters.** A typical 2-player game lasts about 15–20 turns per
-  player, and strong decks can end it much sooner. Gains early in the game
-  compound. Gains late in the game mostly need to be points.
+- **Tempo matters.** Games between strong players mostly end between turns
+  11 and 15, and the fastest decks end them by turn 8 or 9 (see "How fast
+  decks are"). Gains early in the game compound. Gains late in the game
+  mostly need to be points.
 - **Terminal collision.** A *terminal* is an Action that gives no +Action.
   Draw two terminals together without a village and one of them is dead.
   Without villages, keep roughly one terminal per 8–10 cards.
@@ -76,8 +77,10 @@ How to use it:
 
 - **Before the game**, work out the best payload this kingdom allows, given
   its deck control. Ten Bridges is no payload without villages to play them.
-  If the ceiling is about one Province per turn, a complex deck rarely beats
-  Big Money. Without +Buy or gaining, a perfect engine still scores slowly.
+  Look everywhere for what lifts the ceiling past one Province per turn:
+  +Buy on a card, an Event or a token, gainers, cost reduction, VP tokens,
+  Victory cards other than Province. Only when none of it is there does a
+  complex deck rarely beat Big Money.
 - **If deck control is weak** (no villages, draw or trashing), you won't
   reliably play your full payload, so build less.
 - **Once your deck is under control**, balance adding payload against still
@@ -86,9 +89,16 @@ How to use it:
 
 ## The Big Money baseline
 
-"Big Money" means buying only Treasures and Victory cards. It's the
-benchmark every plan should be measured against.
+"Big Money" means buying only Treasures and Victory cards. It is the floor
+every plan is measured against. On most boards it is not the answer.
 
+- **Most kingdoms have something better.** With expansion cards on the
+  board there is usually an engine, a combo or a scoring trick that beats
+  any money deck, and strong players look for it first. Money is what they
+  play when that search fails: mostly on boards with no village, no real
+  draw, or no payload beyond one Province per turn. Recommending BM+X on a
+  board that has all three needs a worked line in which the better-looking
+  plan loses.
 - Buy Province at $8, Gold at $6–7 and Silver at $3–5. Start buying Duchies
   at $5–7 once 4–5 Provinces are left, and Estates at $2–4 near the very end.
 - **Big Money + X** adds one or two copies of a strong terminal, such as
@@ -112,14 +122,17 @@ benchmark every plan should be measured against.
   ([ragingduckd, "The Myth of Big Money Choking"](http://forum.dominionstrategy.com/index.php?topic=9512.0)).
   Don't assume a money opponent stalls once they green. Use these numbers as
   the race clock any slower plan has to beat.
-- Any plan that can't beat a competent BM+X in this kingdom is a mistake.
+- A plan that can't beat a competent BM+X in this kingdom is a mistake. So
+  is BM+X in a kingdom that offers a plan that beats it, and that is the
+  more common mistake of the two.
 
 ## Archetypes
 
 - **Engine**: heavy deck control (villages, draw, thinning) plus +Buy and
   payload. Aim to draw most of your deck each turn and gain several cards,
-  often more than one Province, per turn. Engines start slower but win long
-  games (see "Engines" below).
+  often more than one Province, per turn. Engines start slower and then
+  score several times faster. Where the board supports one it is usually
+  the best plan (see "Engines" below).
 - **Money / BM+X**: few Actions, lots of Treasure, greens early. Strongest
   when the kingdom lacks villages, draw or thinning, or when attacks punish
   slow decks.
@@ -136,7 +149,31 @@ benchmark every plan should be measured against.
   pile plus +Buy. Strong only when the kingdom enables it and the opponent
   can't punish it.
 - **Combos**: a plan built around a specific interaction (see below). Always
-  look for them, but check that they beat the plain options.
+  look for them, and judge each by the best deck that can be built for it.
+
+## How fast decks are
+
+Reference points for a race, from commentated top-level games and designers'
+solo playtests. They assume a strong player and no interference.
+
+- **Money**: BM+X has 4 Provinces around turn 14–17 and doesn't speed up.
+- **Engines**: a well-built engine has its first big turn (two or more
+  Provinces, or the same in other VP) around turn 8–11, and wins or ends the
+  game by turn 11–14. No trashing, pieces at $5 or a junker each cost it a
+  turn or two. They rarely cost it the race.
+- **Combos and one-huge-turn decks**: the fast ones finish in 8–10 turns,
+  and a few have their one turn as early as turn 7.
+- **Whole games** between strong players mostly end between turns 11 and
+  15. A plan still building on turn 14 is usually too slow. So is a money
+  deck that needs until turn 17 on a board where any of the above exists.
+
+An estimate made without playing the line out runs late for an unfamiliar
+deck, often by five turns or more. It counts one gain per turn, leaves out
+the helpers and stops at the first stall. For money it is about right,
+because money is simple. So "the engine arrives around turn 15" is weak
+evidence against the engine, and "money has 4 Provinces by turn 15" is no
+reason to pick money. Play the line out (the `kingdom-analysis` skill,
+step 6) before trusting either.
 
 ## Engines
 
@@ -177,30 +214,40 @@ way to check whether a board can support an engine at all:
 
 ### When to build one
 
-Build an engine when all of these hold:
+Build an engine when the board passes two tests:
 
 1. Real draw exists, by the test above, with villages that actually work
    with it.
-2. There is trashing, or the draw is strong enough to beat the junk. Strong
-   engines can overcome Curses.
-3. Payload scales past one Province per turn: +Buy, gainers, VP tokens or a
-   repeatable attack.
-4. It wins the race against the Big Money baseline: it can take double
-   Provinces by the mid-teens, or control when the game ends.
-5. The pieces are affordable and available: not all at $5+, and not one
-   contested split pile.
+2. Payload scales past one Province per turn: +Buy, gainers, cost
+   reduction, VP tokens, alternative VP or a repeatable attack.
 
-Check these by writing the build out turn by turn. An expensive or
-conditional village looks slow, but how it looks is not evidence either way.
+When both hold, the engine is the default plan, and a money deck has to
+show with a worked line that it gets there first. Everything else is an
+obstacle to solve with what the board offers, not a reason to give up:
+
+- **No trashing**: add more draw, sift, or let gains outgrow the starting
+  cards. Strong engines overcome Coppers, Estates and even Curses.
+- **Every piece costs $5 or more**: build economy first, use gainers and
+  cost reduction, and count the pieces the deck needs. It is usually fewer
+  than it looks.
+- **An expensive or conditional village**: find what meets the condition,
+  or what puts the village in your hand every turn.
+- **One contested pile**: count the copies you need and whether the
+  opponent wants them. If the split decides the game, contest it.
+- **A junker**: take it yourself (see "Attacks and defense").
+
+Check each fix by writing the build out turn by turn. A piece that looks
+slow is not evidence either way.
 
 Don't build one, or build less, when:
 
 - The only "draw" is cantrips. Play a good-stuff deck instead (see
   Archetypes).
 - There are villages with no draw, or terminal draw with no villages.
-- There's no +Buy, gaining or alternative payload, so the payload ceiling is
-  one Province per turn.
-- The opponent can three-pile or rush faster than the engine comes online.
+- After checking every card and landscape, the payload ceiling is still one
+  Province per turn.
+- The opponent can three-pile or rush before the engine's first big turn
+  (see "How fast decks are" for when that is).
 
 ### How to build one
 
@@ -227,13 +274,25 @@ Don't build one, or build less, when:
 
 ### Building for one huge turn
 
-Some decks save resources for a single game-winning turn: cards on mats
-(Native Village), Reserve cards, banked Coffers, Villagers or Favors.
+Some decks score almost everything on one turn. They come in two kinds:
 
-- Saving up means you don't use those resources while building, so playing
-  your payload every turn usually builds faster.
-- It's worth it mainly with an explosive finisher such as cost reduction
-  (Bridge, Highway, Bridge Troll) stacked many times.
+- **Payload that multiplies**: each copy played in the turn makes the
+  others worth more. Cost reduction with +Buy (Bridge) is the usual case.
+  Anything that pays per card played, gained or in play that turn works the
+  same way. Count copies against the target, as you would count Bridges
+  against the Province pile: how many, played in one turn, end the game or
+  put it out of reach? Get that many, not one or two, and build the deck to
+  play them together.
+- **Saved resources**: cards on mats (Native Village), Reserve cards, banked
+  Coffers, Villagers or Favors. Saved resources do nothing while you build,
+  so when the payload doesn't multiply, playing it every turn usually
+  builds faster.
+
+For both kinds:
+
+- These decks green only on the big turn, so they look far behind until it
+  comes. Judge them by the turn it arrives (see "How fast decks are"), not
+  by the score before it.
 - Attacks of every kind hurt a saving deck badly. Check the opponent's
   attacks before committing.
 - Start the big turn only when you can see it through, since a turn that
@@ -357,9 +416,11 @@ it, whether or not the pair appears below.
   your discard attack triggers the opponent's when-discarded cards, and
   cards you make them gain can help them.
 
-An interaction is only worth building around if the result beats the plain
-options, starting with Big Money + X. Known game-deciding combos are listed
-in `context/combos.md`.
+An interaction is worth building around when the best deck built for it
+beats the plain options, starting with Big Money + X. Build that deck before
+deciding: an interaction judged inside a deck made for something else
+always looks weak. Known game-deciding combos are listed in
+`context/combos.md`.
 
 ## Openings
 
