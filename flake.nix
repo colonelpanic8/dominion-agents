@@ -22,7 +22,7 @@
       '';
 
       devShells.default = pkgs.mkShell {
-        packages = with pkgs; [just alejandra check-jsonschema];
+        packages = with pkgs; [just alejandra check-jsonschema python3];
       };
 
       formatter = pkgs.alejandra;

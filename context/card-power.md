@@ -14,40 +14,15 @@ explain any large gap. A low rating is never a reason to skip a card.
 A live community rating system by the Dominion Strategy community. Raters
 choose the stronger card in random pairs, and the votes feed a Glicko-style
 rating. Ratings are on one scale across costs, and landscapes are rated
-separately.
+separately. The ratings themselves are in `context/card-ratings.md`.
 
-- Spreadsheet: <https://docs.google.com/spreadsheets/d/1CaVOd1pgAgmjJHXPM1tVMVnlJOLDZaq8BxjW4I1NI1E>
-- Local snapshot: `data/card-glicko/*.csv`. `data/card-glicko/FETCHED` is
-  the day we downloaded it, and `just refresh-power` updates it. The sheet's
-  own "Last Update" date is in the header row of `cards.csv` and can be
-  months older.
-- Coverage: kingdom cards through Rising Sun. First-edition cards are listed
-  with expansion "deprecated", no rank and a large `phi`: few raters still
-  compare them, so give those ratings little weight. Separate files cover
-  Events/Projects, Ways, Landmarks, Traits, Prophecies and Allies. Arcana is
-  not rated yet.
-- Columns: `rating` (higher is stronger) and `phi` (uncertainty: treat
-  ratings within about one phi as tied). `beats median` is the estimated
-  chance of beating a median card. `Qvist category` is the cost bracket.
 - Scale for kingdom cards: the median is about 0, the top 10% is above 3.3
   and the bottom 10% is below −3. The extremes are about +6.9 and −7.8.
-
-Look cards up in the CSVs rather than relying on memory, e.g.
-`grep -i 'witch' data/card-glicko/cards.csv`.
-
-## Headline picture (Glicko, July 2026)
-
-- **Top tier**: Recruiter, Silk Merchant, King's Court, Daimyo, Peasant,
-  Wharf, Chapel, Bridge Troll, Villa, Page, Governor, Sea Witch, Stockpile,
-  Margrave, Joust, Masquerade.
-- **Strong cheap cards**: Peasant, Chapel, Page, Lackeys and Farrier ($0–2);
-  Stockpile, Masquerade, Sentinel, Clashes and Hermit ($3).
-- **Weakest**: most Alchemy cards except Scrying Pool, plus Philosopher's
-  Stone, Transmute, Stash, Harvest, Pillage, Bureaucrat and Rocks.
-- **Landscapes**: Donate, Journey and Deliver top the Events/Projects.
-  Way of the Mouse and Way of the Horse lead the Ways. Keep and Wall lead the
-  Landmarks. Inherited leads the Traits. Biding Time and Kind Emperor lead
-  the Prophecies. Island Folk leads the Allies by a wide margin.
+- Ratings carry about ±0.7 of uncertainty, so treat cards within about one
+  point of each other as tied.
+- Coverage: kingdom cards and landscapes through Rising Sun. Arcana is not
+  rated yet. First-edition cards are listed separately, with rough ratings.
+- Look ratings up there rather than relying on memory.
 
 ## Secondary sources
 

@@ -126,11 +126,10 @@ Step 3 finds what you were looking for. This pass finds what you weren't.
   and the combos in `context/combos.md`. That list shows kinds of
   interaction and is not complete. Don't drop an interaction because it
   isn't listed.
-- Look the cards up with `grep -i '<name>' data/card-glicko/*.csv`. Where
-  your view and the rating differ by a lot, in either direction, take a
-  second look and give the board-specific reason. A rating is never a
-  reason to skip a card or to buy one. Ratings marked "deprecated" or with
-  a large `phi` carry little weight.
+- Look the cards up in `context/card-ratings.md`. Where your view and the
+  rating differ by a lot, in either direction, take a second look and give
+  the board-specific reason. A rating is never a reason to skip a card or
+  to buy one. First-edition ratings carry little weight.
 
 If the sweep turns up a new loop, take it back through step 3.
 
