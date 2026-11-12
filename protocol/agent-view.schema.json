@@ -507,7 +507,12 @@
           "type": "array",
           "items": { "$ref": "#/$defs/count" }
         },
-        "name": { "$ref": "#/$defs/cardName" }
+        "name": { "$ref": "#/$defs/cardName" },
+        "expect": {
+          "description": "What the answerer takes each chosen option to be, one per index in the same order: the option's label or card. The answer is rejected if an option is something else.",
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 }
+        }
       },
       "required": ["decision"],
       "oneOf": [{ "required": ["indices"] }, { "required": ["name"] }],

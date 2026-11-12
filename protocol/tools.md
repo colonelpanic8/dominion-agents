@@ -13,7 +13,7 @@ a tool from this list a different meaning.
 | Tool | Arguments | Does |
 | --- | --- | --- |
 | `state` | `token?` | Whether there is a game, and if there is, the full view plus card text. |
-| `step` | `decision`, `indices?`, `name?`, `timeout_s?`, `token?` | Answers the open decision, waits for your next one, returns what changed. |
+| `step` | `decision`, `indices?`, `name?`, `expect?`, `timeout_s?`, `token?` | Answers the open decision, waits for your next one, returns what changed. |
 | `wait` | `timeout_s?`, `token?` | Waits for your next decision without answering, returns what changed. |
 | `new_game` | `kingdom?`, `landscapes?`, `bots?`, `players?` and producer extras | Starts a game, seats you, returns the full view. |
 | `cards` | `names` | Card text, types and current cost (the [glossary](README.md#glossary)). |
@@ -35,8 +35,10 @@ not for play, and say so in their description. An agent playing a game must not 
 - `token`: a seat's secret, for producers that host several seats. A producer with one
   seat per server (one logged-in account) ignores it. After `new_game` or `join_game`,
   calls in the same MCP session may leave it out.
-- `decision`, `indices`, `name`: the [answer](README.md#answers), field for field.
-  `indices: []` chooses nothing. `name` only where the decision has `nameAny`.
+- `decision`, `indices`, `name`, `expect`: the [answer](README.md#answers), field for
+  field. `indices: []` chooses nothing. `name` only where the decision has `nameAny`.
+  `expect` names what each index is meant to choose (`indices: [2], expect: ["Buy Silver"]`),
+  and the producer's tool description tells agents to give it.
 - `timeout_s`: seconds to wait for your next decision. Default 60. A producer may cap it,
   but must accept at least 300.
 - `new_game`:

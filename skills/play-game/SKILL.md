@@ -91,7 +91,11 @@ produces. If it could, treat it as a play or a deck change.
 Mechanics:
 
 - Read indices from the latest `DECISION` only. They change from one decision
-  to the next.
+  to the next: after a buy, the piles you can no longer afford are gone and
+  the rest move up, so the number that was Silver can now be Curse.
+- With every `indices`, give `expect`: the label each index is meant to
+  choose, in the same order (`indices: [2], expect: ["Buy Silver"]`). An index
+  that points at something else is then rejected instead of played.
 - Check each group's `min` and `max`. `indices: []` chooses nothing. For an
   ordered decision, list the top card first.
 - After a `REJECTED` error, read the reason and the decision that came with

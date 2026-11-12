@@ -117,6 +117,7 @@ possessing player sees what the possessed player sees.
 
 ```json
 {"decision": "d17", "indices": [0, 1]}
+{"decision": "d18", "indices": [2], "expect": ["Buy Silver"]}
 {"decision": "d23", "name": "Gold"}
 ```
 
@@ -125,12 +126,21 @@ possessing player sees what the possessed player sees.
   only when the producer says so in the group prompts.
 - When `ordered` is true, the order of `indices` is the resulting order, **top first**
   (the first index ends on top of the deck).
+- `expect` says what the answerer takes each chosen option to be, one entry per index
+  in the same order: the option's `label` (with or without a trailing parenthesis; case,
+  spaces and punctuation are ignored), or its `card`. The label says more: in a Buy phase
+  `Silver` is both `Play Silver` and `Buy Silver`. The producer rejects the answer
+  if an option is something else. Option numbers change from one decision to the next
+  (after a buy, the piles no longer affordable are gone and the rest move up), so an
+  index read from an earlier decision can point at another option; `expect` turns that
+  into a rejection. Optional; ignored with `name`.
 - When `nameAny` is true, the answer may give `name`, any card's name (case, spaces and
   punctuation are ignored), instead of indices; the `name` options list the cards in this
   game for convenience.
 - The producer validates every answer. A rejected answer changes nothing and comes with a
   reason, e.g. `option 7 does not exist (decision has 5 options)`, `choose 2 option(s),
-  got 1`, `decision d16 is not open; the open decision is d17`, `P2 is not deciding now`.
+  got 1`, `decision d16 is not open; the open decision is d17`, `P2 is not deciding now`,
+  `option 2 is "Buy Curse ($0)", not "Buy Silver" (that is option 1)`.
 
 ## Glossary
 
