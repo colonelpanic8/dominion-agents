@@ -1,4 +1,4 @@
-# dominion-agents
+# dominion-playbook
 
 Context and skills that help AI agents understand and play
 [Dominion](https://www.riograndegames.com/games/dominion/), with one set of
@@ -28,7 +28,7 @@ files shared by Claude Code and OpenAI Codex.
 - **Skills**: Codex finds them through `.agents/skills` and Claude Code
   through `.claude/skills`. Both point to `skills/`.
 - **Outside this repo**: `packages.default` installs the context, skills and
-  protocol under `share/dominion-agents/`.
+  protocol under `share/dominion-playbook/`.
 
 ## Playing
 

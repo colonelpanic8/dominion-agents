@@ -1,4 +1,4 @@
-# dominion-agents
+# dominion-playbook
 
 Agent context and skills for the deck-building card game Dominion. This repo
 targets Claude (Claude Code) and OpenAI (Codex) agents, and both share the

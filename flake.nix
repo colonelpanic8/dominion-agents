@@ -14,11 +14,11 @@
     flake-utils.lib.eachDefaultSystem (system: let
       pkgs = nixpkgs.legacyPackages.${system};
     in {
-      packages.default = pkgs.runCommand "dominion-agents" {} ''
-        mkdir -p $out/share/dominion-agents
-        cp -r ${./context} $out/share/dominion-agents/context
-        cp -r ${./skills} $out/share/dominion-agents/skills
-        cp -r ${./protocol} $out/share/dominion-agents/protocol
+      packages.default = pkgs.runCommand "dominion-playbook" {} ''
+        mkdir -p $out/share/dominion-playbook
+        cp -r ${./context} $out/share/dominion-playbook/context
+        cp -r ${./skills} $out/share/dominion-playbook/skills
+        cp -r ${./protocol} $out/share/dominion-playbook/protocol
       '';
 
       devShells.default = pkgs.mkShell {
